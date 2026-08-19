@@ -44,24 +44,22 @@ Open **`assets/js/main.js`** and edit the blocks at the top:
 - **`HOURS`** — store hours, Sunday → Saturday. Times are the pretty labels;
   the row for today auto-highlights. Set `closed: true` for a day off.
 
-## ⚓ Before launch — fill in the real business details
+## Business details (live on the site)
 
-The following were seeded as **placeholders** and must be confirmed/replaced
-(search the files for each):
+- **Address** — 75 Park Rd, West Hartford, CT 06119 (contact row, Google Maps
+  embed, and `LocalBusiness` structured data).
+- **Phone / text** — (757) 358-7643.
+- **Hours** — Mon–Fri 11 AM – 8 PM; Sat & Sun closed (out at card shows). Edit
+  in `assets/js/main.js` `HOURS`.
+- **Instagram** — [@tscc_ct](https://www.instagram.com/tscc_ct/).
 
-- **Address** — `index.html`, the `data-todo="address"` contact row and the
-  `LocalBusiness` structured-data block (currently "Connecticut" only).
-- **Phone** — `index.html`, the `data-todo="phone"` contact row (add a real
-  `tel:` link) and the structured data.
-- **Hours** — `assets/js/main.js` `HOURS` (seeded, not confirmed).
-- **Social links** — `index.html` uses `@thousandsunnycards` on Instagram and
-  Facebook as placeholders; point them at the real profiles (search for
-  `thousandsunnycards`).
-- **Domain** — `index.html` canonical/OG URLs use `thousandsunnycards.com`;
-  update if the real domain differs.
+### ⚓ Still to confirm before launch
 
-Optionally add a Google Maps embed to the Visit section once the address is set
-(see The Stronghold's `index.html` `.map-embed` block for the pattern).
+- **Domain** — `index.html` canonical/OG URLs use `thousandsunnycards.com` as a
+  placeholder; update to the real domain (search for `thousandsunnycards.com`).
+- **Facebook** — the shop has a Facebook page, but its URL wasn't provided, so
+  no Facebook link is wired up yet. Add one to the footer / Visit section when
+  you have the handle.
 
 ## Deploy to Vercel
 

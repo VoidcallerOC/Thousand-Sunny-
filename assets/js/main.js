@@ -21,13 +21,13 @@ const GAMES = [
 // Store hours. Order = Sunday..Saturday to match Date.getDay().
 // closed:true renders "Closed". TODO: verify against your real hours before launch.
 const HOURS = [
-  { day: "Sunday",    open: "12:00 PM", close: "6:00 PM" },
-  { day: "Monday",    open: "12:00 PM", close: "8:00 PM" },
-  { day: "Tuesday",   open: "12:00 PM", close: "8:00 PM" },
-  { day: "Wednesday", open: "12:00 PM", close: "8:00 PM" },
-  { day: "Thursday",  open: "12:00 PM", close: "8:00 PM" },
-  { day: "Friday",    open: "12:00 PM", close: "9:00 PM" },
-  { day: "Saturday",  open: "11:00 AM", close: "9:00 PM" },
+  { day: "Sunday",    closed: true },
+  { day: "Monday",    open: "11:00 AM", close: "8:00 PM" },
+  { day: "Tuesday",   open: "11:00 AM", close: "8:00 PM" },
+  { day: "Wednesday", open: "11:00 AM", close: "8:00 PM" },
+  { day: "Thursday",  open: "11:00 AM", close: "8:00 PM" },
+  { day: "Friday",    open: "11:00 AM", close: "8:00 PM" },
+  { day: "Saturday",  closed: true },
 ];
 
 /* ------------------------------------------------------------------
