@@ -328,6 +328,12 @@ body.menu-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
 .shot:hover img { transform: scale(1.05); }
 .shot:hover { border-color: rgba(245,179,1,.5); }
 
+/* ---------- Play & Gather ---------- */
+.play-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 52px; }
+.play-grid .shot { grid-column: auto; }
+.play-grid .shot img { aspect-ratio: 3/4; }
+.events-note { margin-top: 22px; color: var(--muted-2); font-size: .9rem; }
+
 /* ---------- The Display Case ---------- */
 .shop { background: var(--bg); border-block: 1px solid var(--line); }
 .shop-card {
@@ -404,6 +410,7 @@ body.menu-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
   .games { grid-template-columns: repeat(2, 1fr); }
   .gallery { grid-template-columns: repeat(2, 1fr); }
   .shot, .shot--wide { grid-column: span 1; }
+  .play-grid { grid-template-columns: repeat(3, 1fr); }
   .visit-grid { grid-template-columns: 1fr; }
   .shop-card { grid-template-columns: 1fr; }
   .shop-visual { min-height: 240px; order: -1; }
@@ -420,7 +427,7 @@ body.menu-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
   .nav-menu a { font-family: var(--ff-display); text-transform: uppercase; font-size: 2rem; color: var(--white); padding: 10px; }
   .nav-menu a::after { display: none; }
   .nav-menu .btn { display: inline-flex; margin-top: 18px; }
-  .pillars, .games, .gallery { grid-template-columns: 1fr; }
+  .pillars, .games, .gallery, .play-grid { grid-template-columns: 1fr; }
   .footer-top { flex-direction: column; }
   .wordmark .name { font-size: clamp(3rem, 19vw, 6rem); }
 }

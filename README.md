@@ -20,7 +20,7 @@ assets/
   js/main.js          ← interactions + EDITABLE content (shelves, hours)
   img/logo.png        ← Thousand Sunny (TSCC) logo mark
   img/favicon.png     ← browser tab icon
-  img/store-*.jpg     ← store interior photos used in the gallery & case
+  img/*.jpg           ← store photos used in the gallery, Play & the case
 vercel.json           ← deploy config (clean URLs + long-lived asset caching)
 ```
 
