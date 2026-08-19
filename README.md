@@ -52,14 +52,12 @@ Open **`assets/js/main.js`** and edit the blocks at the top:
 - **Hours** — Mon–Fri 11 AM – 8 PM; Sat & Sun closed (out at card shows). Edit
   in `assets/js/main.js` `HOURS`.
 - **Instagram** — [@tscc_ct](https://www.instagram.com/tscc_ct/).
+- **Facebook** — linked in the Visit contact block and footer.
 
 ### ⚓ Still to confirm before launch
 
 - **Domain** — `index.html` canonical/OG URLs use `thousandsunnycards.com` as a
   placeholder; update to the real domain (search for `thousandsunnycards.com`).
-- **Facebook** — the shop has a Facebook page, but its URL wasn't provided, so
-  no Facebook link is wired up yet. Add one to the footer / Visit section when
-  you have the handle.
 
 ## Deploy to Vercel
 
