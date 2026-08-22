@@ -381,6 +381,21 @@ function initEaster() {
   });
 }
 
+function initCaseReveal() {
+  const region = $("#caseRevealRegion");
+  const button = $("#caseReveal");
+  const label = button?.querySelector(".case-reveal-label");
+  if (!region || !button || !label) return;
+
+  const setOpen = (open) => {
+    region.classList.toggle("is-open", open);
+    button.setAttribute("aria-expanded", String(open));
+    label.textContent = open ? "Close the case" : "Open the case";
+  };
+
+  button.addEventListener("click", () => setOpen(!region.classList.contains("is-open")));
+}
+
 function initOfferFlow() {
   const form = $("#offerForm");
   const photos = $("#offerPhotos");
@@ -437,6 +452,7 @@ document.addEventListener("DOMContentLoaded", () => {
   tickStatus();
   initNav();
   initLightbox();
+  initCaseReveal();
   initTilt();
   initMagnetic();
   initScrollFx();

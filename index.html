@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/styles.css?v=15" />
+  <link rel="stylesheet" href="/assets/css/styles.css?v=16" />
 
   <link rel="preload" as="image" type="image/avif" href="/assets/img/optimized/gear5-tall-830.avif" imagesrcset="/assets/img/optimized/gear5-tall-480.avif 480w, /assets/img/optimized/gear5-tall-640.avif 640w, /assets/img/optimized/gear5-tall-830.avif 830w" imagesizes="100vw" media="(max-width: 767px), (max-aspect-ratio: 1/1)" fetchpriority="high" />
   <link rel="preload" as="image" type="image/webp" href="/assets/img/optimized/gear5-tall-830.webp" imagesrcset="/assets/img/optimized/gear5-tall-480.webp 480w, /assets/img/optimized/gear5-tall-640.webp 640w, /assets/img/optimized/gear5-tall-830.webp 830w" imagesizes="100vw" media="(max-width: 767px), (max-aspect-ratio: 1/1)" fetchpriority="high" />
@@ -37,6 +37,8 @@
     "name": "Thousand Sunny Cards & Collectibles",
     "description": "A vibrant anime and trading card hobby shop in West Hartford, CT. Buy, sell, trade and collect — Pokémon, One Piece TCG, Magic: The Gathering, Yu-Gi-Oh, graded singles, Funko Pop!, manga and Japanese snacks.",
     "url": "https://thousand-sunny-cards.vercel.app/",
+    "image": "https://thousand-sunny-cards.vercel.app/assets/img/og.jpg",
+    "priceRange": "$$",
     "telephone": "+1-757-358-7643",
     "address": {
       "@type": "PostalAddress",
@@ -45,6 +47,16 @@
       "addressRegion": "CT",
       "postalCode": "06119",
       "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 41.75692,
+      "longitude": -72.71847
+    },
+    "hasMap": "https://maps.google.com/?q=75+Park+Rd+West+Hartford+CT+06119",
+    "areaServed": {
+      "@type": "City",
+      "name": "West Hartford"
     },
     "openingHoursSpecification": [
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "11:00", "closes": "20:00" }
@@ -416,18 +428,28 @@
           </a>
           <p class="note">Ask the crew about current showcase stock and consignment terms.</p>
         </div>
-        <div class="slab">
+        <div class="slab" id="caseRevealRegion">
           <p class="slab-cert">TSC GRADED · CASE 10</p>
-          <button class="shot" type="button" data-photo="9">
-            <picture class="responsive-picture">
-              <source type="image/avif" srcset="/assets/img/optimized/store-case-480.avif 480w, /assets/img/optimized/store-case-768.avif 768w, /assets/img/optimized/store-case-1200.avif 1200w" sizes="(min-width: 960px) 600px, 100vw" />
-              <source type="image/webp" srcset="/assets/img/optimized/store-case-480.webp 480w, /assets/img/optimized/store-case-768.webp 768w, /assets/img/optimized/store-case-1200.webp 1200w" sizes="(min-width: 960px) 600px, 100vw" />
-              <img src="/assets/img/store-case.jpg" alt="Glass display case of graded Pokémon and One Piece cards and collectibles" width="1200" height="1600" sizes="(min-width: 960px) 600px, 100vw" loading="lazy" decoding="async" />
-            </picture>
-            <span class="gleam" aria-hidden="true"></span>
-            <span>Graded slabs & grails</span>
-          </button>
-          <p class="slab-name">West Hartford Display Case</p>
+          <div class="case-vault" id="caseVault">
+            <button class="shot" id="casePhoto" type="button" data-photo="9" aria-describedby="caseInstruction">
+              <picture class="responsive-picture">
+                <source type="image/avif" srcset="/assets/img/optimized/store-case-480.avif 480w, /assets/img/optimized/store-case-768.avif 768w, /assets/img/optimized/store-case-1200.avif 1200w" sizes="(min-width: 960px) 600px, 100vw" />
+                <source type="image/webp" srcset="/assets/img/optimized/store-case-480.webp 480w, /assets/img/optimized/store-case-768.webp 768w, /assets/img/optimized/store-case-1200.webp 1200w" sizes="(min-width: 960px) 600px, 100vw" />
+                <img src="/assets/img/store-case.jpg" alt="Glass display case of graded Pokémon and One Piece cards and collectibles" width="1200" height="1600" sizes="(min-width: 960px) 600px, 100vw" loading="lazy" decoding="async" />
+              </picture>
+              <span class="gleam" aria-hidden="true"></span>
+              <span>Graded slabs & grails</span>
+            </button>
+            <div class="case-doors" aria-hidden="true">
+              <span class="case-door case-door--left"></span>
+              <span class="case-door case-door--right"></span>
+            </div>
+            <button class="case-reveal" id="caseReveal" type="button" aria-expanded="false" aria-controls="casePhoto">
+              <span class="case-reveal-kicker">TSC CASE 10</span>
+              <span class="case-reveal-label">Open the case</span>
+            </button>
+          </div>
+          <p class="slab-name" id="caseInstruction">West Hartford Display Case · Open the doors, then inspect the grails.</p>
         </div>
       </div>
     </section>
@@ -498,7 +520,7 @@
         </div>
         <div class="footer-cols">
           <div class="footer-col">
-            <h5>Explore</h5>
+            <p class="footer-heading">Explore</p>
             <a href="#events">Events</a>
             <a href="#trade">Sell & trade</a>
             <a href="#shows">Show board</a>
@@ -509,12 +531,12 @@
             <a href="#visit">Visit</a>
           </div>
           <div class="footer-col">
-            <h5>Visit</h5>
+            <p class="footer-heading">Visit</p>
             <a href="#visit">Hours</a>
             <a href="https://maps.google.com/?q=Thousand+Sunny+Cards+%26+Collectibles+75+Park+Rd+West+Hartford+CT+06119" target="_blank" rel="noopener">75 Park Rd, West Hartford, CT 06119</a>
           </div>
           <div class="footer-col">
-            <h5>Follow</h5>
+            <p class="footer-heading">Follow</p>
             <a href="https://www.instagram.com/tscc_ct/" target="_blank" rel="noopener">Instagram @tscc_ct</a>
             <a href="https://www.facebook.com/share/1KuoCicfwX/" target="_blank" rel="noopener">Facebook</a>
             <a href="tel:+17573587643">(757) 358-7643</a>
