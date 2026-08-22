@@ -187,18 +187,13 @@ ul { list-style: none; padding: 0; }
 }
 
 .hero { position: relative; min-height: 100svh; min-height: 100dvh; overflow: hidden; }
-.hero-media {
-  position: absolute; inset: 0;
+.hero-photo {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: 50% 18%;
   transform: scale(1.02) translate3d(0, var(--hero-y, 0px), 0);
   transform-origin: 50% 18%;
   will-change: transform;
 }
-.hero-photo {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: cover;
-}
-.hero-photo--mobile { object-position: 50% 18%; }
-.hero-photo--desk { display: none; object-position: 72% 20%; }
 .hero-shade {
   position: absolute; inset: 0;
   background:
@@ -384,12 +379,11 @@ ul { list-style: none; padding: 0; }
   .footer-cols { grid-template-columns: repeat(3, auto); gap: 4rem; }
 }
 @media (min-width: 768px) {
-  .hero-media {
+  .hero-photo {
+    object-position: 50% 20%;
     transform: translate3d(0, var(--hero-y, 0px), 0);
-    transform-origin: 72% 20%;
+    transform-origin: 50% 20%;
   }
-  .hero-photo--mobile { display: none; }
-  .hero-photo--desk { display: block; }
   .brand-tag {
     display: block; margin-top: 4px; font-size: 10px;
     letter-spacing: 0.22em; text-transform: uppercase; color: var(--faint);
@@ -455,7 +449,7 @@ ul { list-style: none; padding: 0; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
   .marquee-track { animation: none; }
-  .hero-media { transform: none; will-change: auto; }
+  .hero-photo { transform: none; will-change: auto; }
   .game { transform: none; }
   .reveal { opacity: 1; transform: none; filter: none; }
 }
@@ -526,7 +520,7 @@ ul { list-style: none; padding: 0; }
 }
 .lightbox-strip button img { width: 100%; height: 100%; object-fit: cover; }
 .lightbox-strip button.is-on { opacity: 1; outline-color: var(--gold); }
-.hero-media.is-bounce { animation: luffy-bounce .65s var(--ease); }
+.hero-photo.is-bounce { animation: luffy-bounce .65s var(--ease); }
 @keyframes luffy-bounce {
   0%, 100% { transform: scale(1.02) translate3d(0, var(--hero-y, 0px), 0); }
   40% { transform: scale(1.08) translate3d(0, calc(var(--hero-y, 0px) - 10px), 0); }
