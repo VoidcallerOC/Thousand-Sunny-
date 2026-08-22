@@ -46,6 +46,8 @@ const ICONS = {
 const $ = (s, c = document) => c.querySelector(s);
 const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const REDUCE = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const FINE = matchMedia("(hover: hover) and (pointer: fine)").matches;
 
 function easternNow() {
   const parts = new Intl.DateTimeFormat("en-US", {
@@ -76,17 +78,18 @@ function getStatus() {
     return {
       open: true,
       dayIndex,
+      nowMin,
       label: "Open now",
       detail: remaining <= 60 ? `Closes in ${remaining} min` : "Closes at 8:00 PM",
     };
   }
   if (today.closed) {
-    return { open: false, dayIndex, label: "Closed today", detail: "Weekends we're at the card shows" };
+    return { open: false, dayIndex, nowMin, label: "Closed today", detail: "Weekends we're at the card shows" };
   }
   if (!today.closed && nowMin < today.openMin) {
-    return { open: false, dayIndex, label: "Closed", detail: "Opens today at 11:00 AM" };
+    return { open: false, dayIndex, nowMin, label: "Closed", detail: "Opens today at 11:00 AM" };
   }
-  return { open: false, dayIndex, label: "Closed", detail: `Opens ${nextOpenDay(dayIndex)} at 11:00 AM` };
+  return { open: false, dayIndex, nowMin, label: "Closed", detail: `Opens ${nextOpenDay(dayIndex)} at 11:00 AM` };
 }
 
 function renderBadge(el, status) {
@@ -101,7 +104,8 @@ function renderGames() {
   const grid = $("#gamesGrid");
   if (!grid) return;
   grid.innerHTML = GAMES.map(
-    (g) => `<article class="game">
+    (g) => `<article class="game" data-tilt>
+      <span class="game-foil" aria-hidden="true"></span>
       <span class="tag">${g.tag}</span>
       ${ICONS[g.icon] || ""}
       <h4>${g.name}</h4>
@@ -119,11 +123,36 @@ function renderHours(status) {
   }).join("");
 }
 
+function renderClock(status) {
+  const clock = $("#clock");
+  if (clock) {
+    const time = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/New_York",
+      hour: "numeric",
+      minute: "2-digit",
+    }).format(new Date());
+    clock.textContent = `${time} in West Hartford`;
+  }
+  const meter = $("#dayMeter");
+  if (!meter) return;
+  const today = HOURS[status.dayIndex];
+  if (!status.open || today.closed) {
+    meter.hidden = true;
+    return;
+  }
+  const span = today.closeMin - today.openMin;
+  const pct = Math.min(100, Math.max(0, ((status.nowMin - today.openMin) / span) * 100));
+  meter.hidden = false;
+  meter.firstElementChild.style.setProperty("--m", `${pct}%`);
+  meter.firstElementChild.style.width = `${pct}%`;
+}
+
 function shot(i, extra = "") {
   const p = PHOTOS[i];
   const cls = ["shot", extra, p.wide ? "shot--wide" : "", p.top ? "shot--top" : ""].filter(Boolean).join(" ");
   return `<button class="${cls}" type="button" data-photo="${i}">
     <img src="${p.src}" alt="${p.alt}" width="${p.w}" height="${p.h}" loading="lazy" />
+    <span class="gleam" aria-hidden="true"></span>
     <span>${p.caption}</span>
   </button>`;
 }
@@ -165,8 +194,17 @@ function initLightbox() {
   const dialog = $("#lightbox");
   const img = $("#lightboxImg");
   const cap = $("#lightboxCap");
+  const count = $("#lightboxCount");
+  const strip = $("#lightboxStrip");
   if (!dialog) return;
   let index = 0;
+  let startX = 0;
+
+  if (strip) {
+    strip.innerHTML = PHOTOS.map(
+      (p, i) => `<button type="button" data-jump="${i}" aria-label="${p.caption}"><img src="${p.src}" alt=""></button>`,
+    ).join("");
+  }
 
   const show = (i) => {
     index = (i + PHOTOS.length) % PHOTOS.length;
@@ -174,10 +212,17 @@ function initLightbox() {
     img.src = p.src;
     img.alt = p.alt;
     cap.textContent = p.caption;
+    if (count) count.textContent = `${index + 1} / ${PHOTOS.length}`;
+    strip?.querySelectorAll("button").forEach((b, n) => b.classList.toggle("is-on", n === index));
     if (!dialog.open) dialog.showModal();
   };
 
   document.addEventListener("click", (e) => {
+    const jump = e.target.closest("[data-jump]");
+    if (jump && dialog.contains(jump)) {
+      show(Number(jump.dataset.jump));
+      return;
+    }
     const btn = e.target.closest("[data-photo]");
     if (btn) show(Number(btn.dataset.photo));
   });
@@ -185,6 +230,12 @@ function initLightbox() {
   dialog.querySelector("[data-prev]")?.addEventListener("click", () => show(index - 1));
   dialog.querySelector("[data-next]")?.addEventListener("click", () => show(index + 1));
   dialog.addEventListener("click", (e) => { if (e.target === dialog) dialog.close(); });
+  dialog.addEventListener("touchstart", (e) => { startX = e.changedTouches[0].clientX; }, { passive: true });
+  dialog.addEventListener("touchend", (e) => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if (dx > 48) show(index - 1);
+    if (dx < -48) show(index + 1);
+  }, { passive: true });
   document.addEventListener("keydown", (e) => {
     if (!dialog.open) return;
     if (e.key === "ArrowLeft") show(index - 1);
@@ -192,10 +243,129 @@ function initLightbox() {
   });
 }
 
+function initTilt() {
+  if (REDUCE || !FINE) return;
+  $$("[data-tilt]").forEach((el) => {
+    el.addEventListener("pointermove", (e) => {
+      const r = el.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width;
+      const y = (e.clientY - r.top) / r.height;
+      el.style.setProperty("--px", x.toFixed(3));
+      el.style.setProperty("--py", y.toFixed(3));
+      el.style.setProperty("--ry", `${((x - 0.5) * 14).toFixed(2)}deg`);
+      el.style.setProperty("--rx", `${((0.5 - y) * 10).toFixed(2)}deg`);
+      el.classList.add("is-lit");
+    });
+    el.addEventListener("pointerleave", () => {
+      el.style.setProperty("--ry", "0deg");
+      el.style.setProperty("--rx", "0deg");
+      el.classList.remove("is-lit");
+    });
+  });
+}
+
+function initMagnetic() {
+  if (REDUCE || !FINE) return;
+  $$("[data-magnetic]").forEach((el) => {
+    el.addEventListener("pointermove", (e) => {
+      const r = el.getBoundingClientRect();
+      const dx = e.clientX - (r.left + r.width / 2);
+      const dy = e.clientY - (r.top + r.height / 2);
+      el.style.transform = `translate(${dx * 0.22}px, ${dy * 0.28}px)`;
+    });
+    el.addEventListener("pointerleave", () => { el.style.transform = ""; });
+  });
+}
+
+function initScrollFx() {
+  const sprog = $("#sprog");
+  const photo = $("#heroPhoto");
+  const word = $("#wordmark");
+  const tick = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    const p = max > 0 ? Math.min(1, scrollY / max) : 0;
+    if (sprog) sprog.style.setProperty("--p", `${(p * 100).toFixed(2)}%`);
+    if (REDUCE) return;
+    const heroP = Math.min(1, scrollY / (innerHeight * 0.72));
+    if (photo) photo.style.setProperty("--hero-y", `${(heroP * 70).toFixed(1)}px`);
+    if (word) word.style.setProperty("--rubber", `${(-0.04 + heroP * 0.07).toFixed(3)}em`);
+  };
+  tick();
+  window.addEventListener("scroll", tick, { passive: true });
+}
+
+function initReveal() {
+  const nodes = $$(".reveal");
+  if (!nodes.length) return;
+  if (REDUCE) {
+    nodes.forEach((n) => n.classList.add("is-in"));
+    return;
+  }
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) {
+          en.target.classList.add("is-in");
+          io.unobserve(en.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
+  );
+  nodes.forEach((n) => io.observe(n));
+}
+
+function initCopy() {
+  const toast = $("#toast");
+  let hide;
+  const ping = (msg) => {
+    if (!toast) return;
+    toast.textContent = msg;
+    toast.hidden = false;
+    requestAnimationFrame(() => toast.classList.add("is-on"));
+    clearTimeout(hide);
+    hide = setTimeout(() => {
+      toast.classList.remove("is-on");
+      setTimeout(() => { toast.hidden = true; }, 280);
+    }, 1800);
+  };
+  $$("[data-copy]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const text = btn.getAttribute("data-copy") || "";
+      try {
+        await navigator.clipboard.writeText(text);
+        ping("Address copied");
+      } catch {
+        ping("Copy from the listing");
+      }
+    });
+  });
+}
+
+function initEaster() {
+  const sun = $("#sunMark");
+  const photo = $("#heroPhoto");
+  let taps = 0;
+  sun?.addEventListener("click", () => {
+    taps += 1;
+    if (taps < 7) return;
+    taps = 0;
+    document.documentElement.classList.add("gear5");
+    setTimeout(() => document.documentElement.classList.remove("gear5"), 900);
+  });
+  photo?.addEventListener("click", () => {
+    if (REDUCE) return;
+    photo.classList.remove("is-bounce");
+    void photo.offsetWidth;
+    photo.classList.add("is-bounce");
+  });
+}
+
 function tickStatus() {
   const status = getStatus();
   $$("[data-open-badge]").forEach((el) => renderBadge(el, status));
   renderHours(status);
+  renderClock(status);
   return status;
 }
 
@@ -205,6 +375,12 @@ document.addEventListener("DOMContentLoaded", () => {
   tickStatus();
   initNav();
   initLightbox();
+  initTilt();
+  initMagnetic();
+  initScrollFx();
+  initReveal();
+  initCopy();
+  initEaster();
   const y = $("#year");
   if (y) y.textContent = new Date().getFullYear();
   const track = $("#marquee");
