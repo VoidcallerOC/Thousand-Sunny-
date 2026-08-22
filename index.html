@@ -67,8 +67,9 @@
       </span>
     </a>
     <nav class="nav-links" aria-label="Primary">
+      <a href="#events">Events</a>
+      <a href="#trade">Trade</a>
       <a href="#inside">Inside</a>
-      <a href="#play">Play</a>
       <a href="#shelves">Shelves</a>
     </nav>
     <div class="nav-cta">
@@ -89,6 +90,9 @@
         </button>
       </div>
       <nav class="nav-drawer-links" aria-label="Mobile">
+        <a href="#events">Events</a>
+        <a href="#trade">Sell & trade</a>
+        <a href="#shows">Show board</a>
         <a href="#inside">Inside</a>
         <a href="#play">Play</a>
         <a href="#shelves">Shelves</a>
@@ -274,6 +278,127 @@
       </div>
     </section>
 
+    <section class="section events-sec reveal" id="events">
+      <div class="wrap">
+        <div class="section-head section-head--split">
+          <div>
+            <p class="eyebrow">On deck</p>
+            <h2 class="h-sec">The event <span class="gold">calendar</span></h2>
+          </div>
+          <p class="lead">Game nights, release tables and tournament details belong in one place. This board is the shop’s home for confirmed dates, formats and entry details.</p>
+        </div>
+        <div class="event-board">
+          <div class="event-board-top">
+            <span class="board-chip"><span class="board-dot"></span>LIVE CALENDAR</span>
+            <span class="board-update">No confirmed date is posted right now</span>
+          </div>
+          <div class="event-empty">
+            <span class="event-no">01</span>
+            <div>
+              <h3>The next table is being set.</h3>
+              <p>As soon as a game night, tournament or release is locked in, its date, format, entry details and seats will live here — not only in a social post.</p>
+            </div>
+            <a class="btn btn--ghost btn--sm" href="sms:+17573587643?&body=Hi%20Thousand%20Sunny%20%E2%80%94%20what%20event%20or%20game%20night%20is%20coming%20up%3F">Ask the crew</a>
+          </div>
+        </div>
+        <div class="interest-row" aria-label="Event interest options">
+          <p>Want a seat when the calendar fills?</p>
+          <button type="button" data-interest="Pokémon">Pokémon</button>
+          <button type="button" data-interest="One Piece">One Piece</button>
+          <button type="button" data-interest="Magic">Magic</button>
+          <button type="button" data-interest="Open tables">Open tables</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--surface trade-sec reveal" id="trade">
+      <div class="wrap trade-grid">
+        <div class="trade-copy">
+          <p class="eyebrow">Make a move</p>
+          <h2 class="h-sec">Sell it.<br><span class="gold">Trade up.</span></h2>
+          <p class="lead">Bring a single, a binder, sealed product or a shelf of collectibles. Start with the basics below, then the crew can give you the right next step before you make the trip.</p>
+          <div class="trade-steps" aria-label="How the offer process works">
+            <div><span>01</span><p>Tell us what you have.</p></div>
+            <div><span>02</span><p>Add photos from your phone.</p></div>
+            <div><span>03</span><p>Get the crew’s next-step reply.</p></div>
+          </div>
+        </div>
+        <form class="offer-form" id="offerForm">
+          <div class="offer-form-head">
+            <p class="form-kicker">Start an offer</p>
+            <p>Nothing is sent until you choose to open your text message.</p>
+          </div>
+          <label for="offerType">I want to</label>
+          <select id="offerType" name="offerType" required>
+            <option value="sell">Sell</option>
+            <option value="trade">Trade</option>
+            <option value="sell or trade">Sell or trade</option>
+          </select>
+          <label for="offerCategory">What are you bringing?</label>
+          <select id="offerCategory" name="offerCategory" required>
+            <option value="Trading cards">Trading cards</option>
+            <option value="Sealed product">Sealed product</option>
+            <option value="Figures or collectibles">Figures or collectibles</option>
+            <option value="A mixed collection">A mixed collection</option>
+          </select>
+          <label for="offerDetails">Quick inventory</label>
+          <textarea id="offerDetails" name="offerDetails" rows="4" placeholder="Example: Pokémon binder, modern singles, about 40 cards; a few graded slabs."></textarea>
+          <label class="file-picker" for="offerPhotos"><span>Add photos</span><span id="offerPhotoCount">Optional · up to 6</span></label>
+          <input id="offerPhotos" name="offerPhotos" type="file" accept="image/*" multiple />
+          <button class="btn btn--primary btn--block" type="submit">Start your offer</button>
+          <p class="form-note" id="offerStatus" role="status">We’ll draft a text with your inventory details. Add selected photos to the message before you send it.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section show-sec reveal" id="shows">
+      <div class="wrap show-grid">
+        <div class="show-stamp" aria-hidden="true"><span>ON THE ROAD</span><strong>TSC</strong><span>WEEKEND SHOW BOARD</span></div>
+        <div>
+          <p class="eyebrow">When the shop travels</p>
+          <h2 class="h-sec">Find the crew<br><span class="gold">off the map.</span></h2>
+          <p class="lead">When Thousand Sunny heads to a card show, this board will name the venue, town, date and where to find the table. That way, a closed shop door never means a missed connection.</p>
+          <div class="show-status"><span class="status-label">NEXT STOP</span><strong>No show location is posted yet.</strong><p>Text the crew for this weekend’s plan or check back here before you head out.</p></div>
+          <a class="btn btn--ghost" href="sms:+17573587643?&body=Hi%20Thousand%20Sunny%20%E2%80%94%20where%20can%20I%20find%20the%20crew%20this%20weekend%3F">Find the crew</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section story-sec reveal" id="story">
+      <div class="wrap story-grid">
+        <div>
+          <p class="eyebrow">Why the Sunny</p>
+          <h2 class="h-sec">More than<br><span class="gold">the next pull.</span></h2>
+        </div>
+        <div class="story-copy">
+          <p class="story-lead">Thousand Sunny is built around the part of collecting that happens after the pack opens: comparing a new hit, finding the missing piece, meeting another player, or settling in for one more round.</p>
+          <p>The shelves hold cards, anime, figures, manga and snacks. The tables make room for the people behind them. Whether you arrive with a grail in mind or no plan at all, the goal is the same: leave with a better story than the one you walked in with.</p>
+          <div class="review-prompt">
+            <span class="review-mark">“</span>
+            <div><p class="form-kicker">Been aboard?</p><p>Your visit can help the next collector decide to stop in.</p></div>
+            <a href="https://www.google.com/maps/search/?api=1&query=Thousand%20Sunny%20Cards%20%26%20Collectibles%2075%20Park%20Rd%20West%20Hartford%20CT" target="_blank" rel="noopener">Share a note on Google <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--surface faq-sec reveal" id="faq">
+      <div class="wrap faq-grid">
+        <div>
+          <p class="eyebrow">Before you come</p>
+          <h2 class="h-sec">Good <span class="gold">questions.</span></h2>
+          <p class="lead">A few quick answers for collectors, players and first-time visitors.</p>
+        </div>
+        <div class="faq-list">
+          <details open><summary>Do you buy cards and collections?</summary><p>Yes. Bring a single, a binder or a larger collection. The crew can look at cards and collectibles and talk through cash or store-credit options.</p></details>
+          <details><summary>Can I trade instead of sell?</summary><p>Absolutely. Use the offer starter above to tell the crew what you have and what you are hunting, then bring the conversation into the shop.</p></details>
+          <details><summary>Do you help with grading and consignment?</summary><p>Yes. The display-case team can talk through grading help and consignment terms in person, including what makes sense for your item.</p></details>
+          <details><summary>Do I need to book a table or room?</summary><p>For a specific table, room or group plan, message the crew first so they can check what is open before you come over.</p></details>
+          <details><summary>How do I find the crew at a weekend card show?</summary><p>Check the show board above. If a venue is not posted yet, send a quick text and the crew can point you in the right direction.</p></details>
+        </div>
+      </div>
+    </section>
+
     <section class="section section--border reveal" id="case">
       <div class="wrap case-grid">
         <div>
@@ -374,7 +499,9 @@
         <div class="footer-cols">
           <div class="footer-col">
             <h5>Explore</h5>
-            <a href="#do">The Crew</a>
+            <a href="#events">Events</a>
+            <a href="#trade">Sell & trade</a>
+            <a href="#shows">Show board</a>
             <a href="#shelves">Shelves</a>
             <a href="#inside">Inside</a>
             <a href="#play">Play</a>

@@ -381,6 +381,48 @@ function initEaster() {
   });
 }
 
+function initOfferFlow() {
+  const form = $("#offerForm");
+  const photos = $("#offerPhotos");
+  const count = $("#offerPhotoCount");
+  const status = $("#offerStatus");
+
+  photos?.addEventListener("change", () => {
+    const total = Math.min(photos.files.length, 6);
+    if (photos.files.length > 6) {
+      count.textContent = `${total} selected · first 6 suggested`;
+      return;
+    }
+    count.textContent = total ? `${total} photo${total === 1 ? "" : "s"} selected` : "Optional · up to 6";
+  });
+
+  form?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const data = new FormData(form);
+    const type = data.get("offerType");
+    const category = data.get("offerCategory");
+    const details = String(data.get("offerDetails") || "").trim();
+    const photoTotal = Math.min(photos?.files.length || 0, 6);
+    const body = [
+      "Hi Thousand Sunny — I’d like to start an offer.",
+      `I want to: ${type}.`,
+      `I’m bringing: ${category}.`,
+      details ? `Quick inventory: ${details}` : "Quick inventory: I’ll share the details in person.",
+      photoTotal ? `I have ${photoTotal} photo${photoTotal === 1 ? "" : "s"} to add.` : "",
+    ].filter(Boolean).join("\n");
+    if (status) status.textContent = "Your text draft is ready. Add the selected photos to the message before you send it.";
+    window.location.href = `sms:+17573587643?&body=${encodeURIComponent(body)}`;
+  });
+
+  $$('[data-interest]').forEach((button) => {
+    button.addEventListener("click", () => {
+      const interest = button.dataset.interest;
+      const body = `Hi Thousand Sunny — please let me know when ${interest} events or tables are posted.`;
+      window.location.href = `sms:+17573587643?&body=${encodeURIComponent(body)}`;
+    });
+  });
+}
+
 function tickStatus() {
   const status = getStatus();
   $$("[data-open-badge]").forEach((el) => renderBadge(el, status));
@@ -401,6 +443,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initReveal();
   initCopy();
   initEaster();
+  initOfferFlow();
   const y = $("#year");
   if (y) y.textContent = new Date().getFullYear();
   const track = $("#marquee");
