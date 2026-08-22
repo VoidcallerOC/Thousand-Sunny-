@@ -741,6 +741,18 @@ html.gear5 #sunMark { transform: rotate(360deg); }
 .floor-hit .responsive-picture { position: absolute; inset: 0; }
 .lightbox .responsive-picture { display: contents; }
 
+/* Avoid a percentage-height feedback loop inside mobile gallery picture wrappers. */
+@media (max-width: 767px) {
+  .gallery .shot { aspect-ratio: 4 / 5; min-height: 0; }
+  .gallery .shot--wide { aspect-ratio: 16 / 10; }
+  .play-grid .shot { aspect-ratio: 3 / 4; min-height: 0; }
+  .shot .responsive-picture { position: absolute; inset: 0; height: 100%; }
+  .shot .responsive-picture img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    aspect-ratio: auto; object-fit: cover;
+  }
+}
+
 /* — Local shop conversion content — */
 .section-head--split { display: grid; gap: 1rem; }
 .events-sec { background: radial-gradient(ellipse at 80% 0%, rgb(52 36 78 / 0.42), transparent 52%), var(--bg); }
