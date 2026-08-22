@@ -317,10 +317,11 @@ function initScrollFx() {
 function initReveal() {
   const nodes = $$(".reveal");
   if (!nodes.length) return;
-  if (REDUCE) {
+  if (REDUCE || !("IntersectionObserver" in window)) {
     nodes.forEach((n) => n.classList.add("is-in"));
     return;
   }
+  document.documentElement.classList.add("reveal-ready");
   const io = new IntersectionObserver(
     (entries) => {
       entries.forEach((en) => {

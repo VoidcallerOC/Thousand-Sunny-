@@ -470,11 +470,16 @@ ul { list-style: none; padding: 0; }
   transition: opacity .25s var(--ease), transform .25s var(--ease);
 }
 .toast.is-on { opacity: 1; transform: translateX(-50%) translateY(0); }
-.reveal {
+.reveal-ready .reveal {
   opacity: 0; transform: translateY(22px); filter: blur(4px);
   transition: opacity .7s var(--ease), transform .7s var(--ease), filter .7s var(--ease);
 }
-.reveal.is-in { opacity: 1; transform: none; filter: none; }
+.reveal-ready .reveal.is-in { opacity: 1; transform: none; filter: none; }
+
+/* Keep content visible if the enhancement script is unavailable or fails to start. */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-ready .reveal { opacity: 1; transform: none; filter: none; }
+}
 .clock {
   margin: 8px 0 12px; color: var(--gold);
   font-family: var(--ff-display); font-size: 0.8rem; font-weight: 600;
