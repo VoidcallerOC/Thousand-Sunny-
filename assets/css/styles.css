@@ -197,10 +197,8 @@ ul { list-style: none; padding: 0; }
 }
 .hero-photo {
   position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: cover;
+  object-fit: cover; object-position: 50% 40%;
 }
-.hero-photo--mobile { object-position: 52% 38%; }
-.hero-photo--desk { display: none; object-position: 50% 42%; }
 .hero-shade {
   position: absolute; inset: 0;
   background:
@@ -386,11 +384,9 @@ ul { list-style: none; padding: 0; }
   .footer-cols { grid-template-columns: repeat(3, auto); gap: 4rem; }
 }
 @media (min-width: 768px) {
-  .hero-photo--mobile { display: none; }
-  .hero-photo--desk { display: block; }
   .hero-media {
     transform: translate3d(0, var(--hero-y, 0px), 0);
-    transform-origin: 50% 42%;
+    transform-origin: 50% 40%;
   }
   .brand-tag { display: block; }
   .brand img { width: 40px; height: 40px; }
@@ -640,7 +636,7 @@ html.gear5 #sunMark { transform: rotate(360deg); }
   position: absolute; inset: 0; width: 100%; height: 100%;
   object-fit: cover; transition: transform .55s var(--ease);
 }
-.floor-hit--hero img { object-position: 50% 42%; }
+.floor-hit--hero img { object-position: 50% 40%; }
 .floor-hit::after {
   content: "";
   position: absolute; inset: 0;
