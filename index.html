@@ -3,38 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script>document.documentElement.classList.add('js');</script>
-  <title>Thousand Sunny Cards &amp; Collectibles — Trading Cards · Anime · Collectibles | West Hartford, CT</title>
-  <meta name="description" content="Thousand Sunny Cards & Collectibles — a vibrant anime and trading card hobby shop in West Hartford, CT. Buy, Sell, Trade, Collect. Pokémon, One Piece TCG, Magic, Yu-Gi-Oh, graded singles, Funko Pop!, manga and Japanese snacks. 75 Park Rd, open Mon–Fri 11–8." />
-  <meta name="theme-color" content="#0C0A12" />
+  <script>document.documentElement.classList.add("js");</script>
+  <title>Thousand Sunny Cards & Collectibles — West Hartford, CT</title>
+  <meta name="description" content="Thousand Sunny Cards & Collectibles — a vibrant anime and trading card hobby shop in West Hartford, CT. Buy, Sell, Trade, Collect. Pokémon, One Piece TCG, Magic, Yu-Gi-Oh, figures, Funko Pop!, manga and Japanese snacks. 75 Park Rd, open Mon–Fri 11–8." />
+  <meta name="theme-color" content="#0B0910" />
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
   <link rel="icon" type="image/png" href="/assets/img/favicon.png" />
   <link rel="apple-touch-icon" href="/assets/img/favicon.png" />
-  <link rel="canonical" href="https://thousandsunnycards.com/" />
+  <link rel="canonical" href="https://thousand-sunny-cards.vercel.app/" />
 
-  <!-- Open Graph / social -->
   <meta property="og:type" content="business.business" />
   <meta property="og:site_name" content="Thousand Sunny Cards & Collectibles" />
   <meta property="og:title" content="Thousand Sunny Cards & Collectibles" />
   <meta property="og:description" content="Buy · Sell · Trade · Collect. A vibrant anime & trading card shop in West Hartford, CT — Pokémon, One Piece, Magic, Yu-Gi-Oh and more." />
-  <meta property="og:url" content="https://thousandsunnycards.com/" />
-  <meta property="og:image" content="https://thousandsunnycards.com/assets/img/logo.png" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://thousand-sunny-cards.vercel.app/" />
+  <meta property="og:image" content="https://thousand-sunny-cards.vercel.app/assets/img/og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/styles.css" />
 
-  <!-- Local business structured data. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Store",
     "name": "Thousand Sunny Cards & Collectibles",
     "description": "A vibrant anime and trading card hobby shop in West Hartford, CT. Buy, sell, trade and collect — Pokémon, One Piece TCG, Magic: The Gathering, Yu-Gi-Oh, graded singles, Funko Pop!, manga and Japanese snacks.",
-    "url": "https://thousandsunnycards.com/",
+    "url": "https://thousand-sunny-cards.vercel.app/",
     "telephone": "+1-757-358-7643",
     "address": {
       "@type": "PostalAddress",
@@ -52,117 +49,121 @@
   </script>
 </head>
 <body>
-  <div class="cursor-glow" aria-hidden="true"></div>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <!-- ===================== NAV ===================== -->
   <header class="nav" id="nav">
-    <a class="brand" href="#top" aria-label="Thousand Sunny Cards & Collectibles home">
-      <img src="/assets/img/logo.png" alt="" width="42" height="42" />
+    <a class="brand" href="#top" aria-label="Thousand Sunny Cards home">
+      <img src="/assets/img/logo.png" alt="" width="40" height="40" />
       <span>
-        <span class="brand-name">THOUSAND S<b>U</b>NNY</span><br />
-        <span class="brand-tag">Cards &amp; Collectibles</span>
+        <span class="brand-name">Thousand S<span class="gold">u</span>nny</span>
+        <span class="brand-tag">Cards & Collectibles</span>
       </span>
     </a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="#do">What We Do</a>
+      <a href="#do">The Crew</a>
       <a href="#shelves">Shelves</a>
-      <a href="#inside">Step Inside</a>
+      <a href="#inside">Inside</a>
       <a href="#play">Play</a>
       <a href="#case">The Case</a>
       <a href="#visit">Visit</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn--primary" href="#visit">Set Sail</a>
+      <span class="badge badge--compact" data-open-badge data-compact></span>
+      <a class="btn btn--primary btn--sm" href="#visit">Visit</a>
     </div>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false"><span></span></button>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+    </button>
   </header>
 
-  <!-- Mobile menu -->
-  <div class="nav-menu" id="navMenu">
-    <a href="#do">What We Do</a>
-    <a href="#shelves">Shelves</a>
-    <a href="#inside">Step Inside</a>
-    <a href="#play">Play</a>
-    <a href="#case">The Case</a>
-    <a href="#visit">Visit</a>
-    <a class="btn btn--primary" href="#visit">Set Sail</a>
+  <div class="nav-drawer" id="navMenu" hidden>
+    <div class="nav-drawer-sheet">
+      <div class="nav-drawer-handle"></div>
+      <div class="nav-drawer-head">
+        <p class="nav-drawer-title">Menu</p>
+        <button class="icon-btn" id="navClose" type="button" aria-label="Close menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <nav class="nav-drawer-links" aria-label="Mobile">
+        <a href="#do">The Crew</a>
+        <a href="#shelves">Shelves</a>
+        <a href="#inside">Inside</a>
+        <a href="#play">Play</a>
+        <a href="#case">The Case</a>
+        <a href="#visit">Visit</a>
+      </nav>
+      <a class="btn btn--primary btn--block" href="#visit">Plan your visit</a>
+    </div>
   </div>
 
-  <main id="top">
-    <!-- ===================== HERO ===================== -->
-    <section class="hero" id="hero">
-      <div class="hero-grid" aria-hidden="true"></div>
-      <div class="hero-cards" id="heroCards" aria-hidden="true"></div>
-
-      <div class="wrap hero-inner">
-        <img class="hero-logo" src="/assets/img/logo.png" alt="Thousand Sunny Cards & Collectibles logo" width="150" height="150" data-reveal />
-
-        <span class="hero-badge" data-reveal><span class="dot"></span> West Hartford, CT · Anime · TCG · Collectibles</span>
-
-        <h1 class="wordmark" data-reveal data-reveal-delay="1">
-          <span class="the">THOUSAND</span>
-          <span class="name">S<span class="o">U</span>NNY</span>
-          <span class="sub">Cards &amp; Collectibles</span>
-        </h1>
-
-        <p class="hero-tag" data-reveal data-reveal-delay="2">
-          <span>Trading Cards</span><span class="sep">☀</span><span>Anime</span><span class="sep">☀</span><span>Collectibles</span>
+  <main id="main">
+    <section class="hero" id="top">
+      <img class="hero-photo" src="/assets/img/store-luffy.jpg" alt="Life-size Gear 5 Luffy greeter inside Thousand Sunny Cards" width="1300" height="1733" fetchpriority="high" />
+      <div class="hero-shade"></div>
+      <div class="wrap hero-copy">
+        <span class="badge" data-open-badge></span>
+        <p class="hero-kicker">Thousand</p>
+        <h1 class="wordmark">S<span class="gold">u</span>nny</h1>
+        <p class="hero-sub">Cards & Collectibles</p>
+        <p class="hero-lead">West Hartford's crew for Pokémon, One Piece, figures and grails. Buy, sell, trade, collect — then pull up a chair.</p>
+        <p class="bst">
+          <span>Buy</span><span class="dot">·</span>
+          <span>Sell</span><span class="dot">·</span>
+          <span>Trade</span><span class="dot">·</span>
+          <span>Collect</span>
         </p>
-
-        <div class="bst" data-reveal data-reveal-delay="3">
-          <div class="bst-inner">
-            <span>Buy</span><span class="d">•</span><span>Sell</span><span class="d">•</span><span>Trade</span><span class="d">•</span><span>Collect</span>
-          </div>
-        </div>
-
-        <div class="hero-actions" data-reveal data-reveal-delay="4">
+        <div class="hero-actions">
           <a class="btn btn--primary" href="#visit">
-            Plan Your Visit
+            Plan your visit
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a class="btn btn--ghost" href="#shelves">See What We Carry</a>
+          <a class="btn btn--ghost" href="#inside">Peek inside</a>
         </div>
       </div>
-
-      <div class="scroll-cue" aria-hidden="true"><span>Scroll</span><span class="bar"></span></div>
     </section>
 
-    <!-- ===================== MARQUEE ===================== -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track" id="marquee">
         <span>Pokémon</span><span>One Piece TCG</span><span>Magic: The Gathering</span><span>Yu-Gi-Oh!</span><span>Anime Figures</span><span>Funko Pop!</span><span>Graded Slabs</span><span>Manga</span><span>Japanese Snacks</span>
       </div>
     </div>
 
-    <!-- ===================== WHAT WE DO ===================== -->
     <section class="section" id="do">
       <div class="wrap">
-        <span class="eyebrow" data-reveal>What We Do</span>
-        <h2 class="h-sec" data-reveal>Four Ways To<br /><span class="g">Come Aboard</span></h2>
-        <p class="lead" data-reveal>Whether you're hunting a grail slab, cashing in a collection, or just here to nerd out over your favorite anime — the gangplank's down and the crew's friendly. This is a shop built by collectors, for collectors.</p>
-
+        <p class="eyebrow">What we do</p>
+        <h2 class="h-sec">Four ways to<br /><span class="gold">come aboard</span></h2>
+        <p class="lead">Whether you're hunting a grail slab, cashing in a collection, or just here to nerd out over your favorite anime — the gangplank's down and the crew's friendly. This is a shop built by collectors, for collectors.</p>
         <div class="pillars">
-          <article class="pillar tilt" data-reveal data-reveal-delay="1">
-            <span class="num">01</span>
-            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></div>
+          <article class="pillar">
+            <div class="pillar-top">
+              <span class="num">01</span>
+              <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></span>
+            </div>
             <h3>Buy</h3>
             <p>Singles, sealed product, figures, Funko Pops, manga and Japanese snacks — new arrivals landing every week.</p>
           </article>
-          <article class="pillar tilt" data-reveal data-reveal-delay="2">
-            <span class="num">02</span>
-            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+          <article class="pillar">
+            <div class="pillar-top">
+              <span class="num">02</span>
+              <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M22 10H2"/></svg></span>
+            </div>
             <h3>Sell</h3>
             <p>Turn cards and collectibles into cash or store credit. Bring in a single, a binder or a whole collection for a fair offer.</p>
           </article>
-          <article class="pillar tilt" data-reveal data-reveal-delay="3">
-            <span class="num">03</span>
-            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3l5 5-5 5M21 8H8M8 21l-5-5 5-5M3 16h13"/></svg></div>
+          <article class="pillar">
+            <div class="pillar-top">
+              <span class="num">03</span>
+              <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M8 7 4 12l4 5M16 7l4 5-4 5M14 4l-4 16"/></svg></span>
+            </div>
             <h3>Trade</h3>
             <p>Level up your deck and your shelf. Trade with the shop and the community to track down exactly what you're after.</p>
           </article>
-          <article class="pillar tilt" data-reveal data-reveal-delay="4">
-            <span class="num">04</span>
-            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 18.6 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8z"/></svg></div>
+          <article class="pillar">
+            <div class="pillar-top">
+              <span class="num">04</span>
+              <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M6 3h12l4 6-10 12L2 9z"/></svg></span>
+            </div>
             <h3>Collect</h3>
             <p>Graded slabs, chase figures and statues, grails behind the glass — plus consignment and grading help.</p>
           </article>
@@ -170,208 +171,130 @@
       </div>
     </section>
 
-    <!-- ===================== SHELVES ===================== -->
-    <section class="section" id="shelves" style="padding-top:0">
+    <section class="section section--tight" id="shelves">
       <div class="wrap">
-        <span class="eyebrow" data-reveal>On The Shelves</span>
-        <h2 class="h-sec" data-reveal>Cards, Anime &amp; <span class="g">Collectibles</span></h2>
-        <p class="lead" data-reveal>From this week's set to vintage grails and the figure you've been chasing for years. If it's worth collecting, chances are we've got it — or we'll help you hunt it down.</p>
-
-        <div class="games" id="gamesGrid">
-          <!-- Static fallback; enhanced/overwritten by JS. Edit content in assets/js/main.js -->
-          <article class="game" data-reveal data-reveal-delay="1"><div class="glow" style="background:#e0b400"></div><span class="tag">Trading Card Game</span><div><h4>Pokémon</h4><p>Booster boxes, ETBs, singles &amp; graded slabs.</p></div><span class="chip-suit">⚡</span></article>
-          <article class="game" data-reveal data-reveal-delay="2"><div class="glow" style="background:#c0392b"></div><span class="tag">Trading Card Game</span><div><h4>One Piece TCG</h4><p>Sealed, singles &amp; our own Straw Hat crew.</p></div><span class="chip-suit">🏴‍☠️</span></article>
-          <article class="game" data-reveal data-reveal-delay="3"><div class="glow" style="background:#c06b2e"></div><span class="tag">Trading Card Game</span><div><h4>Magic: The Gathering</h4><p>Singles, sealed, Commander decks &amp; supplies.</p></div><span class="chip-suit">🔮</span></article>
-          <article class="game" data-reveal data-reveal-delay="4"><div class="glow" style="background:#7a4dd0"></div><span class="tag">Trading Card Game</span><div><h4>Yu-Gi-Oh!</h4><p>Structure decks, tins, singles &amp; sealed.</p></div><span class="chip-suit">🎴</span></article>
-          <article class="game" data-reveal data-reveal-delay="1"><div class="glow" style="background:#e2662e"></div><span class="tag">Collectibles</span><div><h4>Anime Figures &amp; Statues</h4><p>From shelf pieces to life-size showstoppers.</p></div><span class="chip-suit">🗿</span></article>
-          <article class="game" data-reveal data-reveal-delay="2"><div class="glow" style="background:#2e86c0"></div><span class="tag">Collectibles</span><div><h4>Funko Pop!</h4><p>Anime, gaming &amp; pop-culture vinyl — plus exclusives.</p></div><span class="chip-suit">📦</span></article>
-          <article class="game" data-reveal data-reveal-delay="3"><div class="glow" style="background:#9b59b6"></div><span class="tag">Reads &amp; Games</span><div><h4>Manga &amp; Board Games</h4><p>Latest volumes, box sets &amp; tabletop nights.</p></div><span class="chip-suit">📚</span></article>
-          <article class="game" data-reveal data-reveal-delay="4"><div class="glow" style="background:#e0457b"></div><span class="tag">Snack Bar</span><div><h4>Japanese Snacks &amp; Drinks</h4><p>Ramune, Pocky, Hi-Chew &amp; the cold-drink fridge.</p></div><span class="chip-suit">🍜</span></article>
-        </div>
+        <p class="eyebrow">On the shelves</p>
+        <h2 class="h-sec">Cards, anime & <span class="gold">collectibles</span></h2>
+        <p class="lead">From this week's set to vintage grails and the figure you've been chasing for years. If it's worth collecting, chances are we've got it — or we'll help you hunt it down.</p>
+        <div class="games" id="gamesGrid"></div>
       </div>
     </section>
 
-    <!-- ===================== STEP INSIDE (GALLERY) ===================== -->
-    <section class="section inside" id="inside">
+    <section class="section section--surface" id="inside">
       <div class="wrap">
-        <span class="eyebrow" data-reveal>Step Aboard</span>
-        <h2 class="h-sec" data-reveal>Inside <span class="g">The Sunny</span></h2>
-        <p class="lead" data-reveal>Purple walls, packed shelves and a life-size crew. Here's a peek at what's waiting when you walk through the door.</p>
-
-        <div class="gallery">
-          <figure class="shot shot--wide" data-reveal>
-            <img src="/assets/img/store-figures.jpg" alt="Store floor with anime figure shelves, board games and manga against purple walls" loading="lazy" width="1350" height="1800" />
-            <figcaption>Figures, statues, board games &amp; manga</figcaption>
-          </figure>
-          <figure class="shot" data-reveal data-reveal-delay="1">
-            <img src="/assets/img/store-luffy.jpg" alt="Life-size Luffy Gear 5 statue beside the collectibles shelves" loading="lazy" width="1300" height="1733" />
-            <figcaption>Our life-size Gear 5 greeter</figcaption>
-          </figure>
-          <figure class="shot" data-reveal data-reveal-delay="2">
-            <img src="/assets/img/gallery-figures.jpg" alt="Tall shelves packed with One Piece and anime figures and Funko Pops" loading="lazy" width="1150" height="1331" />
-            <figcaption>Walls of anime figures &amp; Pops</figcaption>
-          </figure>
-          <figure class="shot" data-reveal data-reveal-delay="1">
-            <img src="/assets/img/gallery-art.jpg" alt="Framed anime wall art and boxed figures on wooden shelves" loading="lazy" width="1170" height="1412" />
-            <figcaption>Framed art &amp; boxed collectibles</figcaption>
-          </figure>
-          <figure class="shot" data-reveal data-reveal-delay="2">
-            <img src="/assets/img/gallery-merch.jpg" alt="Anime tumblers, wall scrolls and a One Piece board game on display" loading="lazy" width="1170" height="1389" />
-            <figcaption>Tumblers, scrolls &amp; merch</figcaption>
-          </figure>
-          <figure class="shot shot--wide" data-reveal data-reveal-delay="1">
-            <img src="/assets/img/store-counter.jpg" alt="Front counter with Japanese candy, lollipops, drink fridges and a neon star sign" loading="lazy" width="1300" height="1733" />
-            <figcaption>Snacks, drinks &amp; the neon out front</figcaption>
-          </figure>
-        </div>
+        <p class="eyebrow">Step aboard</p>
+        <h2 class="h-sec">Inside <span class="gold">the Sunny</span></h2>
+        <p class="lead">Purple walls, packed shelves and a life-size crew. Here's a peek at what's waiting when you walk through the door.</p>
+        <div class="gallery" id="gallery"></div>
       </div>
     </section>
 
-    <!-- ===================== PLAY &amp; GATHER ===================== -->
-    <section class="section play" id="play">
+    <section class="section" id="play">
       <div class="wrap">
-        <span class="eyebrow" data-reveal>Pull Up A Chair</span>
-        <h2 class="h-sec" data-reveal>Play &amp; <span class="g">Gather</span></h2>
-        <p class="lead" data-reveal>The Sunny isn't just a shop — it's a hangout. Big communal tables, private rooms and screens for game nights, tournaments, releases and just chilling with the crew. Come throw down or come hang out.</p>
-
-        <div class="play-grid">
-          <figure class="shot" data-reveal data-reveal-delay="1">
-            <img src="/assets/img/play-hall.jpg" alt="Long communal wooden table with chairs running through the store" loading="lazy" width="1169" height="1396" />
-            <figcaption>The communal table</figcaption>
-          </figure>
-          <figure class="shot" data-reveal data-reveal-delay="2">
-            <img src="/assets/img/event-room.jpg" alt="Event room with a long table, chairs and figure shelves" loading="lazy" width="1168" height="1387" />
-            <figcaption>Room for the whole crew</figcaption>
-          </figure>
-          <figure class="shot" data-reveal data-reveal-delay="3">
-            <img src="/assets/img/play-room.jpg" alt="Private play room with a Luffy poster, TV and purple accent wall" loading="lazy" width="1168" height="1389" />
-            <figcaption>Private room + big screen</figcaption>
-          </figure>
-        </div>
-        <p class="events-note" data-reveal>⚓ Event schedule rotates — follow us on <a href="https://www.instagram.com/tscc_ct/" target="_blank" rel="noopener" style="color:var(--gold)">Instagram @tscc_ct</a> for game nights, tournaments and release parties.</p>
+        <p class="eyebrow">Pull up a chair</p>
+        <h2 class="h-sec">Play & <span class="gold">gather</span></h2>
+        <p class="lead">The Sunny isn't just a shop — it's a hangout. Big communal tables, private rooms and screens for game nights, tournaments, releases and just chilling with the crew. Come throw down or come hang out.</p>
+        <div class="play-grid" id="playGrid"></div>
+        <p class="events-note">Event schedule rotates — follow us on <a href="https://www.instagram.com/tscc_ct/" target="_blank" rel="noopener">Instagram @tscc_ct</a> for game nights, tournaments and release parties.</p>
       </div>
     </section>
 
-    <!-- ===================== THE DISPLAY CASE ===================== -->
-    <section class="section shop" id="case">
-      <div class="wrap">
-        <div class="shop-card" data-reveal>
-          <div class="shop-copy">
-            <span class="eyebrow">Behind The Glass</span>
-            <h2 class="h-sec">The<br /><span class="g">Display Case</span></h2>
-            <p class="lead">Our showcase is stocked with graded slabs, vintage grails and chase pieces — think PSA 10 Pokémon, One Piece hits and hard-to-find figures. Looking to buy a grail, consign your collection, or get cards sent off for grading? Come talk to the crew.</p>
-            <div class="shop-actions">
-              <a class="btn btn--primary" href="#visit">
-                Ask About The Case
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-            </div>
-            <ul class="shop-feats">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M22 4 12 14.01l-3-3"/></svg>Graded singles</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Consignment</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9M14 17H5M17 21a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM7 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/></svg>Grading help</li>
-            </ul>
-            <p class="shop-note">Ask the crew about current showcase stock and consignment terms.</p>
+    <section class="section section--border" id="case">
+      <div class="wrap case-grid">
+        <div>
+          <p class="eyebrow">Behind the glass</p>
+          <h2 class="h-sec">The <span class="gold">display case</span></h2>
+          <p class="lead">Our showcase is stocked with graded slabs, vintage grails and chase pieces — think PSA 10 Pokémon, One Piece hits and hard-to-find figures. Looking to buy a grail, consign your collection, or get cards sent off for grading? Come talk to the crew.</p>
+          <div class="feats">
+            <span>Graded singles</span>
+            <span>Consignment</span>
+            <span>Grading help</span>
           </div>
-
-          <div class="shop-visual" aria-hidden="true">
-            <div class="case-photo">
-              <img src="/assets/img/store-case.jpg" alt="" loading="lazy" width="1200" height="1600" />
-            </div>
-          </div>
+          <a class="btn btn--primary" href="#visit">
+            Ask about the case
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <p class="note">Ask the crew about current showcase stock and consignment terms.</p>
         </div>
+        <button class="shot" type="button" data-photo="9">
+          <img src="/assets/img/store-case.jpg" alt="Glass display case of graded Pokémon and One Piece cards and collectibles" width="1200" height="1600" loading="lazy" />
+          <span>Graded slabs & grails</span>
+        </button>
       </div>
     </section>
 
-    <!-- ===================== VISIT ===================== -->
-    <section class="section visit" id="visit">
+    <section class="section section--surface" id="visit">
       <div class="wrap">
-        <span class="eyebrow" data-reveal>Chart A Course</span>
-        <h2 class="h-sec" data-reveal>Come <span class="g">Aboard</span></h2>
-
+        <p class="eyebrow">Chart a course</p>
+        <h2 class="h-sec">Come <span class="gold">aboard</span></h2>
+        <div class="visit-badge"><span class="badge" data-open-badge></span></div>
         <div class="visit-grid">
-          <div class="hours-card" data-reveal>
+          <div class="hours-card">
             <h3>Hours</h3>
-            <ul class="hours-list" id="hoursList">
-              <!-- Static fallback; enhanced/overwritten by JS (adds today highlight). Edit content in assets/js/main.js -->
-              <li><span class="d">Sunday</span><span class="t">Closed</span></li>
-              <li><span class="d">Monday</span><span class="t">11:00 AM – 8:00 PM</span></li>
-              <li><span class="d">Tuesday</span><span class="t">11:00 AM – 8:00 PM</span></li>
-              <li><span class="d">Wednesday</span><span class="t">11:00 AM – 8:00 PM</span></li>
-              <li><span class="d">Thursday</span><span class="t">11:00 AM – 8:00 PM</span></li>
-              <li><span class="d">Friday</span><span class="t">11:00 AM – 8:00 PM</span></li>
-              <li><span class="d">Saturday</span><span class="t">Closed</span></li>
-            </ul>
-            <p class="hours-note">⚓ Weekends we're out at card shows — follow <a href="https://www.instagram.com/tscc_ct/" target="_blank" rel="noopener" style="color:var(--gold)">@tscc_ct</a> for where to catch us.</p>
+            <ul class="hours-list" id="hoursList"></ul>
+            <p class="hours-note">Weekends we're out at card shows — follow <a href="https://www.instagram.com/tscc_ct/" target="_blank" rel="noopener">@tscc_ct</a> for where to catch us.</p>
           </div>
-
-          <div class="contact-block" data-reveal data-reveal-delay="1">
+          <div class="contact-block">
             <a class="contact-row" href="https://maps.google.com/?q=Thousand+Sunny+Cards+%26+Collectibles+75+Park+Rd+West+Hartford+CT+06119" target="_blank" rel="noopener">
-              <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
-              <span><span class="cl">Location</span><br /><span class="cv">75 Park Rd, West Hartford, CT 06119</span></span>
+              <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <span><span class="cl">Location</span><span class="cv">75 Park Rd, West Hartford, CT 06119</span></span>
             </a>
             <a class="contact-row" href="tel:+17573587643">
-              <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
-              <span><span class="cl">Call / Text</span><br /><span class="cv">(757) 358-7643</span></span>
+              <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+              <span><span class="cl">Call / Text</span><span class="cv">(757) 358-7643</span></span>
             </a>
             <a class="contact-row" href="https://www.instagram.com/tscc_ct/" target="_blank" rel="noopener">
-              <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
-              <span><span class="cl">Follow</span><br /><span class="cv">@tscc_ct</span></span>
+              <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
+              <span><span class="cl">Follow</span><span class="cv">@tscc_ct</span></span>
             </a>
             <a class="contact-row" href="https://www.facebook.com/share/1KuoCicfwX/" target="_blank" rel="noopener">
               <span class="ci"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.25-1.5 1.5-1.5H17V4.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.3H7.7V14h2.8v8z"/></svg></span>
-              <span><span class="cl">Say Hi</span><br /><span class="cv">Find us on Facebook</span></span>
+              <span><span class="cl">Say hi</span><span class="cv">Find us on Facebook</span></span>
             </a>
             <div class="map-embed">
-              <iframe
-                title="Map to Thousand Sunny Cards & Collectibles, West Hartford CT"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                src="https://maps.google.com/maps?q=75%20Park%20Rd%2C%20West%20Hartford%2C%20CT%2006119&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+              <iframe title="Map to Thousand Sunny Cards & Collectibles, West Hartford CT" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=75%20Park%20Rd%2C%20West%20Hartford%2C%20CT%2006119&z=15&output=embed"></iframe>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===================== CTA BAND ===================== -->
-    <section class="section cta-band">
+    <section class="cta-band">
       <div class="wrap">
-        <h2 data-reveal>Your Crew<br /><span class="g">Awaits.</span></h2>
-        <p class="lead" data-reveal>New collector or seasoned captain — everyone's welcome aboard the Sunny. Stop in, say hi, and find your next grail.</p>
-        <div class="cta-actions" data-reveal data-reveal-delay="1">
-          <a class="btn btn--primary" href="#visit">Plan Your Visit</a>
-          <a class="btn btn--ghost" href="#shelves">Browse The Shelves</a>
+        <h2>Your crew<br /><span class="gold">awaits.</span></h2>
+        <p class="lead">New collector or seasoned captain — everyone's welcome aboard the Sunny. Stop in, say hi, and find your next grail.</p>
+        <div class="cta-actions">
+          <a class="btn btn--primary" href="#visit">Plan your visit</a>
+          <a class="btn btn--ghost" href="#shelves">Browse the shelves</a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
     <div class="wrap">
       <div class="footer-top">
         <div class="footer-brand">
-          <a class="brand" href="#top" aria-label="Thousand Sunny Cards & Collectibles">
-            <img src="/assets/img/logo.png" alt="" width="52" />
-            <span class="brand-name">THOUSAND S<b>U</b>NNY</span>
+          <a class="brand" href="#top">
+            <img src="/assets/img/logo.png" alt="" width="44" height="44" />
+            <span class="brand-name">Thousand S<span class="gold">u</span>nny</span>
           </a>
           <p>Trading Cards · Anime · Collectibles. West Hartford, CT's crew for cards, figures and grails. Buy · Sell · Trade · Collect.</p>
         </div>
         <div class="footer-cols">
           <div class="footer-col">
             <h5>Explore</h5>
-            <a href="#do">What We Do</a>
+            <a href="#do">The Crew</a>
             <a href="#shelves">Shelves</a>
-            <a href="#inside">Step Inside</a>
-            <a href="#play">Play &amp; Gather</a>
+            <a href="#inside">Inside</a>
+            <a href="#play">Play</a>
             <a href="#case">The Case</a>
             <a href="#visit">Visit</a>
           </div>
           <div class="footer-col">
             <h5>Visit</h5>
             <a href="#visit">Hours</a>
-            <a href="#visit">Location &amp; Contact</a>
+            <a href="https://maps.google.com/?q=Thousand+Sunny+Cards+%26+Collectibles+75+Park+Rd+West+Hartford+CT+06119" target="_blank" rel="noopener">75 Park Rd, West Hartford, CT 06119</a>
           </div>
           <div class="footer-col">
             <h5>Follow</h5>
@@ -382,11 +305,40 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <span class="site">THOUSAND SUNNY<span class="g"> CARDS</span></span>
-        <span>© <span id="year">2026</span> Thousand Sunny Cards &amp; Collectibles · West Hartford, CT · All rights reserved.</span>
+        <span class="site">Thousand Sunny <span class="gold">Cards</span></span>
+        <span>© <span id="year">2026</span> Thousand Sunny Cards & Collectibles · West Hartford, CT</span>
       </div>
     </div>
   </footer>
+
+  <nav class="dock" aria-label="Quick actions">
+    <a href="tel:+17573587643">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+      Call
+    </a>
+    <a href="https://maps.google.com/?q=Thousand+Sunny+Cards+%26+Collectibles+75+Park+Rd+West+Hartford+CT+06119" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Directions
+    </a>
+    <a href="#visit">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      Hours
+    </a>
+  </nav>
+
+  <dialog class="lightbox" id="lightbox" aria-label="Store photo">
+    <button class="icon-btn lightbox-close" type="button" data-close aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <img id="lightboxImg" alt="" />
+    <p id="lightboxCap"></p>
+    <button class="icon-btn lightbox-prev" type="button" data-prev aria-label="Previous photo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <button class="icon-btn lightbox-next" type="button" data-next aria-label="Next photo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
+  </dialog>
 
   <script src="/assets/js/main.js" defer></script>
 </body>
