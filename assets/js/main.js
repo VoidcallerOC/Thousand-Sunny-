@@ -9,18 +9,6 @@ const GAMES = [
   { tag: "Snack Bar", name: "Japanese Snacks", note: "Ramune, Pocky, Hi-Chew & the cold-drink fridge.", rarity: "C", no: "008", art: "/assets/img/pulls/snacks.jpg" },
 ];
 
-const SECRET = {
-  tag: "Secret Rare",
-  name: "Gear 5 Greeter",
-  note: "Life-size. Greets you at the door.",
-  rarity: "SEC",
-  no: "000",
-  art: "/assets/img/pulls/secret.jpg",
-};
-
-const CARD_BACK = "/assets/img/pulls/back.jpg";
-
-
 const HOURS = [
   { day: "Sunday", closed: true },
   { day: "Monday", open: "11:00 AM", close: "8:00 PM", openMin: 11 * 60, closeMin: 20 * 60 },
@@ -101,100 +89,22 @@ function renderBadge(el, status) {
   }`;
 }
 
-function shuffle(list) {
-  const a = [...list];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
-function tcgHTML(card, { flip = false, n = 0 } = {}) {
-  const face = `<div class="tcg-face">
-      <span class="tcg-set">TSC · ${card.no}</span>
-      <div class="tcg-art"><img src="${card.art}" alt="" width="400" height="400" decoding="async"></div>
-      <div class="tcg-plate"><h4>${card.name}</h4><span>${card.rarity}</span></div>
-      <p class="tcg-flavor">${card.note}</p>
-      <span class="tcg-foil" aria-hidden="true"></span>
-    </div>`;
-  if (!flip) {
-    return `<article class="tcg" data-tilt data-rarity="${card.rarity}">${face}</article>`;
-  }
-  return `<article class="tcg tcg--flip" data-rarity="${card.rarity}" style="--d:${n}">
-    <div class="tcg-3d">
-      <div class="tcg-back"><img src="${CARD_BACK}" alt="" width="384" height="536" decoding="async"></div>
-      ${face}
-    </div>
-  </article>`;
-}
-
-function preloadCardArt() {
-  const urls = [...new Set([...GAMES.map((g) => g.art), SECRET.art, CARD_BACK])];
-  urls.forEach((src) => {
-    const img = new Image();
-    img.src = src;
-  });
-}
-
-function whenLoaded(imgs) {
-  return Promise.all(
-    imgs.map(
-      (img) =>
-        img.complete && img.naturalWidth
-          ? Promise.resolve()
-          : new Promise((resolve) => {
-              img.addEventListener("load", resolve, { once: true });
-              img.addEventListener("error", resolve, { once: true });
-            }),
-    ),
-  );
+function tcgHTML(card) {
+  return `<article class="tcg" data-tilt data-rarity="${card.rarity}">
+      <div class="tcg-face">
+        <span class="tcg-set">TSC · ${card.no}</span>
+        <div class="tcg-art"><img src="${card.art}" alt="" width="400" height="400" decoding="async"></div>
+        <div class="tcg-plate"><h4>${card.name}</h4><span>${card.rarity}</span></div>
+        <p class="tcg-flavor">${card.note}</p>
+        <span class="tcg-foil" aria-hidden="true"></span>
+      </div>
+    </article>`;
 }
 
 function renderGames() {
   const grid = $("#gamesGrid");
   if (!grid) return;
   grid.innerHTML = GAMES.map((g) => tcgHTML(g)).join("");
-}
-
-function initPack() {
-  const rip = $("#rip");
-  const btn = $("#packBtn");
-  const pulls = $("#pulls");
-  const again = $("#packAgain");
-  if (!rip || !btn || !pulls) return;
-
-  const deal = () => {
-    const four = shuffle(GAMES).slice(0, 4);
-    const cards = [...four, SECRET];
-    pulls.hidden = false;
-    pulls.innerHTML = cards.map((c, i) => tcgHTML(c, { flip: true, n: i })).join("");
-    rip.dataset.state = "open";
-    btn.hidden = true;
-    if (again) again.hidden = false;
-    const open = () => {
-      $$(".tcg--flip", pulls).forEach((el) => el.classList.add("is-open"));
-    };
-    const imgs = $$(".tcg-art img, .tcg-back img", pulls);
-    const go = () => (REDUCE ? open() : setTimeout(open, 80));
-    whenLoaded(imgs).then(go);
-  };
-
-  btn.addEventListener("click", () => {
-    if (rip.dataset.state !== "idle") return;
-    rip.dataset.state = "ripping";
-    btn.classList.add("is-ripping");
-    if (REDUCE) deal();
-    else setTimeout(deal, 520);
-  });
-  again?.addEventListener("click", () => {
-    rip.dataset.state = "idle";
-    pulls.hidden = true;
-    pulls.innerHTML = "";
-    btn.hidden = false;
-    btn.classList.remove("is-ripping");
-    again.hidden = true;
-  });
 }
 
 function renderHours(status) {
@@ -459,13 +369,11 @@ function tickStatus() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  preloadCardArt();
   renderGames();
   renderGalleries();
   tickStatus();
   initNav();
   initLightbox();
-  initPack();
   initTilt();
   initMagnetic();
   initScrollFx();
