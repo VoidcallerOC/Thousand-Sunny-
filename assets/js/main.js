@@ -1,12 +1,12 @@
 const GAMES = [
-  { tag: "Trading Card Game", name: "Pokémon", note: "Booster boxes, ETBs, singles & graded slabs.", rarity: "SR", no: "001", art: "/assets/img/store-case.jpg", pos: "center" },
-  { tag: "Trading Card Game", name: "One Piece TCG", note: "Sealed, singles & our own Straw Hat crew.", rarity: "SR", no: "002", art: "/assets/img/gallery-figures.jpg", pos: "top" },
-  { tag: "Trading Card Game", name: "Magic: The Gathering", note: "Singles, sealed, Commander decks & supplies.", rarity: "R", no: "003", art: "/assets/img/gallery-art.jpg", pos: "center" },
-  { tag: "Trading Card Game", name: "Yu-Gi-Oh!", note: "Structure decks, tins, singles & sealed.", rarity: "R", no: "004", art: "/assets/img/store-figures.jpg", pos: "center" },
-  { tag: "Collectibles", name: "Anime Figures", note: "From shelf pieces to life-size showstoppers.", rarity: "U", no: "005", art: "/assets/img/gallery-figures.jpg", pos: "center" },
-  { tag: "Collectibles", name: "Funko Pop!", note: "Anime, gaming & pop-culture vinyl — plus exclusives.", rarity: "U", no: "006", art: "/assets/img/gallery-merch.jpg", pos: "center" },
-  { tag: "Reads & Games", name: "Manga & Board Games", note: "Latest volumes, box sets & tabletop nights.", rarity: "C", no: "007", art: "/assets/img/play-hall.jpg", pos: "center" },
-  { tag: "Snack Bar", name: "Japanese Snacks", note: "Ramune, Pocky, Hi-Chew & the cold-drink fridge.", rarity: "C", no: "008", art: "/assets/img/store-counter.jpg", pos: "center" },
+  { tag: "Trading Card Game", name: "Pokémon", note: "Booster boxes, ETBs, singles & graded slabs.", rarity: "SR", no: "001", art: "/assets/img/cards/pokemon.jpg" },
+  { tag: "Trading Card Game", name: "One Piece TCG", note: "Sealed, singles & our own Straw Hat crew.", rarity: "SR", no: "002", art: "/assets/img/cards/onepiece.jpg" },
+  { tag: "Trading Card Game", name: "Magic: The Gathering", note: "Singles, sealed, Commander decks & supplies.", rarity: "R", no: "003", art: "/assets/img/cards/mtg.jpg" },
+  { tag: "Trading Card Game", name: "Yu-Gi-Oh!", note: "Structure decks, tins, singles & sealed.", rarity: "R", no: "004", art: "/assets/img/cards/yugioh.jpg" },
+  { tag: "Collectibles", name: "Anime Figures", note: "From shelf pieces to life-size showstoppers.", rarity: "U", no: "005", art: "/assets/img/cards/figures.jpg" },
+  { tag: "Collectibles", name: "Funko Pop!", note: "Anime, gaming & pop-culture vinyl — plus exclusives.", rarity: "U", no: "006", art: "/assets/img/cards/funko.jpg" },
+  { tag: "Reads & Games", name: "Manga & Board Games", note: "Latest volumes, box sets & tabletop nights.", rarity: "C", no: "007", art: "/assets/img/cards/manga.jpg" },
+  { tag: "Snack Bar", name: "Japanese Snacks", note: "Ramune, Pocky, Hi-Chew & the cold-drink fridge.", rarity: "C", no: "008", art: "/assets/img/cards/snacks.jpg" },
 ];
 
 const SECRET = {
@@ -15,9 +15,11 @@ const SECRET = {
   note: "Life-size. Greets you at the door.",
   rarity: "SEC",
   no: "000",
-  art: "/assets/img/store-luffy.jpg",
-  pos: "54% 40%",
+  art: "/assets/img/cards/secret.jpg",
 };
+
+const CARD_BACK = "/assets/img/cards/back.jpg";
+
 
 const HOURS = [
   { day: "Sunday", closed: true },
@@ -111,7 +113,7 @@ function shuffle(list) {
 function tcgHTML(card, { flip = false, n = 0 } = {}) {
   const face = `<div class="tcg-face">
       <span class="tcg-set">TSC · ${card.no}</span>
-      <div class="tcg-art"><img src="${card.art}" alt="" style="object-position:${card.pos || "center"}"></div>
+      <div class="tcg-art"><img src="${card.art}" alt="" width="400" height="400" decoding="async"></div>
       <div class="tcg-plate"><h4>${card.name}</h4><span>${card.rarity}</span></div>
       <p class="tcg-flavor">${card.note}</p>
       <span class="tcg-foil" aria-hidden="true"></span>
@@ -121,10 +123,32 @@ function tcgHTML(card, { flip = false, n = 0 } = {}) {
   }
   return `<article class="tcg tcg--flip" data-rarity="${card.rarity}" style="--d:${n}">
     <div class="tcg-3d">
-      <div class="tcg-back"><img src="/assets/img/logo.png" alt=""><span>Thousand Sunny</span></div>
+      <div class="tcg-back"><img src="${CARD_BACK}" alt="" width="384" height="536" decoding="async"></div>
       ${face}
     </div>
   </article>`;
+}
+
+function preloadCardArt() {
+  const urls = [...new Set([...GAMES.map((g) => g.art), SECRET.art, CARD_BACK])];
+  urls.forEach((src) => {
+    const img = new Image();
+    img.src = src;
+  });
+}
+
+function whenLoaded(imgs) {
+  return Promise.all(
+    imgs.map(
+      (img) =>
+        img.complete && img.naturalWidth
+          ? Promise.resolve()
+          : new Promise((resolve) => {
+              img.addEventListener("load", resolve, { once: true });
+              img.addEventListener("error", resolve, { once: true });
+            }),
+    ),
+  );
 }
 
 function renderGames() {
@@ -151,8 +175,9 @@ function initPack() {
     const open = () => {
       $$(".tcg--flip", pulls).forEach((el) => el.classList.add("is-open"));
     };
-    if (REDUCE) open();
-    else setTimeout(open, 120);
+    const imgs = $$(".tcg-art img, .tcg-back img", pulls);
+    const go = () => (REDUCE ? open() : setTimeout(open, 80));
+    whenLoaded(imgs).then(go);
   };
 
   btn.addEventListener("click", () => {
@@ -434,6 +459,7 @@ function tickStatus() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  preloadCardArt();
   renderGames();
   renderGalleries();
   tickStatus();
