@@ -48,4 +48,5 @@ Edit the blocks at the top of **`assets/js/main.js`**:
 
 ## Deploy
 
-Push to `main`. Vercel project **thousand-sunny-cards** is linked to this repo.
+Push to `main`. Vercel project **thousand-sunny-cards** is linked to this repo
+and serves production at [thousand-sunny-cards.vercel.app](https://thousand-sunny-cards.vercel.app/).
