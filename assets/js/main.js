@@ -1,13 +1,23 @@
 const GAMES = [
-  { tag: "Trading Card Game", name: "Pokémon", note: "Booster boxes, ETBs, singles & graded slabs.", icon: "zap" },
-  { tag: "Trading Card Game", name: "One Piece TCG", note: "Sealed, singles & our own Straw Hat crew.", icon: "anchor" },
-  { tag: "Trading Card Game", name: "Magic: The Gathering", note: "Singles, sealed, Commander decks & supplies.", icon: "spark" },
-  { tag: "Trading Card Game", name: "Yu-Gi-Oh!", note: "Structure decks, tins, singles & sealed.", icon: "layers" },
-  { tag: "Collectibles", name: "Anime Figures & Statues", note: "From shelf pieces to life-size showstoppers.", icon: "user" },
-  { tag: "Collectibles", name: "Funko Pop!", note: "Anime, gaming & pop-culture vinyl — plus exclusives.", icon: "box" },
-  { tag: "Reads & Games", name: "Manga & Board Games", note: "Latest volumes, box sets & tabletop nights.", icon: "book" },
-  { tag: "Snack Bar", name: "Japanese Snacks & Drinks", note: "Ramune, Pocky, Hi-Chew & the cold-drink fridge.", icon: "cup" },
+  { tag: "Trading Card Game", name: "Pokémon", note: "Booster boxes, ETBs, singles & graded slabs.", rarity: "SR", no: "001", art: "/assets/img/store-case.jpg", pos: "center" },
+  { tag: "Trading Card Game", name: "One Piece TCG", note: "Sealed, singles & our own Straw Hat crew.", rarity: "SR", no: "002", art: "/assets/img/gallery-figures.jpg", pos: "top" },
+  { tag: "Trading Card Game", name: "Magic: The Gathering", note: "Singles, sealed, Commander decks & supplies.", rarity: "R", no: "003", art: "/assets/img/gallery-art.jpg", pos: "center" },
+  { tag: "Trading Card Game", name: "Yu-Gi-Oh!", note: "Structure decks, tins, singles & sealed.", rarity: "R", no: "004", art: "/assets/img/store-figures.jpg", pos: "center" },
+  { tag: "Collectibles", name: "Anime Figures", note: "From shelf pieces to life-size showstoppers.", rarity: "U", no: "005", art: "/assets/img/gallery-figures.jpg", pos: "center" },
+  { tag: "Collectibles", name: "Funko Pop!", note: "Anime, gaming & pop-culture vinyl — plus exclusives.", rarity: "U", no: "006", art: "/assets/img/gallery-merch.jpg", pos: "center" },
+  { tag: "Reads & Games", name: "Manga & Board Games", note: "Latest volumes, box sets & tabletop nights.", rarity: "C", no: "007", art: "/assets/img/play-hall.jpg", pos: "center" },
+  { tag: "Snack Bar", name: "Japanese Snacks", note: "Ramune, Pocky, Hi-Chew & the cold-drink fridge.", rarity: "C", no: "008", art: "/assets/img/store-counter.jpg", pos: "center" },
 ];
+
+const SECRET = {
+  tag: "Secret Rare",
+  name: "Gear 5 Greeter",
+  note: "Life-size. Greets you at the door.",
+  rarity: "SEC",
+  no: "000",
+  art: "/assets/img/store-luffy.jpg",
+  pos: "54% 40%",
+};
 
 const HOURS = [
   { day: "Sunday", closed: true },
@@ -31,17 +41,6 @@ const PHOTOS = [
   { src: "/assets/img/play-room.jpg", alt: "Private play room with a Luffy poster, TV and purple accent wall", caption: "Private room + big screen", w: 1168, h: 1389 },
   { src: "/assets/img/store-case.jpg", alt: "Glass display case of graded Pokémon and One Piece cards and collectibles", caption: "Graded slabs & grails", w: 1200, h: 1600 },
 ];
-
-const ICONS = {
-  zap: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>',
-  anchor: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="5" r="2"/><path d="M12 7v14M5 13a7 7 0 0 0 14 0M5 13H2m20 0h-3"/></svg>',
-  spark: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M6 18l2.5-2.5"/></svg>',
-  layers: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="m12 2 9 5-9 5-9-5z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/></svg>',
-  user: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="8" r="4"/><path d="M4 20a8 8 0 0 1 16 0"/></svg>',
-  box: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v10"/></svg>',
-  book: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v15H6.5A2.5 2.5 0 0 0 4 19.5z"/></svg>',
-  cup: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M18 8h1a3 3 0 0 1 0 6h-1M5 8h13v9a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4z"/></svg>',
-};
 
 const $ = (s, c = document) => c.querySelector(s);
 const $$ = (s, c = document) => [...c.querySelectorAll(s)];
@@ -100,18 +99,77 @@ function renderBadge(el, status) {
   }`;
 }
 
+function shuffle(list) {
+  const a = [...list];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function tcgHTML(card, { flip = false, n = 0 } = {}) {
+  const face = `<div class="tcg-face">
+      <span class="tcg-set">TSC · ${card.no}</span>
+      <div class="tcg-art"><img src="${card.art}" alt="" style="object-position:${card.pos || "center"}"></div>
+      <div class="tcg-plate"><h4>${card.name}</h4><span>${card.rarity}</span></div>
+      <p class="tcg-flavor">${card.note}</p>
+      <span class="tcg-foil" aria-hidden="true"></span>
+    </div>`;
+  if (!flip) {
+    return `<article class="tcg" data-tilt data-rarity="${card.rarity}">${face}</article>`;
+  }
+  return `<article class="tcg tcg--flip" data-rarity="${card.rarity}" style="--d:${n}">
+    <div class="tcg-3d">
+      <div class="tcg-back"><img src="/assets/img/logo.png" alt=""><span>Thousand Sunny</span></div>
+      ${face}
+    </div>
+  </article>`;
+}
+
 function renderGames() {
   const grid = $("#gamesGrid");
   if (!grid) return;
-  grid.innerHTML = GAMES.map(
-    (g) => `<article class="game" data-tilt>
-      <span class="game-foil" aria-hidden="true"></span>
-      <span class="tag">${g.tag}</span>
-      ${ICONS[g.icon] || ""}
-      <h4>${g.name}</h4>
-      <p>${g.note}</p>
-    </article>`,
-  ).join("");
+  grid.innerHTML = GAMES.map((g) => tcgHTML(g)).join("");
+}
+
+function initPack() {
+  const rip = $("#rip");
+  const btn = $("#packBtn");
+  const pulls = $("#pulls");
+  const again = $("#packAgain");
+  if (!rip || !btn || !pulls) return;
+
+  const deal = () => {
+    const four = shuffle(GAMES).slice(0, 4);
+    const cards = [...four, SECRET];
+    pulls.hidden = false;
+    pulls.innerHTML = cards.map((c, i) => tcgHTML(c, { flip: true, n: i })).join("");
+    rip.dataset.state = "open";
+    btn.hidden = true;
+    if (again) again.hidden = false;
+    const open = () => {
+      $$(".tcg--flip", pulls).forEach((el) => el.classList.add("is-open"));
+    };
+    if (REDUCE) open();
+    else setTimeout(open, 120);
+  };
+
+  btn.addEventListener("click", () => {
+    if (rip.dataset.state !== "idle") return;
+    rip.dataset.state = "ripping";
+    btn.classList.add("is-ripping");
+    if (REDUCE) deal();
+    else setTimeout(deal, 520);
+  });
+  again?.addEventListener("click", () => {
+    rip.dataset.state = "idle";
+    pulls.hidden = true;
+    pulls.innerHTML = "";
+    btn.hidden = false;
+    btn.classList.remove("is-ripping");
+    again.hidden = true;
+  });
 }
 
 function renderHours(status) {
@@ -243,9 +301,11 @@ function initLightbox() {
   });
 }
 
-function initTilt() {
+function bindTilt(scope = document) {
   if (REDUCE || !FINE) return;
-  $$("[data-tilt]").forEach((el) => {
+  $$("[data-tilt]", scope).forEach((el) => {
+    if (el.dataset.tiltBound) return;
+    el.dataset.tiltBound = "1";
     el.addEventListener("pointermove", (e) => {
       const r = el.getBoundingClientRect();
       const x = (e.clientX - r.left) / r.width;
@@ -262,6 +322,10 @@ function initTilt() {
       el.classList.remove("is-lit");
     });
   });
+}
+
+function initTilt() {
+  bindTilt();
 }
 
 function initMagnetic() {
@@ -375,6 +439,7 @@ document.addEventListener("DOMContentLoaded", () => {
   tickStatus();
   initNav();
   initLightbox();
+  initPack();
   initTilt();
   initMagnetic();
   initScrollFx();

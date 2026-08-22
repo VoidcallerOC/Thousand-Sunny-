@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/styles.css?v=3" />
+  <link rel="stylesheet" href="/assets/css/styles.css?v=4" />
 
   <script type="application/ld+json">
   {
@@ -63,6 +63,7 @@
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="#do">The Crew</a>
+      <a href="#pack">Pulls</a>
       <a href="#shelves">Shelves</a>
       <a href="#inside">Inside</a>
       <a href="#play">Play</a>
@@ -89,6 +90,7 @@
       </div>
       <nav class="nav-drawer-links" aria-label="Mobile">
         <a href="#do">The Crew</a>
+        <a href="#pack">Pulls</a>
         <a href="#shelves">Shelves</a>
         <a href="#inside">Inside</a>
         <a href="#play">Play</a>
@@ -120,7 +122,7 @@
             Plan your visit
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a class="btn btn--ghost" href="#inside">Peek inside</a>
+          <a class="btn btn--ghost" href="#pack">Rip a pack</a>
         </div>
       </div>
     </section>
@@ -130,6 +132,25 @@
         <span>Pokémon</span><span>One Piece TCG</span><span>Magic: The Gathering</span><span>Yu-Gi-Oh!</span><span>Anime Figures</span><span>Funko Pop!</span><span>Graded Slabs</span><span>Manga</span><span>Japanese Snacks</span>
       </div>
     </div>
+
+    <section class="section pack-sec reveal" id="pack">
+      <div class="wrap">
+        <p class="eyebrow">This week's pulls</p>
+        <h2 class="h-sec">Rip a <span class="gold">booster</span></h2>
+        <p class="lead">Five cards from what's actually in the shop — four from the shelves, one secret rare. No fake inventory. Just the Sunny, shuffled.</p>
+        <div class="rip" id="rip" data-state="idle">
+          <button class="pack" id="packBtn" type="button" aria-label="Rip a Thousand Sunny booster pack">
+            <span class="pack-seal">TSC</span>
+            <span class="pack-kicker">Thousand Sunny</span>
+            <img src="/assets/img/logo.png" alt="" width="96" height="96" />
+            <span class="pack-title">West Hartford<br />Booster</span>
+            <span class="pack-meta">5 cards · 1 secret rare</span>
+          </button>
+          <div class="pulls" id="pulls" hidden></div>
+          <button class="btn btn--ghost pack-again" id="packAgain" type="button" hidden>Rip another</button>
+        </div>
+      </div>
+    </section>
 
     <section class="section reveal" id="do">
       <div class="wrap">
@@ -187,11 +208,11 @@
         <p class="eyebrow">Step aboard</p>
         <h2 class="h-sec">Inside <span class="gold">the Sunny</span></h2>
         <p class="lead">Purple walls, packed shelves and a life-size crew. Here's a peek at what's waiting when you walk through the door.</p>
-        <div class="gallery" id="gallery"></div>
+        <div class="gallery binder" id="gallery"></div>
       </div>
     </section>
 
-    <section class="section reveal" id="play">
+    <section class="section play-sec reveal" id="play">
       <div class="wrap">
         <p class="eyebrow">Pull up a chair</p>
         <h2 class="h-sec">Play & <span class="gold">gather</span></h2>
@@ -218,11 +239,15 @@
           </a>
           <p class="note">Ask the crew about current showcase stock and consignment terms.</p>
         </div>
-        <button class="shot" type="button" data-photo="9">
-          <img src="/assets/img/store-case.jpg" alt="Glass display case of graded Pokémon and One Piece cards and collectibles" width="1200" height="1600" loading="lazy" />
-          <span class="gleam" aria-hidden="true"></span>
-          <span>Graded slabs & grails</span>
-        </button>
+        <div class="slab">
+          <p class="slab-cert">TSC GRADED · CASE 10</p>
+          <button class="shot" type="button" data-photo="9">
+            <img src="/assets/img/store-case.jpg" alt="Glass display case of graded Pokémon and One Piece cards and collectibles" width="1200" height="1600" loading="lazy" />
+            <span class="gleam" aria-hidden="true"></span>
+            <span>Graded slabs & grails</span>
+          </button>
+          <p class="slab-name">West Hartford Display Case</p>
+        </div>
       </div>
     </section>
 
@@ -353,6 +378,6 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite" hidden>Address copied</div>
 
-  <script src="/assets/js/main.js?v=3" defer></script>
+  <script src="/assets/js/main.js?v=4" defer></script>
 </body>
 </html>
