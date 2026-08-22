@@ -23,10 +23,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/styles.css?v=7" />
+  <link rel="stylesheet" href="/assets/css/styles.css?v=8" />
 
-  <link rel="preload" as="image" href="/assets/img/hero-luffy.jpg" media="(max-width: 767px)" fetchpriority="high" />
-  <link rel="preload" as="image" href="/assets/img/hero-desktop.jpg" media="(min-width: 768px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="/assets/img/greeter-m.jpg" media="(max-width: 767px)" fetchpriority="high" />
+  <link rel="preload" as="image" href="/assets/img/greeter-d.jpg" media="(min-width: 768px)" fetchpriority="high" />
   <link rel="preload" as="image" href="/assets/img/pulls/back.jpg" />
   <link rel="preload" as="image" href="/assets/img/pulls/pokemon.jpg" />
   <link rel="preload" as="image" href="/assets/img/pulls/onepiece.jpg" />
@@ -116,10 +116,10 @@
 
   <main id="main">
     <section class="hero" id="top">
-      <picture>
-        <source media="(min-width: 768px)" srcset="/assets/img/hero-desktop.jpg" />
-        <img class="hero-photo" id="heroPhoto" src="/assets/img/hero-luffy.jpg" alt="Life-size Gear 5 Luffy greeter inside Thousand Sunny Cards" width="780" height="1688" fetchpriority="high" />
-      </picture>
+      <div class="hero-media" id="heroPhoto">
+        <img class="hero-photo hero-photo--mobile" src="/assets/img/greeter-m.jpg" alt="Life-size Gear 5 Luffy greeter inside Thousand Sunny Cards" width="780" height="1688" fetchpriority="high" />
+        <img class="hero-photo hero-photo--desk" src="/assets/img/greeter-d.jpg" alt="" width="940" height="540" decoding="async" />
+      </div>
       <div class="hero-shade"></div>
       <div class="wrap hero-copy">
         <span class="badge" data-open-badge></span>
@@ -394,6 +394,6 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite" hidden>Address copied</div>
 
-  <script src="/assets/js/main.js?v=7" defer></script>
+  <script src="/assets/js/main.js?v=8" defer></script>
 </body>
 </html>
