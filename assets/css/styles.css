@@ -359,9 +359,9 @@ ul { list-style: none; padding: 0; }
 }
 @media (min-width: 768px) {
   .hero-photo {
-    object-position: 82% 28%;
+    object-position: 72% 20%;
     transform: translate3d(0, var(--hero-y, 0px), 0);
-    transform-origin: 82% 28%;
+    transform-origin: 72% 20%;
   }
   .hero-copy { justify-content: center; padding-bottom: 5rem; }
   .hero-shade {
