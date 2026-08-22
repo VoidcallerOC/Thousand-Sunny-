@@ -23,18 +23,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/styles.css?v=5" />
+  <link rel="stylesheet" href="/assets/css/styles.css?v=6" />
 
-  <link rel="preload" as="image" href="/assets/img/cards/back.jpg" />
-  <link rel="preload" as="image" href="/assets/img/cards/pokemon.jpg" />
-  <link rel="preload" as="image" href="/assets/img/cards/onepiece.jpg" />
-  <link rel="preload" as="image" href="/assets/img/cards/mtg.jpg" />
-  <link rel="preload" as="image" href="/assets/img/cards/yugioh.jpg" />
-  <link rel="preload" as="image" href="/assets/img/cards/figures.jpg" />
-  <link rel="preload" as="image" href="/assets/img/cards/funko.jpg" />
-  <link rel="preload" as="image" href="/assets/img/cards/manga.jpg" />
-  <link rel="preload" as="image" href="/assets/img/cards/snacks.jpg" />
-  <link rel="preload" as="image" href="/assets/img/cards/secret.jpg" />
+  <link rel="preload" as="image" href="/assets/img/hero-luffy.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="/assets/img/pulls/back.jpg" />
+  <link rel="preload" as="image" href="/assets/img/pulls/pokemon.jpg" />
+  <link rel="preload" as="image" href="/assets/img/pulls/onepiece.jpg" />
+  <link rel="preload" as="image" href="/assets/img/pulls/mtg.jpg" />
+  <link rel="preload" as="image" href="/assets/img/pulls/yugioh.jpg" />
+  <link rel="preload" as="image" href="/assets/img/pulls/figures.jpg" />
+  <link rel="preload" as="image" href="/assets/img/pulls/funko.jpg" />
+  <link rel="preload" as="image" href="/assets/img/pulls/manga.jpg" />
+  <link rel="preload" as="image" href="/assets/img/pulls/snacks.jpg" />
+  <link rel="preload" as="image" href="/assets/img/pulls/secret.jpg" />
 
   <script type="application/ld+json">
   {
@@ -114,7 +115,10 @@
 
   <main id="main">
     <section class="hero" id="top">
-      <img class="hero-photo" id="heroPhoto" src="/assets/img/store-luffy.jpg" alt="Life-size Gear 5 Luffy greeter inside Thousand Sunny Cards" width="1300" height="1733" fetchpriority="high" />
+      <picture>
+        <source media="(min-width: 768px)" srcset="/assets/img/store-luffy.jpg" />
+        <img class="hero-photo" id="heroPhoto" src="/assets/img/hero-luffy.jpg" alt="Life-size Gear 5 Luffy greeter inside Thousand Sunny Cards" width="780" height="1688" fetchpriority="high" />
+      </picture>
       <div class="hero-shade"></div>
       <div class="wrap hero-copy">
         <span class="badge" data-open-badge></span>
@@ -389,6 +393,6 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite" hidden>Address copied</div>
 
-  <script src="/assets/js/main.js?v=5" defer></script>
+  <script src="/assets/js/main.js?v=6" defer></script>
 </body>
 </html>

@@ -168,9 +168,9 @@ ul { list-style: none; padding: 0; }
 .hero { position: relative; min-height: 100svh; min-height: 100dvh; overflow: hidden; }
 .hero-photo {
   position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: cover; object-position: 54% 40%;
-  transform: scale(1.08) translate3d(0, var(--hero-y, 0px), 0);
-  transform-origin: 54% 40%;
+  object-fit: cover; object-position: 50% 22%;
+  transform: scale(1.02) translate3d(0, var(--hero-y, 0px), 0);
+  transform-origin: 50% 22%;
   will-change: transform;
 }
 .hero-shade {
@@ -359,9 +359,9 @@ ul { list-style: none; padding: 0; }
 }
 @media (min-width: 768px) {
   .hero-photo {
-    object-position: 78% 40%;
+    object-position: 82% 28%;
     transform: translate3d(0, var(--hero-y, 0px), 0);
-    transform-origin: 78% 40%;
+    transform-origin: 82% 28%;
   }
   .hero-copy { justify-content: center; padding-bottom: 5rem; }
   .hero-shade {
@@ -481,8 +481,8 @@ ul { list-style: none; padding: 0; }
 .lightbox-strip button.is-on { opacity: 1; outline-color: var(--gold); }
 .hero-photo.is-bounce { animation: luffy-bounce .65s var(--ease); }
 @keyframes luffy-bounce {
-  0%, 100% { transform: scale(1.08) translate3d(0, var(--hero-y, 0px), 0); }
-  40% { transform: scale(1.16) translate3d(0, calc(var(--hero-y, 0px) - 10px), 0); }
+  0%, 100% { transform: scale(1.02) translate3d(0, var(--hero-y, 0px), 0); }
+  40% { transform: scale(1.08) translate3d(0, calc(var(--hero-y, 0px) - 10px), 0); }
 }
 html.gear5 .wordmark { animation: rubber .85s var(--ease); }
 @keyframes rubber {

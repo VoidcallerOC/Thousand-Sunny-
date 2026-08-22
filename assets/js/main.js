@@ -1,12 +1,12 @@
 const GAMES = [
-  { tag: "Trading Card Game", name: "Pokémon", note: "Booster boxes, ETBs, singles & graded slabs.", rarity: "SR", no: "001", art: "/assets/img/cards/pokemon.jpg" },
-  { tag: "Trading Card Game", name: "One Piece TCG", note: "Sealed, singles & our own Straw Hat crew.", rarity: "SR", no: "002", art: "/assets/img/cards/onepiece.jpg" },
-  { tag: "Trading Card Game", name: "Magic: The Gathering", note: "Singles, sealed, Commander decks & supplies.", rarity: "R", no: "003", art: "/assets/img/cards/mtg.jpg" },
-  { tag: "Trading Card Game", name: "Yu-Gi-Oh!", note: "Structure decks, tins, singles & sealed.", rarity: "R", no: "004", art: "/assets/img/cards/yugioh.jpg" },
-  { tag: "Collectibles", name: "Anime Figures", note: "From shelf pieces to life-size showstoppers.", rarity: "U", no: "005", art: "/assets/img/cards/figures.jpg" },
-  { tag: "Collectibles", name: "Funko Pop!", note: "Anime, gaming & pop-culture vinyl — plus exclusives.", rarity: "U", no: "006", art: "/assets/img/cards/funko.jpg" },
-  { tag: "Reads & Games", name: "Manga & Board Games", note: "Latest volumes, box sets & tabletop nights.", rarity: "C", no: "007", art: "/assets/img/cards/manga.jpg" },
-  { tag: "Snack Bar", name: "Japanese Snacks", note: "Ramune, Pocky, Hi-Chew & the cold-drink fridge.", rarity: "C", no: "008", art: "/assets/img/cards/snacks.jpg" },
+  { tag: "Trading Card Game", name: "Pokémon", note: "Booster boxes, ETBs, singles & graded slabs.", rarity: "SR", no: "001", art: "/assets/img/pulls/pokemon.jpg" },
+  { tag: "Trading Card Game", name: "One Piece TCG", note: "Sealed, singles & our own Straw Hat crew.", rarity: "SR", no: "002", art: "/assets/img/pulls/onepiece.jpg" },
+  { tag: "Trading Card Game", name: "Magic: The Gathering", note: "Singles, sealed, Commander decks & supplies.", rarity: "R", no: "003", art: "/assets/img/pulls/mtg.jpg" },
+  { tag: "Trading Card Game", name: "Yu-Gi-Oh!", note: "Structure decks, tins, singles & sealed.", rarity: "R", no: "004", art: "/assets/img/pulls/yugioh.jpg" },
+  { tag: "Collectibles", name: "Anime Figures", note: "From shelf pieces to life-size showstoppers.", rarity: "U", no: "005", art: "/assets/img/pulls/figures.jpg" },
+  { tag: "Collectibles", name: "Funko Pop!", note: "Anime, gaming & pop-culture vinyl — plus exclusives.", rarity: "U", no: "006", art: "/assets/img/pulls/funko.jpg" },
+  { tag: "Reads & Games", name: "Manga & Board Games", note: "Latest volumes, box sets & tabletop nights.", rarity: "C", no: "007", art: "/assets/img/pulls/manga.jpg" },
+  { tag: "Snack Bar", name: "Japanese Snacks", note: "Ramune, Pocky, Hi-Chew & the cold-drink fridge.", rarity: "C", no: "008", art: "/assets/img/pulls/snacks.jpg" },
 ];
 
 const SECRET = {
@@ -15,10 +15,10 @@ const SECRET = {
   note: "Life-size. Greets you at the door.",
   rarity: "SEC",
   no: "000",
-  art: "/assets/img/cards/secret.jpg",
+  art: "/assets/img/pulls/secret.jpg",
 };
 
-const CARD_BACK = "/assets/img/cards/back.jpg";
+const CARD_BACK = "/assets/img/pulls/back.jpg";
 
 
 const HOURS = [
