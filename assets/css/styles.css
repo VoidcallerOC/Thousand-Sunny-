@@ -726,3 +726,11 @@ html.gear5 #sunMark { transform: rotate(360deg); }
   .tcg, .tcg-3d { transform: none !important; transition: none !important; animation: none !important; }
   .tcg[data-rarity="SEC"] .tcg-foil { animation: none; }
 }
+
+/* Responsive picture wrappers keep the existing grid and object-fit rules intact. */
+.responsive-picture { display: block; width: 100%; }
+.tcg-art .responsive-picture,
+.shot .responsive-picture,
+.floor-hit .responsive-picture { height: 100%; }
+.floor-hit .responsive-picture { position: absolute; inset: 0; }
+.lightbox .responsive-picture { display: contents; }

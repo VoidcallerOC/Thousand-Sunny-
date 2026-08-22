@@ -23,10 +23,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/assets/css/styles.css?v=14" />
+  <link rel="stylesheet" href="/assets/css/styles.css?v=15" />
 
-  <link rel="preload" as="image" href="/assets/img/gear5-tall.jpg" media="(max-width: 767px), (max-aspect-ratio: 1/1)" fetchpriority="high" />
-  <link rel="preload" as="image" href="/assets/img/gear5-wide.jpg" media="(min-width: 768px) and (min-aspect-ratio: 1/1)" fetchpriority="high" />
+  <link rel="preload" as="image" type="image/avif" href="/assets/img/optimized/gear5-tall-830.avif" imagesrcset="/assets/img/optimized/gear5-tall-480.avif 480w, /assets/img/optimized/gear5-tall-640.avif 640w, /assets/img/optimized/gear5-tall-830.avif 830w" imagesizes="100vw" media="(max-width: 767px), (max-aspect-ratio: 1/1)" fetchpriority="high" />
+  <link rel="preload" as="image" type="image/webp" href="/assets/img/optimized/gear5-tall-830.webp" imagesrcset="/assets/img/optimized/gear5-tall-480.webp 480w, /assets/img/optimized/gear5-tall-640.webp 640w, /assets/img/optimized/gear5-tall-830.webp 830w" imagesizes="100vw" media="(max-width: 767px), (max-aspect-ratio: 1/1)" fetchpriority="high" />
+  <link rel="preload" as="image" type="image/avif" href="/assets/img/optimized/gear5-wide-1120.avif" imagesrcset="/assets/img/optimized/gear5-wide-640.avif 640w, /assets/img/optimized/gear5-wide-960.avif 960w, /assets/img/optimized/gear5-wide-1120.avif 1120w" imagesizes="100vw" media="(min-width: 768px) and (min-aspect-ratio: 1/1)" fetchpriority="high" />
+  <link rel="preload" as="image" type="image/webp" href="/assets/img/optimized/gear5-wide-1120.webp" imagesrcset="/assets/img/optimized/gear5-wide-640.webp 640w, /assets/img/optimized/gear5-wide-960.webp 960w, /assets/img/optimized/gear5-wide-1120.webp 1120w" imagesizes="100vw" media="(min-width: 768px) and (min-aspect-ratio: 1/1)" fetchpriority="high" />
 
   <script type="application/ld+json">
   {
@@ -101,8 +103,12 @@
     <section class="hero" id="top">
       <div class="hero-media" id="heroPhoto">
         <picture>
+          <source media="(min-width: 768px) and (min-aspect-ratio: 1/1)" type="image/avif" srcset="/assets/img/optimized/gear5-wide-640.avif 640w, /assets/img/optimized/gear5-wide-960.avif 960w, /assets/img/optimized/gear5-wide-1120.avif 1120w" sizes="100vw" width="1120" height="746" />
+          <source media="(min-width: 768px) and (min-aspect-ratio: 1/1)" type="image/webp" srcset="/assets/img/optimized/gear5-wide-640.webp 640w, /assets/img/optimized/gear5-wide-960.webp 960w, /assets/img/optimized/gear5-wide-1120.webp 1120w" sizes="100vw" width="1120" height="746" />
+          <source type="image/avif" srcset="/assets/img/optimized/gear5-tall-480.avif 480w, /assets/img/optimized/gear5-tall-640.avif 640w, /assets/img/optimized/gear5-tall-830.avif 830w" sizes="100vw" width="830" height="1383" />
+          <source type="image/webp" srcset="/assets/img/optimized/gear5-tall-480.webp 480w, /assets/img/optimized/gear5-tall-640.webp 640w, /assets/img/optimized/gear5-tall-830.webp 830w" sizes="100vw" width="830" height="1383" />
           <source media="(min-width: 768px) and (min-aspect-ratio: 1/1)" srcset="/assets/img/gear5-wide.jpg" width="1120" height="746" />
-          <img class="hero-photo" src="/assets/img/gear5-tall.jpg" alt="Life-size Gear 5 Luffy greeter inside Thousand Sunny Cards" width="830" height="1383" fetchpriority="high" />
+          <img class="hero-photo" src="/assets/img/gear5-tall.jpg" alt="Life-size Gear 5 Luffy greeter inside Thousand Sunny Cards" width="830" height="1383" sizes="100vw" fetchpriority="high" />
         </picture>
       </div>
       <div class="hero-shade"></div>
@@ -141,28 +147,44 @@
         <p class="lead">No gimmick pulls. This is the shop — the greeter at the door, the case, the wall, the candy. Come stand in it.</p>
         <div class="floor">
           <a class="floor-hit floor-hit--hero" href="#inside">
-            <img src="/assets/img/gear5-tall.jpg" alt="Life-size Gear 5 Luffy greeter" width="830" height="1383" />
+            <picture class="responsive-picture">
+              <source type="image/avif" srcset="/assets/img/optimized/gear5-tall-480.avif 480w, /assets/img/optimized/gear5-tall-640.avif 640w, /assets/img/optimized/gear5-tall-830.avif 830w" sizes="(min-width: 960px) 830px, 100vw" />
+              <source type="image/webp" srcset="/assets/img/optimized/gear5-tall-480.webp 480w, /assets/img/optimized/gear5-tall-640.webp 640w, /assets/img/optimized/gear5-tall-830.webp 830w" sizes="(min-width: 960px) 830px, 100vw" />
+              <img src="/assets/img/gear5-tall.jpg" alt="Life-size Gear 5 Luffy greeter" width="830" height="1383" sizes="(min-width: 960px) 830px, 100vw" />
+            </picture>
             <span class="floor-meta">
               <span class="floor-kicker">At the door</span>
               <span class="floor-name">Gear 5 greeter</span>
             </span>
           </a>
           <a class="floor-hit" href="#case">
-            <img src="/assets/img/store-case.jpg" alt="Glass display case of graded cards" width="1200" height="1600" loading="lazy" />
+            <picture class="responsive-picture">
+              <source type="image/avif" srcset="/assets/img/optimized/store-case-480.avif 480w, /assets/img/optimized/store-case-768.avif 768w, /assets/img/optimized/store-case-1200.avif 1200w" sizes="(min-width: 960px) 600px, 50vw" />
+              <source type="image/webp" srcset="/assets/img/optimized/store-case-480.webp 480w, /assets/img/optimized/store-case-768.webp 768w, /assets/img/optimized/store-case-1200.webp 1200w" sizes="(min-width: 960px) 600px, 50vw" />
+              <img src="/assets/img/store-case.jpg" alt="Glass display case of graded cards" width="1200" height="1600" sizes="(min-width: 960px) 600px, 50vw" loading="lazy" decoding="async" />
+            </picture>
             <span class="floor-meta">
               <span class="floor-kicker">Behind the glass</span>
               <span class="floor-name">Slabs & grails</span>
             </span>
           </a>
           <a class="floor-hit" href="#inside">
-            <img src="/assets/img/gallery-figures.jpg" alt="Wall of anime figures and Funko Pops" width="1150" height="1331" loading="lazy" />
+            <picture class="responsive-picture">
+              <source type="image/avif" srcset="/assets/img/optimized/gallery-figures-480.avif 480w, /assets/img/optimized/gallery-figures-768.avif 768w, /assets/img/optimized/gallery-figures-1150.avif 1150w" sizes="(min-width: 960px) 600px, 50vw" />
+              <source type="image/webp" srcset="/assets/img/optimized/gallery-figures-480.webp 480w, /assets/img/optimized/gallery-figures-768.webp 768w, /assets/img/optimized/gallery-figures-1150.webp 1150w" sizes="(min-width: 960px) 600px, 50vw" />
+              <img src="/assets/img/gallery-figures.jpg" alt="Wall of anime figures and Funko Pops" width="1150" height="1331" sizes="(min-width: 960px) 600px, 50vw" loading="lazy" decoding="async" />
+            </picture>
             <span class="floor-meta">
               <span class="floor-kicker">Floor to ceiling</span>
               <span class="floor-name">Figures & Pops</span>
             </span>
           </a>
           <a class="floor-hit floor-hit--wide" href="#visit">
-            <img src="/assets/img/store-counter.jpg" alt="Front counter with Japanese candy and drinks" width="1300" height="1733" loading="lazy" />
+            <picture class="responsive-picture">
+              <source type="image/avif" srcset="/assets/img/optimized/store-counter-480.avif 480w, /assets/img/optimized/store-counter-768.avif 768w, /assets/img/optimized/store-counter-1300.avif 1300w" sizes="(min-width: 960px) 1200px, 100vw" />
+              <source type="image/webp" srcset="/assets/img/optimized/store-counter-480.webp 480w, /assets/img/optimized/store-counter-768.webp 768w, /assets/img/optimized/store-counter-1300.webp 1300w" sizes="(min-width: 960px) 1200px, 100vw" />
+              <img src="/assets/img/store-counter.jpg" alt="Front counter with Japanese candy and drinks" width="1300" height="1733" sizes="(min-width: 960px) 1200px, 100vw" loading="lazy" decoding="async" />
+            </picture>
             <span class="floor-meta">
               <span class="floor-kicker">The counter</span>
               <span class="floor-name">Snacks, drinks, neon</span>
@@ -272,7 +294,11 @@
         <div class="slab">
           <p class="slab-cert">TSC GRADED · CASE 10</p>
           <button class="shot" type="button" data-photo="9">
-            <img src="/assets/img/store-case.jpg" alt="Glass display case of graded Pokémon and One Piece cards and collectibles" width="1200" height="1600" loading="lazy" />
+            <picture class="responsive-picture">
+              <source type="image/avif" srcset="/assets/img/optimized/store-case-480.avif 480w, /assets/img/optimized/store-case-768.avif 768w, /assets/img/optimized/store-case-1200.avif 1200w" sizes="(min-width: 960px) 600px, 100vw" />
+              <source type="image/webp" srcset="/assets/img/optimized/store-case-480.webp 480w, /assets/img/optimized/store-case-768.webp 768w, /assets/img/optimized/store-case-1200.webp 1200w" sizes="(min-width: 960px) 600px, 100vw" />
+              <img src="/assets/img/store-case.jpg" alt="Glass display case of graded Pokémon and One Piece cards and collectibles" width="1200" height="1600" sizes="(min-width: 960px) 600px, 100vw" loading="lazy" decoding="async" />
+            </picture>
             <span class="gleam" aria-hidden="true"></span>
             <span>Graded slabs & grails</span>
           </button>
@@ -395,7 +421,11 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
     </button>
     <p class="lightbox-count" id="lightboxCount"></p>
-    <img id="lightboxImg" alt="" />
+    <picture class="responsive-picture">
+      <source id="lightboxAvif" type="image/avif" />
+      <source id="lightboxWebp" type="image/webp" />
+      <img id="lightboxImg" alt="" />
+    </picture>
     <p id="lightboxCap"></p>
     <div class="lightbox-strip" id="lightboxStrip"></div>
     <button class="icon-btn lightbox-prev" type="button" data-prev aria-label="Previous photo">
@@ -408,6 +438,6 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite" hidden>Address copied</div>
 
-  <script src="/assets/js/main.js?v=13" defer></script>
+  <script src="/assets/js/main.js?v=14" defer></script>
 </body>
 </html>

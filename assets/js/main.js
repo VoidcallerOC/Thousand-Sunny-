@@ -20,20 +20,36 @@ const HOURS = [
 ];
 
 const PHOTOS = [
-  { src: "/assets/img/store-figures.jpg", alt: "Store floor with anime figure shelves, board games and manga against purple walls", caption: "Figures, statues, board games & manga", w: 1350, h: 1800 },
-  { src: "/assets/img/store-luffy.jpg", alt: "Life-size Luffy Gear 5 statue beside the collectibles shelves", caption: "Our life-size Gear 5 greeter", w: 1300, h: 1733, top: true },
-  { src: "/assets/img/gallery-figures.jpg", alt: "Tall shelves packed with One Piece and anime figures and Funko Pops", caption: "Walls of anime figures & Pops", w: 1150, h: 1331 },
-  { src: "/assets/img/gallery-art.jpg", alt: "Framed anime wall art and boxed figures on wooden shelves", caption: "Framed art & boxed collectibles", w: 1170, h: 1412 },
-  { src: "/assets/img/gallery-merch.jpg", alt: "Anime tumblers, wall scrolls and a One Piece board game on display", caption: "Tumblers, scrolls & merch", w: 1170, h: 1389 },
-  { src: "/assets/img/store-counter.jpg", alt: "Front counter with Japanese candy, lollipops, drink fridges and a neon star sign", caption: "Snacks, drinks & the neon out front", w: 1300, h: 1733, wide: true },
-  { src: "/assets/img/play-hall.jpg", alt: "Long communal wooden table with chairs running through the store", caption: "The communal table", w: 1169, h: 1396 },
-  { src: "/assets/img/event-room.jpg", alt: "Event room with a long table, chairs and figure shelves", caption: "Room for the whole crew", w: 1168, h: 1387 },
-  { src: "/assets/img/play-room.jpg", alt: "Private play room with a Luffy poster, TV and purple accent wall", caption: "Private room + big screen", w: 1168, h: 1389 },
-  { src: "/assets/img/store-case.jpg", alt: "Glass display case of graded Pokémon and One Piece cards and collectibles", caption: "Graded slabs & grails", w: 1200, h: 1600 },
+  { src: "/assets/img/store-figures.jpg", alt: "Store floor with anime figure shelves, board games and manga against purple walls", caption: "Figures, statues, board games & manga", w: 1350, h: 1800, widths: [480, 768, 1350] },
+  { src: "/assets/img/store-luffy.jpg", alt: "Life-size Luffy Gear 5 statue beside the collectibles shelves", caption: "Our life-size Gear 5 greeter", w: 1300, h: 1733, widths: [480, 768, 1300], top: true },
+  { src: "/assets/img/gallery-figures.jpg", alt: "Tall shelves packed with One Piece and anime figures and Funko Pops", caption: "Walls of anime figures & Pops", w: 1150, h: 1331, widths: [480, 768, 1150] },
+  { src: "/assets/img/gallery-art.jpg", alt: "Framed anime wall art and boxed figures on wooden shelves", caption: "Framed art & boxed collectibles", w: 1170, h: 1412, widths: [480, 768, 1170] },
+  { src: "/assets/img/gallery-merch.jpg", alt: "Anime tumblers, wall scrolls and a One Piece board game on display", caption: "Tumblers, scrolls & merch", w: 1170, h: 1389, widths: [480, 768, 1170] },
+  { src: "/assets/img/store-counter.jpg", alt: "Front counter with Japanese candy, lollipops, drink fridges and a neon star sign", caption: "Snacks, drinks & the neon out front", w: 1300, h: 1733, widths: [480, 768, 1300], wide: true },
+  { src: "/assets/img/play-hall.jpg", alt: "Long communal wooden table with chairs running through the store", caption: "The communal table", w: 1169, h: 1396, widths: [480, 768, 1169] },
+  { src: "/assets/img/event-room.jpg", alt: "Event room with a long table, chairs and figure shelves", caption: "Room for the whole crew", w: 1168, h: 1387, widths: [480, 768, 1168] },
+  { src: "/assets/img/play-room.jpg", alt: "Private play room with a Luffy poster, TV and purple accent wall", caption: "Private room + big screen", w: 1168, h: 1389, widths: [480, 768, 1168] },
+  { src: "/assets/img/store-case.jpg", alt: "Glass display case of graded Pokémon and One Piece cards and collectibles", caption: "Graded slabs & grails", w: 1200, h: 1600, widths: [480, 768, 1200] },
 ];
 
 const $ = (s, c = document) => c.querySelector(s);
 const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+
+function responsiveSrcset(src, widths, extension) {
+  const stem = src.split("/").pop().replace(/\.jpg$/i, "");
+  return widths.map((width) => `/assets/img/optimized/${stem}-${width}.${extension} ${width}w`).join(", ");
+}
+
+function responsiveImage({ src, widths, sizes, alt = "", width, height, className = "", loading = "lazy", decoding = "async", fetchPriority = "" }) {
+  const classAttr = className ? ` class="${className}"` : "";
+  const loadingAttr = loading ? ` loading="${loading}"` : "";
+  const fetchPriorityAttr = fetchPriority ? ` fetchpriority="${fetchPriority}"` : "";
+  return `<picture class="responsive-picture">
+    <source type="image/avif" srcset="${responsiveSrcset(src, widths, "avif")}" sizes="${sizes}" />
+    <source type="image/webp" srcset="${responsiveSrcset(src, widths, "webp")}" sizes="${sizes}" />
+    <img${classAttr} src="${src}" alt="${alt}" width="${width}" height="${height}" sizes="${sizes}"${loadingAttr} decoding="${decoding}"${fetchPriorityAttr} />
+  </picture>`;
+}
 const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const REDUCE = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const FINE = matchMedia("(hover: hover) and (pointer: fine)").matches;
@@ -93,7 +109,7 @@ function tcgHTML(card) {
   return `<article class="tcg" data-tilt data-rarity="${card.rarity}">
       <div class="tcg-face">
         <span class="tcg-set">TSC · ${card.no}</span>
-        <div class="tcg-art"><img src="${card.art}" alt="" width="400" height="400" decoding="async"></div>
+        <div class="tcg-art">${responsiveImage({ src: card.art, widths: [240, 400, 640], sizes: "(min-width: 960px) 240px, (min-width: 640px) 45vw, 50vw", width: 400, height: 400, loading: "lazy" })}</div>
         <div class="tcg-plate"><h4>${card.name}</h4><span>${card.rarity}</span></div>
         <p class="tcg-flavor">${card.note}</p>
         <span class="tcg-foil" aria-hidden="true"></span>
@@ -144,7 +160,7 @@ function shot(i, extra = "") {
   const p = PHOTOS[i];
   const cls = ["shot", extra, p.wide ? "shot--wide" : "", p.top ? "shot--top" : ""].filter(Boolean).join(" ");
   return `<button class="${cls}" type="button" data-photo="${i}">
-    <img src="${p.src}" alt="${p.alt}" width="${p.w}" height="${p.h}" loading="lazy" />
+    ${responsiveImage({ src: p.src, widths: p.widths, sizes: "(min-width: 1200px) 600px, (min-width: 768px) 50vw, 100vw", alt: p.alt, width: p.w, height: p.h })}
     <span class="gleam" aria-hidden="true"></span>
     <span>${p.caption}</span>
   </button>`;
@@ -185,6 +201,8 @@ function initNav() {
 
 function initLightbox() {
   const dialog = $("#lightbox");
+  const avif = $("#lightboxAvif");
+  const webp = $("#lightboxWebp");
   const img = $("#lightboxImg");
   const cap = $("#lightboxCap");
   const count = $("#lightboxCount");
@@ -195,13 +213,16 @@ function initLightbox() {
 
   if (strip) {
     strip.innerHTML = PHOTOS.map(
-      (p, i) => `<button type="button" data-jump="${i}" aria-label="${p.caption}"><img src="${p.src}" alt=""></button>`,
+      (p, i) => `<button type="button" data-jump="${i}" aria-label="${p.caption}"><img src="/assets/img/optimized/${p.src.split("/").pop().replace(/\.jpg$/i, "")}-${p.widths[0]}.webp" alt="" width="56" height="72" loading="lazy" decoding="async"></button>`,
     ).join("");
   }
 
   const show = (i) => {
     index = (i + PHOTOS.length) % PHOTOS.length;
     const p = PHOTOS[index];
+    avif.srcset = responsiveSrcset(p.src, p.widths, "avif");
+    webp.srcset = responsiveSrcset(p.src, p.widths, "webp");
+    img.sizes = "100vw";
     img.src = p.src;
     img.alt = p.alt;
     cap.textContent = p.caption;
