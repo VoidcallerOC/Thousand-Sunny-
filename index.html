@@ -3,7 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script>document.documentElement.classList.add("js");</script>
+  <script>
+    document.documentElement.classList.add("js");
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    const navigationEntry = performance.getEntriesByType("navigation")[0];
+    const isReload = navigationEntry?.type === "reload" || performance.navigation?.type === 1;
+    if (isReload && !location.hash) {
+      window.addEventListener("load", () => requestAnimationFrame(() => window.scrollTo(0, 0)), { once: true });
+    }
+  </script>
   <title>Thousand Sunny Cards & Collectibles — West Hartford, CT</title>
   <meta name="description" content="Thousand Sunny Cards & Collectibles — a vibrant anime and trading card hobby shop in West Hartford, CT. Buy, Sell, Trade, Collect. Pokémon, One Piece TCG, Magic, Yu-Gi-Oh, figures, Funko Pop!, manga and Japanese snacks. 75 Park Rd, open Mon–Fri 11–8." />
   <meta name="theme-color" content="#0B0910" />
