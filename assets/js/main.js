@@ -53,6 +53,7 @@ function responsiveImage({ src, widths, sizes, alt = "", width, height, classNam
 const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const REDUCE = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const FINE = matchMedia("(hover: hover) and (pointer: fine)").matches;
+const HERO_SCROLL_FX = FINE && matchMedia("(min-width: 768px)").matches;
 
 function easternNow() {
   const parts = new Intl.DateTimeFormat("en-US", {
@@ -305,7 +306,7 @@ function initScrollFx() {
     const max = document.documentElement.scrollHeight - innerHeight;
     const p = max > 0 ? Math.min(1, scrollY / max) : 0;
     if (sprog) sprog.style.setProperty("--p", `${(p * 100).toFixed(2)}%`);
-    if (REDUCE) return;
+    if (REDUCE || !HERO_SCROLL_FX) return;
     const heroP = Math.min(1, scrollY / (innerHeight * 0.72));
     if (photo) photo.style.setProperty("--hero-y", `${(heroP * 70).toFixed(1)}px`);
     if (word) word.style.setProperty("--rubber", `${(-0.04 + heroP * 0.07).toFixed(3)}em`);
