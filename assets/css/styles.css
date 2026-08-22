@@ -117,28 +117,30 @@ ul { list-style: none; padding: 0; }
 .nav {
   position: fixed; inset: 0 0 auto 0; z-index: 50;
   display: flex; align-items: center; justify-content: space-between; gap: 12px;
-  padding: 8px var(--gutter);
-  background: rgb(11 9 16 / 0.62);
-  backdrop-filter: saturate(1.3) blur(16px);
-  -webkit-backdrop-filter: saturate(1.3) blur(16px);
-  border-bottom: 1px solid rgb(246 241 230 / 0.08);
-  transition: background .2s ease, border-color .2s ease, padding .2s ease;
+  padding: 14px var(--gutter);
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background .2s ease, border-color .2s ease, padding .2s ease, backdrop-filter .2s ease;
 }
 .nav.scrolled {
-  background: rgb(11 9 16 / 0.9);
+  background: rgb(11 9 16 / 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom-color: var(--line);
+  padding-block: 10px;
 }
 .brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
 .brand img {
-  width: 32px; height: 32px; object-fit: contain; flex: none;
-  border-radius: 50%;
-  box-shadow: 0 0 0 1px rgb(245 179 1 / 0.28);
+  width: 36px; height: 36px; object-fit: contain; flex: none;
 }
 .brand-name {
   display: block; font-family: var(--ff-display); font-weight: 700;
-  font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; line-height: 1;
+  font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; line-height: 1;
 }
-.brand-tag { display: none; }
+.brand-tag {
+  display: none; margin-top: 4px; font-size: 10px;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--faint);
+}
 .nav-links { display: none; align-items: center; gap: 28px; }
 .nav-links a {
   font-family: var(--ff-display); font-size: 0.75rem; font-weight: 600;
@@ -384,26 +386,10 @@ ul { list-style: none; padding: 0; }
     transform: translate3d(0, var(--hero-y, 0px), 0);
     transform-origin: 50% 20%;
   }
-  .brand-tag {
-    display: block; margin-top: 4px; font-size: 10px;
-    letter-spacing: 0.22em; text-transform: uppercase; color: var(--faint);
-  }
+  .brand-tag { display: block; }
   .brand img { width: 40px; height: 40px; }
-  .brand-name { font-size: 0.9rem; letter-spacing: 0.04em; }
-  .nav {
-    padding: 16px var(--gutter);
-    background: transparent;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    border-bottom-color: transparent;
-  }
-  .nav.scrolled {
-    background: rgb(11 9 16 / 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom-color: var(--line);
-    padding-block: 10px;
-  }
+  .brand-name { font-size: 0.95rem; letter-spacing: 0.04em; }
+  .nav { padding: 22px var(--gutter); }
   .hero-copy { justify-content: center; padding-bottom: 5rem; }
   .hero-shade {
     background:
