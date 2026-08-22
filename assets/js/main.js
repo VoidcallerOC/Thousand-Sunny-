@@ -53,7 +53,9 @@ function responsiveImage({ src, widths, sizes, alt = "", width, height, classNam
 const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const REDUCE = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const FINE = matchMedia("(hover: hover) and (pointer: fine)").matches;
-const HERO_SCROLL_FX = FINE && matchMedia("(min-width: 768px)").matches;
+const DESKTOP_SCROLL_FX = FINE && matchMedia("(min-width: 768px)").matches;
+const HERO_SCROLL_FX = DESKTOP_SCROLL_FX;
+const SCROLL_REVEAL_FX = DESKTOP_SCROLL_FX;
 
 function easternNow() {
   const parts = new Intl.DateTimeFormat("en-US", {
@@ -318,7 +320,7 @@ function initScrollFx() {
 function initReveal() {
   const nodes = $$(".reveal");
   if (!nodes.length) return;
-  if (REDUCE || !("IntersectionObserver" in window)) {
+  if (REDUCE || !SCROLL_REVEAL_FX || !("IntersectionObserver" in window)) {
     nodes.forEach((n) => n.classList.add("is-in"));
     return;
   }
