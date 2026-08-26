@@ -48,6 +48,24 @@ assets/img/pulls/figures.jpg|240,400,640
 assets/img/pulls/funko.jpg|240,400,640
 assets/img/pulls/manga.jpg|240,400,640
 assets/img/pulls/snacks.jpg|240,400,640
+assets/img/collectibles/card-2213.jpg|320,640,960
+assets/img/collectibles/card-2214.jpg|320,640,960
+assets/img/collectibles/card-2215.jpg|320,640,960
+assets/img/collectibles/card-2216.jpg|320,640,960
+assets/img/collectibles/card-2217.jpg|320,640,960
+assets/img/collectibles/card-2218.jpg|320,640,960
+assets/img/collectibles/card-2219.jpg|320,640,960
+assets/img/collectibles/card-2220.jpg|320,640,960
+assets/img/collectibles/card-2221.jpg|320,640,960
+assets/img/collectibles/card-2222.jpg|320,640,960
+assets/img/collectibles/card-2223.jpg|320,640,960
+assets/img/collectibles/card-2224.jpg|320,640,960
+assets/img/collectibles/card-2225.jpg|320,640,960
+assets/img/collectibles/card-2226.jpg|320,640,960
+assets/img/collectibles/card-2227.jpg|320,640,960
+assets/img/collectibles/card-2229.jpg|320,640,960
+assets/img/collectibles/card-2230.jpg|320,640,960
+assets/img/collectibles/card-2231.jpg|320,640,960
 IMAGES
 
 printf 'Created %s responsive image files in %s.\n' "$(find "$OUT_DIR" -type f | wc -l)" "$OUT_DIR"

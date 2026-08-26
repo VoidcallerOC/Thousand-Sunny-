@@ -1,12 +1,22 @@
-const GAMES = [
-  { tag: "Trading Card Game", name: "Pokémon", note: "Booster boxes, ETBs, singles & graded slabs.", rarity: "SR", no: "001", art: "/assets/img/pulls/pokemon.jpg" },
-  { tag: "Trading Card Game", name: "One Piece TCG", note: "Sealed, singles & our own Straw Hat crew.", rarity: "SR", no: "002", art: "/assets/img/pulls/onepiece.jpg" },
-  { tag: "Trading Card Game", name: "Magic: The Gathering", note: "Singles, sealed, Commander decks & supplies.", rarity: "R", no: "003", art: "/assets/img/pulls/mtg.jpg" },
-  { tag: "Trading Card Game", name: "Yu-Gi-Oh!", note: "Structure decks, tins, singles & sealed.", rarity: "R", no: "004", art: "/assets/img/pulls/yugioh.jpg" },
-  { tag: "Collectibles", name: "Anime Figures", note: "From shelf pieces to life-size showstoppers.", rarity: "U", no: "005", art: "/assets/img/pulls/figures.jpg" },
-  { tag: "Collectibles", name: "Funko Pop!", note: "Anime, gaming & pop-culture vinyl — plus exclusives.", rarity: "U", no: "006", art: "/assets/img/pulls/funko.jpg" },
-  { tag: "Reads & Games", name: "Manga & Board Games", note: "Latest volumes, box sets & tabletop nights.", rarity: "C", no: "007", art: "/assets/img/pulls/manga.jpg" },
-  { tag: "Snack Bar", name: "Japanese Snacks", note: "Ramune, Pocky, Hi-Chew & the cold-drink fridge.", rarity: "C", no: "008", art: "/assets/img/pulls/snacks.jpg" },
+const CARD_PHOTOS = [
+  { src: "/assets/img/collectibles/card-2229.jpg", alt: "PSA 10 Raikou V card from Crown Zenith", caption: "Raikou V · PSA 10", tag: "Crown Zenith", w: 1145, h: 1810, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2231.jpg", alt: "PSA 10 Suicune V card from Crown Zenith", caption: "Suicune V · PSA 10", tag: "Crown Zenith", w: 1165, h: 1825, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2230.jpg", alt: "PSA 10 Entei V card from Crown Zenith", caption: "Entei V · PSA 10", tag: "Crown Zenith", w: 1165, h: 1865, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2219.jpg", alt: "Beckett graded Monkey D. Luffy trading card", caption: "Monkey D. Luffy · BGS 10", tag: "One Piece", w: 1250, h: 1750, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2218.jpg", alt: "PSA graded Majin Buu Kid trading card", caption: "Majin Buu Kid · PSA 10", tag: "Dragon Ball", w: 1250, h: 1750, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2217.jpg", alt: "PSA graded Gogeta trading card", caption: "Gogeta · PSA 10", tag: "Dragon Ball", w: 1293, h: 1810, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2220.jpg", alt: "Horizontally presented graded Monkey D. Luffy One Piece card", caption: "Monkey D. Luffy · Pristine 10", tag: "One Piece", w: 1715, h: 1205, widths: [320, 640, 960], landscape: true },
+  { src: "/assets/img/collectibles/card-2222.jpg", alt: "Monkey D. Luffy One Piece card", caption: "Monkey D. Luffy", tag: "One Piece", w: 1218, h: 1705, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2223.jpg", alt: "Shanks One Piece card", caption: "Shanks", tag: "One Piece", w: 1229, h: 1720, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2227.jpg", alt: "Nami One Piece card", caption: "Nami", tag: "One Piece", w: 1179, h: 1650, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2224.jpg", alt: "Lugia V Pokémon card", caption: "Lugia V", tag: "Pokémon", w: 1204, h: 1685, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2225.jpg", alt: "Espeon GX Pokémon card", caption: "Espeon GX", tag: "Pokémon", w: 1221, h: 1710, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2226.jpg", alt: "Flareon ex Pokémon card", caption: "Flareon ex", tag: "Pokémon", w: 1182, h: 1655, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2221.jpg", alt: "Reshiram EX Pokémon card", caption: "Reshiram EX", tag: "Pokémon", w: 1214, h: 1700, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2213.jpg", alt: "Zed From the Shadows Riftbound card", caption: "Zed · From the Shadows", tag: "Riftbound", w: 1345, h: 1745, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2214.jpg", alt: "Blind Monk Riftbound card", caption: "Blind Monk", tag: "Riftbound", w: 1325, h: 1560, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2215.jpg", alt: "Deceiver Riftbound card", caption: "Deceiver", tag: "Riftbound", w: 1218, h: 1705, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2216.jpg", alt: "Blind Monk Riftbound card with dragon artwork", caption: "Blind Monk · Alt Art", tag: "Riftbound", w: 1246, h: 1745, widths: [320, 640, 960] },
 ];
 
 const HOURS = [
@@ -108,22 +118,18 @@ function renderBadge(el, status) {
   }`;
 }
 
-function tcgHTML(card) {
-  return `<article class="tcg" data-tilt data-rarity="${card.rarity}">
-      <div class="tcg-face">
-        <span class="tcg-set">TSC · ${card.no}</span>
-        <div class="tcg-art">${responsiveImage({ src: card.art, widths: [240, 400, 640], sizes: "(min-width: 960px) 240px, (min-width: 640px) 45vw, 50vw", width: 400, height: 400, loading: "lazy" })}</div>
-        <div class="tcg-plate"><h4>${card.name}</h4><span>${card.rarity}</span></div>
-        <p class="tcg-flavor">${card.note}</p>
-        <span class="tcg-foil" aria-hidden="true"></span>
-      </div>
-    </article>`;
+function collectibleHTML(card, index) {
+  const className = ["collectible-card", card.landscape ? "collectible-card--landscape" : ""].filter(Boolean).join(" ");
+  return `<button class="${className}" type="button" data-card-photo="${index}" data-tilt aria-label="View ${card.caption}">
+    <span class="collectible-card__media">${responsiveImage({ src: card.src, widths: card.widths, sizes: "(min-width: 960px) 25vw, (min-width: 640px) 50vw, 50vw", alt: card.alt, width: card.w, height: card.h, className: "collectible-card__image", loading: "lazy" })}</span>
+    <span class="collectible-card__meta"><span>${card.tag}</span><strong>${card.caption}</strong></span>
+  </button>`;
 }
 
 function renderGames() {
   const grid = $("#gamesGrid");
   if (!grid) return;
-  grid.innerHTML = GAMES.map((g) => tcgHTML(g)).join("");
+  grid.innerHTML = CARD_PHOTOS.map((card, index) => collectibleHTML(card, index)).join("");
 }
 
 function renderHours(status) {
@@ -211,27 +217,35 @@ function initLightbox() {
   const count = $("#lightboxCount");
   const strip = $("#lightboxStrip");
   if (!dialog) return;
+  let items = PHOTOS;
   let index = 0;
   let startX = 0;
 
-  if (strip) {
-    strip.innerHTML = PHOTOS.map(
+  const renderStrip = () => {
+    if (!strip) return;
+    strip.innerHTML = items.map(
       (p, i) => `<button type="button" data-jump="${i}" aria-label="${p.caption}"><img src="/assets/img/optimized/${p.src.split("/").pop().replace(/\.jpg$/i, "")}-${p.widths[0]}.webp" alt="" width="56" height="72" loading="lazy" decoding="async"></button>`,
     ).join("");
-  }
+  };
 
   const show = (i) => {
-    index = (i + PHOTOS.length) % PHOTOS.length;
-    const p = PHOTOS[index];
+    index = (i + items.length) % items.length;
+    const p = items[index];
     avif.srcset = responsiveSrcset(p.src, p.widths, "avif");
     webp.srcset = responsiveSrcset(p.src, p.widths, "webp");
     img.sizes = "100vw";
     img.src = p.src;
     img.alt = p.alt;
     cap.textContent = p.caption;
-    if (count) count.textContent = `${index + 1} / ${PHOTOS.length}`;
+    if (count) count.textContent = `${index + 1} / ${items.length}`;
     strip?.querySelectorAll("button").forEach((b, n) => b.classList.toggle("is-on", n === index));
     if (!dialog.open) dialog.showModal();
+  };
+
+  const open = (nextItems, nextIndex) => {
+    items = nextItems;
+    renderStrip();
+    show(nextIndex);
   };
 
   document.addEventListener("click", (e) => {
@@ -240,8 +254,8 @@ function initLightbox() {
       show(Number(jump.dataset.jump));
       return;
     }
-    const btn = e.target.closest("[data-photo]");
-    if (btn) show(Number(btn.dataset.photo));
+    const btn = e.target.closest("[data-photo], [data-card-photo]");
+    if (btn) open(btn.hasAttribute("data-card-photo") ? CARD_PHOTOS : PHOTOS, Number(btn.dataset.cardPhoto ?? btn.dataset.photo));
   });
   dialog.querySelector("[data-close]")?.addEventListener("click", () => dialog.close());
   dialog.querySelector("[data-prev]")?.addEventListener("click", () => show(index - 1));

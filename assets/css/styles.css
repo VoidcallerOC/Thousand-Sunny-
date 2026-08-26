@@ -270,6 +270,75 @@ ul { list-style: none; padding: 0; }
   perspective: 900px;
 }
 
+/* — Showcase card-photo gallery — */
+.games:has(.collectible-card) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  perspective: 1000px;
+}
+.collectible-card {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  min-width: 0;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #352a16, #100d0a 42%, #251d12);
+  box-shadow: 0 14px 28px -20px rgb(0 0 0 / 0.9), inset 0 0 0 1px rgb(245 179 1 / 0.45);
+  cursor: zoom-in;
+  color: var(--fg);
+  text-align: left;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transform-style: preserve-3d;
+  transition: transform .18s ease-out, box-shadow .2s ease;
+}
+.collectible-card:hover,
+.collectible-card:focus-visible {
+  box-shadow: 0 20px 36px -20px rgb(0 0 0 / 0.95), inset 0 0 0 1px var(--gold);
+  outline: none;
+}
+.collectible-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.collectible-card__media {
+  display: block;
+  aspect-ratio: 5 / 7;
+  padding: 5px;
+  background: #0c0a0b;
+}
+.collectible-card--landscape { grid-column: span 2; }
+.collectible-card--landscape .collectible-card__media { aspect-ratio: 4 / 3; }
+.collectible-card__media .responsive-picture { height: 100%; }
+.collectible-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 9px;
+  background: #0b0910;
+}
+.collectible-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 9px 9px;
+  border-top: 1px solid rgb(245 179 1 / 0.16);
+}
+.collectible-card__meta span {
+  color: var(--gold);
+  font-family: var(--ff-display);
+  font-size: 0.53rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.collectible-card__meta strong {
+  font-size: 0.72rem;
+  line-height: 1.2;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
 .gallery { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 3rem; }
 .shot {
   position: relative; overflow: hidden; border-radius: 16px; padding: 0; width: 100%;
@@ -391,6 +460,7 @@ ul { list-style: none; padding: 0; }
 
 @media (min-width: 640px) {
   .pillars, .games { grid-template-columns: 1fr 1fr; }
+  .games:has(.collectible-card) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .play-grid { grid-template-columns: 1fr 1fr 1fr; }
   .footer-cols { grid-template-columns: repeat(3, auto); gap: 4rem; }
 }
@@ -431,6 +501,7 @@ ul { list-style: none; padding: 0; }
 @media (min-width: 960px) {
   .pillars { grid-template-columns: repeat(4, 1fr); }
   .games { grid-template-columns: repeat(4, 1fr); }
+  .games:has(.collectible-card) { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   .visit-grid, .case-grid { grid-template-columns: 1fr 1fr; gap: 4rem; }
 }
 @media (min-width: 1024px) {
