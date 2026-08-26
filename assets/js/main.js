@@ -405,21 +405,28 @@ function initCaseReveal() {
   const photo = $("#casePhoto");
   if (!region || !button || !label) return;
 
+  const isMobileCase = () => window.matchMedia("(max-width: 699px)").matches;
   const setOpen = (open) => {
+    const mobile = isMobileCase();
     region.classList.toggle("is-open", open);
     button.setAttribute("aria-expanded", String(open));
-    button.setAttribute("aria-label", open ? "Browse all 18 cards in the display case gallery" : "Open the display case");
-    label.textContent = open ? "Browse all 18 cards" : "Open the case";
+    button.setAttribute("aria-label", mobile || open ? "Browse all 18 cards in the display case gallery" : "Open the display case");
+    label.textContent = mobile || open ? "Browse all 18 cards" : "Open the case";
   };
 
   setOpen(false);
   button.addEventListener("click", () => {
+    if (isMobileCase()) {
+      photo?.click();
+      return;
+    }
     if (!region.classList.contains("is-open")) {
       setOpen(true);
       return;
     }
     photo?.click();
   });
+  window.matchMedia("(max-width: 699px)").addEventListener?.("change", () => setOpen(region.classList.contains("is-open")));
 }
 
 function initOfferFlow() {

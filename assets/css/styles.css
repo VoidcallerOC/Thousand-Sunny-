@@ -25,6 +25,8 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  scroll-behavior: auto !important;
+  overscroll-behavior-y: auto;
 }
 body {
   font-family: var(--ff-body);
@@ -32,6 +34,8 @@ body {
   color: var(--fg);
   line-height: 1.55;
   overflow-x: hidden;
+  overflow-y: auto;
+  touch-action: pan-y;
 }
 img, svg { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
@@ -932,6 +936,25 @@ html.gear5 #sunMark { transform: rotate(360deg); }
 .slab.is-open .case-door--right { transform: perspective(1000px) rotateY(105deg); opacity: .52; }
 .slab.is-open .case-reveal { top: auto; bottom: 12px; min-width: auto; padding: 8px 12px; background: rgb(11 9 16 / 0.86); border-color: rgb(245 179 1 / 0.8); transform: translateX(-50%); }
 .slab.is-open .case-reveal-kicker { display: none; }
+@media (max-width: 699px) {
+  .case-doors { display: none; }
+  .case-reveal,
+  .slab.is-open .case-reveal {
+    position: relative;
+    inset: auto;
+    transform: none;
+    display: grid;
+    width: 100%;
+    min-width: 0;
+    margin-top: 12px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: rgb(11 9 16 / 0.94);
+    border-color: rgb(245 179 1 / 0.86);
+  }
+  .case-reveal-kicker { display: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .case-door, .case-reveal { transition-duration: .001ms !important; }
 }
