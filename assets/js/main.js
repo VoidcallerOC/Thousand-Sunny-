@@ -13,8 +13,8 @@ const CARD_PHOTOS = [
   { src: "/assets/img/collectibles/card-2225-v2.jpg", alt: "Espeon GX Pokémon card", caption: "Espeon GX", tag: "Pokémon", w: 1221, h: 1710, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2226-v2.jpg", alt: "Flareon ex Pokémon card", caption: "Flareon ex", tag: "Pokémon", w: 1182, h: 1655, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2221-v2.jpg", alt: "Reshiram EX Pokémon card", caption: "Reshiram EX", tag: "Pokémon", w: 1214, h: 1700, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2213-v2.jpg", alt: "Zed From the Shadows Riftbound card", caption: "Zed · From the Shadows", tag: "Riftbound", w: 1345, h: 1745, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2214-v2.jpg", alt: "Blind Monk Riftbound card", caption: "Blind Monk", tag: "Riftbound", w: 1325, h: 1560, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2213-v3.jpg", alt: "Zed From the Shadows Riftbound card", caption: "Zed · From the Shadows", tag: "Riftbound", w: 1075, h: 1505, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2214-v3.jpg", alt: "Blind Monk Riftbound card", caption: "Blind Monk", tag: "Riftbound", w: 992, h: 1388, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2215-v2.jpg", alt: "Deceiver Riftbound card", caption: "Deceiver", tag: "Riftbound", w: 1218, h: 1705, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2216-v2.jpg", alt: "Blind Monk Riftbound card with dragon artwork", caption: "Blind Monk · Alt Art", tag: "Riftbound", w: 1246, h: 1745, widths: [320, 640, 960] },
 ];

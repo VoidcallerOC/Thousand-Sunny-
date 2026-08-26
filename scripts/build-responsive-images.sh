@@ -48,8 +48,8 @@ assets/img/pulls/figures.jpg|240,400,640
 assets/img/pulls/funko.jpg|240,400,640
 assets/img/pulls/manga.jpg|240,400,640
 assets/img/pulls/snacks.jpg|240,400,640
-assets/img/collectibles/card-2213-v2.jpg|320,640,960
-assets/img/collectibles/card-2214-v2.jpg|320,640,960
+assets/img/collectibles/card-2213-v3.jpg|320,640,960
+assets/img/collectibles/card-2214-v3.jpg|320,640,960
 assets/img/collectibles/card-2215-v2.jpg|320,640,960
 assets/img/collectibles/card-2216-v2.jpg|320,640,960
 assets/img/collectibles/card-2217-v2.jpg|320,640,960
