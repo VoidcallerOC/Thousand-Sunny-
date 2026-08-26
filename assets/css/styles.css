@@ -491,6 +491,8 @@ ul { list-style: none; padding: 0; }
   .gallery .shot:nth-child(4),
   .gallery .shot:nth-child(5) { grid-column: span 4; }
   .gallery .shot:nth-child(6) { grid-column: span 12; }
+  .gallery .shot:nth-child(7),
+  .gallery .shot:nth-child(8) { grid-column: span 6; }
   .gallery .shot:nth-child(1) img,
   .gallery .shot:nth-child(2) img { aspect-ratio: auto; height: 100%; }
   .dock { display: none; }

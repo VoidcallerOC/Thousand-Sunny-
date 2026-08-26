@@ -40,6 +40,8 @@ const PHOTOS = [
   { src: "/assets/img/event-room.jpg", alt: "Event room with a long table, chairs and figure shelves", caption: "Room for the whole crew", w: 1168, h: 1387, widths: [480, 768, 1168] },
   { src: "/assets/img/play-room.jpg", alt: "Private play room with a Luffy poster, TV and purple accent wall", caption: "Private room + big screen", w: 1168, h: 1389, widths: [480, 768, 1168] },
   { src: "/assets/img/store-case.jpg", alt: "Glass display case of graded Pokémon and One Piece cards and collectibles", caption: "Graded slabs & grails", w: 1200, h: 1600, widths: [480, 768, 1200] },
+  { src: "/assets/img/store-overview-1.jpg", alt: "Wide view across the Thousand Sunny Cards and Collectibles store", caption: "A full look around the shop", w: 1920, h: 1440, widths: [640, 960, 1440], wide: true },
+  { src: "/assets/img/store-overview-2.jpg", alt: "Overview of display cases, figures, cards, and collectibles inside Thousand Sunny", caption: "Cards, figures & collectibles throughout", w: 1920, h: 1440, widths: [640, 960, 1440], wide: true },
 ];
 
 const $ = (s, c = document) => c.querySelector(s);
@@ -178,7 +180,7 @@ function shot(i, extra = "") {
 function renderGalleries() {
   const gallery = $("#gallery");
   const play = $("#playGrid");
-  if (gallery) gallery.innerHTML = [0, 1, 2, 3, 4, 5].map((i) => shot(i)).join("");
+  if (gallery) gallery.innerHTML = [10, 11, 0, 1, 2, 5, 3, 4].map((i) => shot(i)).join("");
   if (play) play.innerHTML = [6, 7, 8].map((i) => shot(i)).join("");
 }
 

@@ -31,6 +31,8 @@ done <<'IMAGES'
 assets/img/gear5-tall.jpg|480,640,830
 assets/img/gear5-wide.jpg|640,960,1120
 assets/img/store-case.jpg|480,768,1200
+assets/img/store-overview-1.jpg|640,960,1440
+assets/img/store-overview-2.jpg|640,960,1440
 assets/img/gallery-figures.jpg|480,768,1150
 assets/img/store-counter.jpg|480,768,1300
 assets/img/store-figures.jpg|480,768,1350
