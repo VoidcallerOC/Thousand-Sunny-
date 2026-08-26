@@ -5,7 +5,7 @@ const CARD_PHOTOS = [
   { src: "/assets/img/collectibles/card-2219.jpg", alt: "Beckett graded Monkey D. Luffy trading card", caption: "Monkey D. Luffy · BGS 10", tag: "One Piece", w: 1250, h: 1750, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2218.jpg", alt: "PSA graded Majin Buu Kid trading card", caption: "Majin Buu Kid · PSA 10", tag: "Dragon Ball", w: 1250, h: 1750, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2217.jpg", alt: "PSA graded Gogeta trading card", caption: "Gogeta · PSA 10", tag: "Dragon Ball", w: 1293, h: 1810, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2220.jpg", alt: "Horizontally presented graded Monkey D. Luffy One Piece card", caption: "Monkey D. Luffy · Pristine 10", tag: "One Piece", w: 1715, h: 1205, widths: [320, 640, 960], landscape: true },
+  { src: "/assets/img/collectibles/card-2220.jpg", alt: "Pristine 10 Monkey D. Luffy One Piece card", caption: "Monkey D. Luffy · Pristine 10", tag: "One Piece", w: 1280, h: 1920, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2222.jpg", alt: "Monkey D. Luffy One Piece card", caption: "Monkey D. Luffy", tag: "One Piece", w: 1218, h: 1705, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2223.jpg", alt: "Shanks One Piece card", caption: "Shanks", tag: "One Piece", w: 1229, h: 1720, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2227.jpg", alt: "Nami One Piece card", caption: "Nami", tag: "One Piece", w: 1179, h: 1650, widths: [320, 640, 960] },
