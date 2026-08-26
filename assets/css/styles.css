@@ -783,6 +783,7 @@ html.gear5 #sunMark { transform: rotate(360deg); }
 .slab-name { margin-top: 10px; }
 .slab .shot { border-radius: 2px; outline: none; }
 .slab .shot span { color: #f6f1e6; }
+.case-vault .shot img { object-fit: contain; background: #0b0910; }
 
 @media (min-width: 768px) {
   .floor {
