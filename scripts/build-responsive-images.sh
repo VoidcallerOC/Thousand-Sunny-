@@ -33,6 +33,11 @@ assets/img/gear5-wide.jpg|640,960,1120
 assets/img/store-case.jpg|480,768,1200
 assets/img/store-overview-1.jpg|640,960,1440
 assets/img/store-overview-2.jpg|640,960,1440
+assets/img/store-gear5-statue-2026.jpg|480,768,1152
+assets/img/store-collectible-displays-2026.jpg|480,768,1152
+assets/img/store-shelf-wall-2026.jpg|480,768,1152
+assets/img/storefront-sign-close-2026.jpg|480,768,1152
+assets/img/storefront-sign-wide-2026.jpg|480,768,1152
 assets/img/gallery-figures.jpg|480,768,1150
 assets/img/store-counter.jpg|480,768,1300
 assets/img/store-figures.jpg|480,768,1350
@@ -58,20 +63,20 @@ assets/img/collectibles/card-2217-c1.jpg|320,640,960
 assets/img/collectibles/card-2218-c1.jpg|320,640,960
 assets/img/collectibles/card-2219-c1.jpg|320,640,960
 assets/img/collectibles/card-2220-c1.jpg|320,640,960
-assets/img/collectibles/card-2221-c1.jpg|320,640,960
+assets/img/collectibles/card-2221-c2.jpg|320,640,960
 assets/img/collectibles/card-2222-c1.jpg|320,640,960
 assets/img/collectibles/card-2223-c1.jpg|320,640,960
-assets/img/collectibles/card-2224-c1.jpg|320,640,960
-assets/img/collectibles/card-2225-c1.jpg|320,640,960
-assets/img/collectibles/card-2226-c1.jpg|320,640,960
+assets/img/collectibles/card-2224-c2.jpg|320,640,960
+assets/img/collectibles/card-2225-c2.jpg|320,640,960
+assets/img/collectibles/card-2226-c2.jpg|320,640,960
 assets/img/collectibles/card-2227-c1.jpg|320,640,960
 assets/img/collectibles/card-2229-c1.jpg|320,640,960
 assets/img/collectibles/card-2230-c1.jpg|320,640,960
 assets/img/collectibles/card-2231-c1.jpg|320,640,960
-assets/img/collectibles/card-2283-c1.jpg|320,640,960
-assets/img/collectibles/card-2284-c1.jpg|320,640,960
+assets/img/collectibles/card-2283-c2.jpg|320,640,960
+assets/img/collectibles/card-2284-c2.jpg|320,640,960
 assets/img/collectibles/card-2285-c1.jpg|320,640,960
-assets/img/collectibles/card-2286-c1.jpg|320,640,960
+assets/img/collectibles/card-2286-c2.jpg|320,640,960
 IMAGES
 
 printf 'Created %s responsive image files in %s.\n' "$(find "$OUT_DIR" -type f | wc -l)" "$OUT_DIR"

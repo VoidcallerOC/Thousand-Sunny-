@@ -9,14 +9,14 @@ const CARD_PHOTOS = [
   { src: "/assets/img/collectibles/card-2222-c1.jpg", alt: "Monkey D. Luffy One Piece card", caption: "Monkey D. Luffy", tag: "One Piece", w: 1137, h: 1705, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2223-c1.jpg", alt: "Shanks One Piece card", caption: "Shanks", tag: "One Piece", w: 1147, h: 1720, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2227-c1.jpg", alt: "Nami One Piece card", caption: "Nami", tag: "One Piece", w: 1100, h: 1650, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2286-c1.jpg", alt: "Pristine 10 Gear Two One Piece card in Beckett slab", caption: "Gear Two · Pristine 10", tag: "One Piece", w: 1200, h: 1800, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2286-c2.jpg", alt: "Pristine 10 Gear Two One Piece card in Beckett slab", caption: "Gear Two · Pristine 10", tag: "One Piece", w: 1200, h: 1800, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2285-c1.jpg", alt: "Pristine 10 Monkey D. Luffy SP One Piece card in Beckett slab", caption: "Monkey D. Luffy SP · Pristine 10", tag: "One Piece", w: 1200, h: 1800, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2283-c1.jpg", alt: "Pristine 10 Portgas D. Ace Manga Art One Piece card in Beckett slab", caption: "Portgas D. Ace · Pristine 10", tag: "One Piece", w: 1200, h: 1800, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2284-c1.jpg", alt: "PSA 10 Boa Hancock Manga Alternate Art One Piece card", caption: "Boa Hancock · PSA 10", tag: "One Piece", w: 1200, h: 1800, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2224-c1.jpg", alt: "Lugia V Pokémon card", caption: "Lugia V", tag: "Pokémon", w: 1123, h: 1684, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2225-c1.jpg", alt: "Espeon GX Pokémon card", caption: "Espeon GX", tag: "Pokémon", w: 1140, h: 1710, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2226-c1.jpg", alt: "Flareon ex Pokémon card", caption: "Flareon ex", tag: "Pokémon", w: 1103, h: 1654, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2221-c1.jpg", alt: "Reshiram EX Pokémon card", caption: "Reshiram EX", tag: "Pokémon", w: 1133, h: 1700, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2283-c2.jpg", alt: "Pristine 10 Portgas D. Ace Manga Art One Piece card in Beckett slab", caption: "Portgas D. Ace · Pristine 10", tag: "One Piece", w: 1200, h: 1800, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2284-c2.jpg", alt: "PSA 10 Boa Hancock Manga Alternate Art One Piece card", caption: "Boa Hancock · PSA 10", tag: "One Piece", w: 1200, h: 1800, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2224-c2.jpg", alt: "Lugia V Pokémon card", caption: "Lugia V", tag: "Pokémon", w: 1123, h: 1685, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2225-c2.jpg", alt: "Espeon GX Pokémon card", caption: "Espeon GX", tag: "Pokémon", w: 1140, h: 1710, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2226-c2.jpg", alt: "Flareon ex Pokémon card", caption: "Flareon ex", tag: "Pokémon", w: 1103, h: 1655, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2221-c2.jpg", alt: "Reshiram EX Pokémon card", caption: "Reshiram EX", tag: "Pokémon", w: 1133, h: 1700, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2213-c1.jpg", alt: "Zed From the Shadows Riftbound card", caption: "Zed · From the Shadows", tag: "Riftbound", w: 1003, h: 1505, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2214-c1.jpg", alt: "Blind Monk Riftbound card", caption: "Blind Monk", tag: "Riftbound", w: 925, h: 1388, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2215-c1.jpg", alt: "Deceiver Riftbound card", caption: "Deceiver", tag: "Riftbound", w: 1137, h: 1705, widths: [320, 640, 960] },
@@ -46,6 +46,11 @@ const PHOTOS = [
   { src: "/assets/img/store-case.jpg", alt: "Glass display case of graded Pokémon and One Piece cards and collectibles", caption: "Graded slabs & grails", w: 1200, h: 1600, widths: [480, 768, 1200] },
   { src: "/assets/img/store-overview-1.jpg", alt: "Wide view across the Thousand Sunny Cards and Collectibles store", caption: "A full look around the shop", w: 1920, h: 1440, widths: [640, 960, 1440], wide: true },
   { src: "/assets/img/store-overview-2.jpg", alt: "Overview of display cases, figures, cards, and collectibles inside Thousand Sunny", caption: "Cards, figures & collectibles throughout", w: 1920, h: 1440, widths: [640, 960, 1440], wide: true },
+  { src: "/assets/img/store-gear5-statue-2026.jpg", alt: "Seated Gear 5 Luffy statue inside Thousand Sunny Cards and Collectibles", caption: "Gear 5 Luffy statue", w: 1440, h: 1920, widths: [480, 768, 1152] },
+  { src: "/assets/img/store-collectible-displays-2026.jpg", alt: "Collectible display shelves and illuminated anime artwork inside Thousand Sunny", caption: "Collectible displays around the shop", w: 1440, h: 1920, widths: [480, 768, 1152] },
+  { src: "/assets/img/store-shelf-wall-2026.jpg", alt: "Purple feature wall with shelves of anime and One Piece collectible boxes", caption: "Collectible lighting & shelf wall", w: 1440, h: 1920, widths: [480, 768, 1152] },
+  { src: "/assets/img/storefront-sign-close-2026.jpg", alt: "Thousand Sunny Cards and Collectibles exterior storefront sign", caption: "The Thousand Sunny sign", w: 1440, h: 1920, widths: [480, 768, 1152] },
+  { src: "/assets/img/storefront-sign-wide-2026.jpg", alt: "Exterior view of the Thousand Sunny Cards and Collectibles sign at 75 Park Road", caption: "Find us on Park Road", w: 1440, h: 1920, widths: [480, 768, 1152] },
 ];
 
 const $ = (s, c = document) => c.querySelector(s);
@@ -184,7 +189,7 @@ function shot(i, extra = "") {
 function renderGalleries() {
   const gallery = $("#gallery");
   const play = $("#playGrid");
-  if (gallery) gallery.innerHTML = [10, 11, 0, 1, 2, 5, 3, 4].map((i) => shot(i)).join("");
+  if (gallery) gallery.innerHTML = [10, 11, 12, 13, 14, 15, 16, 0, 1, 2, 5, 3, 4].map((i) => shot(i)).join("");
   if (play) play.innerHTML = [6, 7, 8].map((i) => shot(i)).join("");
 }
 
