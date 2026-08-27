@@ -59,11 +59,11 @@ assets/img/collectibles/card-2213-c1.jpg|320,640,960
 assets/img/collectibles/card-2214-c1.jpg|320,640,960
 assets/img/collectibles/card-2215-c1.jpg|320,640,960
 assets/img/collectibles/card-2216-c1.jpg|320,640,960
-assets/img/collectibles/card-2217-c1.jpg|320,640,960
+assets/img/collectibles/card-2217-c2.jpg|320,640,960
 assets/img/collectibles/card-2218-c1.jpg|320,640,960
 assets/img/collectibles/card-2219-c1.jpg|320,640,960
 assets/img/collectibles/card-2220-c1.jpg|320,640,960
-assets/img/collectibles/card-2221-c2.jpg|320,640,960
+assets/img/collectibles/card-2221-c3.jpg|320,640,960
 assets/img/collectibles/card-2222-c1.jpg|320,640,960
 assets/img/collectibles/card-2223-c1.jpg|320,640,960
 assets/img/collectibles/card-2224-c2.jpg|320,640,960
@@ -74,7 +74,7 @@ assets/img/collectibles/card-2229-c1.jpg|320,640,960
 assets/img/collectibles/card-2230-c1.jpg|320,640,960
 assets/img/collectibles/card-2231-c1.jpg|320,640,960
 assets/img/collectibles/card-2283-c2.jpg|320,640,960
-assets/img/collectibles/card-2284-c2.jpg|320,640,960
+assets/img/collectibles/card-2284-c3.jpg|320,640,960
 assets/img/collectibles/card-2285-c1.jpg|320,640,960
 assets/img/collectibles/card-2286-c2.jpg|320,640,960
 IMAGES
