@@ -16,7 +16,7 @@ const CARD_PHOTOS = [
   { src: "/assets/img/collectibles/card-2224-c2.jpg", alt: "Lugia V Pokémon card", caption: "Lugia V", tag: "Pokémon", w: 1123, h: 1685, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2225-c2.jpg", alt: "Espeon GX Pokémon card", caption: "Espeon GX", tag: "Pokémon", w: 1140, h: 1710, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2226-c2.jpg", alt: "Flareon ex Pokémon card", caption: "Flareon ex", tag: "Pokémon", w: 1103, h: 1655, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2221-c3.jpg", alt: "Reshiram EX Pokémon card", caption: "Reshiram EX", tag: "Pokémon", w: 1133, h: 1700, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2221-c4.jpg", alt: "Reshiram EX Pokémon card", caption: "Reshiram EX", tag: "Pokémon", w: 1133, h: 1700, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2213-c1.jpg", alt: "Zed From the Shadows Riftbound card", caption: "Zed · From the Shadows", tag: "Riftbound", w: 1003, h: 1505, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2214-c1.jpg", alt: "Blind Monk Riftbound card", caption: "Blind Monk", tag: "Riftbound", w: 925, h: 1388, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2215-c1.jpg", alt: "Deceiver Riftbound card", caption: "Deceiver", tag: "Riftbound", w: 1137, h: 1705, widths: [320, 640, 960] },

@@ -62,7 +62,7 @@ assets/img/collectibles/card-2217-c2.jpg|320,640,960
 assets/img/collectibles/card-2218-c1.jpg|320,640,960
 assets/img/collectibles/card-2219-c1.jpg|320,640,960
 assets/img/collectibles/card-2220-c1.jpg|320,640,960
-assets/img/collectibles/card-2221-c3.jpg|320,640,960
+assets/img/collectibles/card-2221-c4.jpg|320,640,960
 assets/img/collectibles/card-2222-c1.jpg|320,640,960
 assets/img/collectibles/card-2223-c1.jpg|320,640,960
 assets/img/collectibles/card-2224-c2.jpg|320,640,960
