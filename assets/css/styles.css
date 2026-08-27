@@ -938,6 +938,22 @@ html.gear5 #sunMark { transform: rotate(360deg); }
 .slab.is-open .case-reveal { top: auto; bottom: 12px; min-width: auto; padding: 8px 12px; background: rgb(14 9 10 / 0.86); border-color: rgb(229 57 70 / 0.8); transform: translateX(-50%); }
 .slab.is-open .case-reveal-kicker { display: none; }
 @media (max-width: 699px) {
+  .case-vault { padding: 10px; background: #0e090a; }
+  .case-vault .shot {
+    position: relative;
+    display: block;
+    aspect-ratio: 2 / 3;
+    min-height: 0;
+    border: 1px solid rgb(229 57 70 / 0.48);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .case-vault .shot .responsive-picture { position: absolute; inset: 0; display: block; height: 100%; }
+  .case-vault .shot .responsive-picture img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    aspect-ratio: auto; object-fit: contain; background: #0e090a;
+  }
+  .case-vault .shot::after { background: linear-gradient(to top, rgb(14 9 10 / 0.82), transparent 46%); }
   .case-doors { display: none; }
   .case-reveal,
   .slab.is-open .case-reveal {
