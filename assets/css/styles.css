@@ -446,6 +446,7 @@ ul { list-style: none; padding: 0; }
   color: var(--faint); font-size: 0.75rem;
 }
 .footer-bottom .site { font-family: var(--ff-display); font-weight: 700; text-transform: uppercase; color: var(--fg); font-size: 0.9rem; }
+.footer-seo { color: var(--faint); font-size: 0.64rem; letter-spacing: 0.04em; line-height: 1.45; }
 
 .dock {
   position: fixed; inset: auto 0 0 0; z-index: 40;

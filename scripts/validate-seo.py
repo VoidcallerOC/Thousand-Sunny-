@@ -24,9 +24,14 @@ for rule in vercel.get('headers', []):
 if not soup.title or 'West Hartford' not in soup.title.get_text():
     errors.append('Homepage title does not include the local service area.')
 
-h1s = soup.find_all('h1')
-if len(h1s) != 1 or 'Thousand Sunny Cards & Collectibles' not in h1s[0].get_text(' ', strip=True):
-    errors.append('Homepage must have exactly one descriptive business-name H1.')
+hero = soup.select_one('.hero')
+if hero and hero.find('h1'):
+    errors.append('Hero must not contain a prominent SEO H1.')
+
+footer_context = soup.select_one('footer .footer-seo')
+footer_text = footer_context.get_text(' ', strip=True) if footer_context else ''
+if not footer_context or 'Trading card shop' not in footer_text or 'West Hartford, CT' not in footer_text:
+    errors.append('Footer must include compact local business context.')
 
 schema_node = soup.find('script', attrs={'type': 'application/ld+json'})
 if not schema_node:
@@ -56,4 +61,4 @@ if errors:
     sys.exit(1)
 
 print('SEO validation passed.')
-print('No production noindex rules, one descriptive H1, live-domain LocalBusiness data, robots.txt, and sitemap.xml are present.')
+print('No production noindex rules, no prominent hero SEO heading, compact footer context, live-domain LocalBusiness data, robots.txt, and sitemap.xml are present.')
