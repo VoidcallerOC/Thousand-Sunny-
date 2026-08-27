@@ -362,6 +362,12 @@ ul { list-style: none; padding: 0; }
 .shot--top img { object-position: top; }
 .shot--bottom img { object-position: bottom; }
 
+/* Keep every Inside the Sunny photograph in one consistent, even tile format. */
+#gallery .shot,
+#gallery .shot--wide { aspect-ratio: 4 / 5; }
+#gallery .shot img,
+#gallery .shot--wide img { height: 100%; aspect-ratio: auto; object-fit: cover; }
+
 .play-grid { display: grid; gap: 12px; margin-top: 3rem; }
 .play-grid .shot img { aspect-ratio: 3/4; }
 .events-note { margin-top: 1.5rem; color: var(--muted); font-size: 0.9rem; }
@@ -484,20 +490,15 @@ ul { list-style: none; padding: 0; }
     font-size: 0.9rem; letter-spacing: 0.18em;
   }
   .hero-actions { margin-top: 2rem; gap: 12px; }
-  .gallery {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    grid-template-rows: 32rem auto auto;
+  #gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: none;
   }
-  .gallery .shot:nth-child(1) { grid-column: span 7; grid-row: 1; }
-  .gallery .shot:nth-child(2) { grid-column: span 5; grid-row: 1; }
-  .gallery .shot:nth-child(3),
-  .gallery .shot:nth-child(4),
-  .gallery .shot:nth-child(5) { grid-column: span 4; }
-  .gallery .shot:nth-child(6) { grid-column: span 12; }
-  .gallery .shot:nth-child(7),
-  .gallery .shot:nth-child(8) { grid-column: span 6; }
-  .gallery .shot:nth-child(1) img,
-  .gallery .shot:nth-child(2) img { aspect-ratio: auto; height: 100%; }
+  #gallery .shot,
+  #gallery .shot:nth-child(n) {
+    grid-column: auto;
+    grid-row: auto;
+  }
   .dock { display: none; }
   .footer { padding-bottom: 2.5rem; }
   .footer-top { flex-direction: row; justify-content: space-between; }
