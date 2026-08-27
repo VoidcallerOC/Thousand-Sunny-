@@ -35,7 +35,6 @@ const HOURS = [
 
 const PHOTOS = [
   { src: "/assets/img/store-figures.jpg", alt: "Store floor with anime figure shelves, board games and manga against purple walls", caption: "Figures, statues, board games & manga", w: 1350, h: 1800, widths: [480, 768, 1350] },
-  { src: "/assets/img/store-luffy.jpg", alt: "Life-size Luffy Gear 5 statue beside the collectibles shelves", caption: "Our life-size Gear 5 greeter", w: 1300, h: 1733, widths: [480, 768, 1300], top: true },
   { src: "/assets/img/gallery-figures.jpg", alt: "Tall shelves packed with One Piece and anime figures and Funko Pops", caption: "Walls of anime figures & Pops", w: 1150, h: 1331, widths: [480, 768, 1150] },
   { src: "/assets/img/gallery-art.jpg", alt: "Framed anime wall art and boxed figures on wooden shelves", caption: "Framed art & boxed collectibles", w: 1170, h: 1412, widths: [480, 768, 1170] },
   { src: "/assets/img/gallery-merch.jpg", alt: "Anime tumblers, wall scrolls and a One Piece board game on display", caption: "Tumblers, scrolls & merch", w: 1170, h: 1389, widths: [480, 768, 1170] },
@@ -189,8 +188,8 @@ function shot(i, extra = "") {
 function renderGalleries() {
   const gallery = $("#gallery");
   const play = $("#playGrid");
-  if (gallery) gallery.innerHTML = [10, 11, 12, 13, 14, 15, 16, 0, 1, 2, 5, 3, 4].map((i) => shot(i)).join("");
-  if (play) play.innerHTML = [6, 7, 8].map((i) => shot(i)).join("");
+  if (gallery) gallery.innerHTML = [9, 10, 11, 12, 13, 14, 15, 0, 1, 2, 4, 3].map((i) => shot(i)).join("");
+  if (play) play.innerHTML = [5, 6, 7].map((i) => shot(i)).join("");
 }
 
 function initNav() {

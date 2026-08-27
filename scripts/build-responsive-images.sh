@@ -41,7 +41,6 @@ assets/img/storefront-sign-wide-2026.jpg|480,768,1152
 assets/img/gallery-figures.jpg|480,768,1150
 assets/img/store-counter.jpg|480,768,1300
 assets/img/store-figures.jpg|480,768,1350
-assets/img/store-luffy.jpg|480,768,1300
 assets/img/gallery-art.jpg|480,768,1170
 assets/img/gallery-merch.jpg|480,768,1170
 assets/img/play-hall.jpg|480,768,1169
