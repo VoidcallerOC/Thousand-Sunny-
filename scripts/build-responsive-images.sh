@@ -68,6 +68,10 @@ assets/img/collectibles/card-2227-v2.jpg|320,640,960
 assets/img/collectibles/card-2229-v2.jpg|320,640,960
 assets/img/collectibles/card-2230-v2.jpg|320,640,960
 assets/img/collectibles/card-2231-v2.jpg|320,640,960
+assets/img/collectibles/card-2283-v1.jpg|320,640,960
+assets/img/collectibles/card-2284-v1.jpg|320,640,960
+assets/img/collectibles/card-2285-v1.jpg|320,640,960
+assets/img/collectibles/card-2286-v1.jpg|320,640,960
 IMAGES
 
 printf 'Created %s responsive image files in %s.\n' "$(find "$OUT_DIR" -type f | wc -l)" "$OUT_DIR"

@@ -9,6 +9,10 @@ const CARD_PHOTOS = [
   { src: "/assets/img/collectibles/card-2222-v2.jpg", alt: "Monkey D. Luffy One Piece card", caption: "Monkey D. Luffy", tag: "One Piece", w: 1218, h: 1705, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2223-v2.jpg", alt: "Shanks One Piece card", caption: "Shanks", tag: "One Piece", w: 1229, h: 1720, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2227-v2.jpg", alt: "Nami One Piece card", caption: "Nami", tag: "One Piece", w: 1179, h: 1650, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2286-v1.jpg", alt: "Pristine 10 Gear Two One Piece card in Beckett slab", caption: "Gear Two · Pristine 10", tag: "One Piece", w: 1200, h: 1800, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2285-v1.jpg", alt: "Pristine 10 Monkey D. Luffy SP One Piece card in Beckett slab", caption: "Monkey D. Luffy SP · Pristine 10", tag: "One Piece", w: 1200, h: 1800, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2283-v1.jpg", alt: "Pristine 10 Portgas D. Ace Manga Art One Piece card in Beckett slab", caption: "Portgas D. Ace · Pristine 10", tag: "One Piece", w: 1200, h: 1800, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2284-v1.jpg", alt: "PSA 10 Boa Hancock Manga Alternate Art One Piece card", caption: "Boa Hancock · PSA 10", tag: "One Piece", w: 1200, h: 1800, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2224-v2.jpg", alt: "Lugia V Pokémon card", caption: "Lugia V", tag: "Pokémon", w: 1204, h: 1685, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2225-v2.jpg", alt: "Espeon GX Pokémon card", caption: "Espeon GX", tag: "Pokémon", w: 1221, h: 1710, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2226-v2.jpg", alt: "Flareon ex Pokémon card", caption: "Flareon ex", tag: "Pokémon", w: 1182, h: 1655, widths: [320, 640, 960] },
@@ -410,8 +414,8 @@ function initCaseReveal() {
     const mobile = isMobileCase();
     region.classList.toggle("is-open", open);
     button.setAttribute("aria-expanded", String(open));
-    button.setAttribute("aria-label", mobile || open ? "Browse all 18 cards in the display case gallery" : "Open the display case");
-    label.textContent = mobile || open ? "Browse all 18 cards" : "Open the case";
+    button.setAttribute("aria-label", mobile || open ? "Browse all 22 cards in the display case gallery" : "Open the display case");
+    label.textContent = mobile || open ? "Browse all 22 cards" : "Open the case";
   };
 
   setOpen(false);
