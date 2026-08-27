@@ -3,11 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Spec build: keep out of search until the engagement is signed. Remove this line to go live. -->
-  <meta name="robots" content="noindex, nofollow" />
   <script>document.documentElement.classList.add("js");</script>
-  <title>Thousand Sunny Cards & Collectibles — West Hartford, CT</title>
-  <meta name="description" content="Thousand Sunny Cards & Collectibles — a vibrant anime and trading card hobby shop in West Hartford, CT. Buy, Sell, Trade, Collect. Pokémon, One Piece TCG, Magic, Yu-Gi-Oh, figures, Funko Pop!, manga and Japanese snacks. 75 Park Rd, open Mon–Fri 11–8." />
+  <title>Trading Card Shop in West Hartford, CT | Thousand Sunny Cards</title>
+  <meta name="description" content="Buy, sell and trade Pokémon, One Piece, Magic and Yu-Gi-Oh cards in West Hartford, CT. Shop graded slabs, anime figures, manga and more at Thousand Sunny." />
   <meta name="theme-color" content="#3A1217" />
   <link rel="icon" type="image/png" sizes="64x64" href="/assets/img/favicon-sunny-ship-v1.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon-sunny-ship-v1.png" />
@@ -41,11 +39,15 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Store",
+    "@type": ["Store", "HobbyShop"],
+    "@id": "https://www.thousandsunnytcg.com/#store",
     "name": "Thousand Sunny Cards & Collectibles",
-    "description": "A vibrant anime and trading card hobby shop in West Hartford, CT. Buy, sell, trade and collect — Pokémon, One Piece TCG, Magic: The Gathering, Yu-Gi-Oh, graded singles, Funko Pop!, manga and Japanese snacks.",
-    "url": "https://thousand-sunny-cards.vercel.app/",
-    "image": "https://thousand-sunny-cards.vercel.app/assets/img/og.jpg",
+    "description": "A trading card and anime collectibles shop in West Hartford, CT. Buy, sell, trade and collect Pokémon, One Piece TCG, Magic: The Gathering, Yu-Gi-Oh, graded singles, Funko Pop!, manga and Japanese snacks.",
+    "url": "https://www.thousandsunnytcg.com/",
+    "image": [
+      "https://www.thousandsunnytcg.com/assets/img/og-storefront-red-v1.jpg",
+      "https://www.thousandsunnytcg.com/assets/img/storefront-sign-wide-2026.jpg"
+    ],
     "priceRange": "$$",
     "telephone": "+1-757-358-7643",
     "address": {
@@ -67,9 +69,9 @@
       "name": "West Hartford"
     },
     "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "11:00", "closes": "20:00" }
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "11:00", "closes": "20:00" }
     ],
-    "sameAs": ["https://www.instagram.com/tscc_ct/", "https://www.facebook.com/share/1KuoCicfwX/"]
+    "sameAs": ["https://www.instagram.com/tscc_ct/"]
   }
   </script>
 </head>
@@ -138,10 +140,11 @@
       <div class="hero-shade"></div>
       <div class="wrap hero-copy">
         <span class="badge" data-open-badge></span>
+        <h1 class="sr-only">Thousand Sunny Cards & Collectibles — Trading Card Shop in West Hartford, CT</h1>
         <p class="hero-kicker">Thousand</p>
-        <h1 class="wordmark" id="wordmark">S<span class="gold">u</span>nny</h1>
+        <div class="wordmark" id="wordmark" aria-hidden="true">S<span class="gold">u</span>nny</div>
         <p class="hero-sub">Cards & Collectibles</p>
-        <p class="hero-lead">West Hartford's crew for Pokémon, One Piece, figures and grails. Buy, sell, trade, collect — then pull up a chair.</p>
+        <p class="hero-lead">Buy, sell and trade Pokémon, One Piece TCG, Magic, Yu-Gi-Oh, graded cards and anime collectibles in West Hartford.</p>
         <p class="bst">
           <span>Buy</span><span class="dot">·</span>
           <span>Sell</span><span class="dot">·</span>
