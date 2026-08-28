@@ -1,10 +1,28 @@
 {
   "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "thousandsunnytcg.com" }],
+      "destination": "https://www.thousandsunnytcg.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "thousand-sunny-cards.vercel.app" }],
+      "destination": "https://www.thousandsunnytcg.com/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/",
       "headers": [
-        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+        { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
       ]
     },
     {

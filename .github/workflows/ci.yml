@@ -9,12 +9,18 @@ on:
       - main
 
 jobs:
-  build:
+  check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Lint
-        run: |
-          npm install
-          npm run lint
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install SEO checker
+        run: pip install beautifulsoup4
+      - name: Validate SEO
+        run: python3 scripts/validate-seo.py
+      - name: Guard raw image fallbacks
+        run: python3 scripts/check-assets.py

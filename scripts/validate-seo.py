@@ -6,7 +6,7 @@ import xml.etree.ElementTree as ET
 
 root = Path(__file__).resolve().parents[1]
 html = (root / 'index.html').read_text(encoding='utf-8')
-vercel = json.loads((root / 'vercel.json').read_text(encoding='utf-8'))
+vercel = json.loads((root / 'vercel.json').read_text(encoding='utf-8') )
 robots = (root / 'robots.txt').read_text(encoding='utf-8')
 sitemap = (root / 'sitemap.xml').read_text(encoding='utf-8')
 soup = BeautifulSoup(html, 'html.parser')
@@ -25,8 +25,12 @@ if not soup.title or 'West Hartford' not in soup.title.get_text():
     errors.append('Homepage title does not include the local service area.')
 
 hero = soup.select_one('.hero')
-if hero and hero.find('h1'):
+if hero and hero.find('h1') and 'sr-only' not in (hero.find('h1').get('class') or []):
     errors.append('Hero must not contain a prominent SEO H1.')
+
+h1 = soup.find('h1')
+if not h1 or 'West Hartford' not in h1.get_text():
+    errors.append('Homepage is missing a local-business H1.')
 
 footer_context = soup.select_one('footer .footer-seo')
 footer_text = footer_context.get_text(' ', strip=True) if footer_context else ''
