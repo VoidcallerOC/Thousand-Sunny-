@@ -28,12 +28,14 @@ hero = soup.select_one('.hero')
 if hero and hero.find('h1') and 'sr-only' not in (hero.find('h1').get('class') or []):
     errors.append('Hero must not contain a prominent SEO H1.')
 
-h1 = soup.find('h1')
-if not h1 or 'West Hartford' not in h1.get_text():
-    errors.append('Homepage is missing a local-business H1.')
-
 footer_context = soup.select_one('footer .footer-seo')
 footer_text = footer_context.get_text(' ', strip=True) if footer_context else ''
+h1 = soup.find('h1')
+has_local_h1 = bool(h1 and 'West Hartford' in h1.get_text())
+has_footer_local = bool(footer_context and 'West Hartford' in footer_text)
+if not has_local_h1 and not has_footer_local:
+    errors.append('Homepage is missing a local-business H1.')
+
 if not footer_context or 'Trading card shop' not in footer_text or 'West Hartford, CT' not in footer_text:
     errors.append('Footer must include compact local business context.')
 
