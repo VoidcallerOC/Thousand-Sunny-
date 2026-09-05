@@ -1,0 +1,28 @@
+name: Live site canary
+
+# Reads the body of the live pages, not just their status code.
+#
+# The 2026-09-05 outage served a 141-byte "restore-pending" stub with HTTP 200
+# for three and a half hours. Any probe watching status codes saw a healthy
+# site the whole time. This one fails when the page is blank.
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: live-site-canary
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+      - name: Probe the live site
+        run: bash scripts/probe-live-site.sh
