@@ -55,8 +55,15 @@ if 'Sitemap: https://www.thousandsunnytcg.com/sitemap.xml' not in robots:
 try:
     sitemap_root = ET.fromstring(sitemap)
     urls = [node.text for node in sitemap_root.findall('{http://www.sitemaps.org/schemas/sitemap/0.9}url/{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
-    if urls != ['https://www.thousandsunnytcg.com/']:
-        errors.append('Sitemap does not contain exactly the live canonical homepage.')
+    homepage = 'https://www.thousandsunnytcg.com/'
+    if homepage not in urls:
+        errors.append('Sitemap is missing the live canonical homepage.')
+    off_domain = [url for url in urls if not url.startswith(homepage)]
+    if off_domain:
+        errors.append(f'Sitemap lists non-canonical URLs: {", ".join(off_domain)}')
+    duplicates = sorted({url for url in urls if urls.count(url) > 1})
+    if duplicates:
+        errors.append(f'Sitemap lists duplicate URLs: {", ".join(duplicates)}')
 except ET.ParseError as exc:
     errors.append(f'Sitemap is not valid XML: {exc}')
 
