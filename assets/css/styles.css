@@ -83,6 +83,7 @@ ul { list-style: none; padding: 0; }
 .wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); }
 .gold { color: var(--gold); }
 .section { padding-block: clamp(5rem, 10vw, 7rem); }
+.section:not(.hero) { content-visibility: auto; contain-intrinsic-size: 900px; }
 .section--tight { padding-top: 0; }
 .section--surface { background: var(--surface); border-block: 1px solid var(--line); }
 .section--border { border-block: 1px solid var(--line); }
@@ -448,7 +449,7 @@ ul { list-style: none; padding: 0; }
 .cta-band .lead { margin: 1.25rem auto 0; }
 .cta-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 2rem; }
 
-.footer { border-top: 1px solid var(--line); background: var(--surface); padding: 3.5rem var(--gutter) 6.5rem; }
+.footer { content-visibility: auto; contain-intrinsic-size: 520px; border-top: 1px solid var(--line); background: var(--surface); padding: 3.5rem var(--gutter) 6.5rem; }
 .footer-top { display: flex; flex-direction: column; gap: 2.5rem; max-width: var(--maxw); margin-inline: auto; }
 .footer-brand p { color: var(--muted); margin-top: 1rem; max-width: 34ch; font-size: 0.9rem; }
 .footer-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
