@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "Figtree";
+  src: url("/assets/fonts/figtree-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Syne";
+  src: url("/assets/fonts/syne-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600 800;
+  font-display: swap;
+}
+
 :root {
   --bg: #0e090a;
   --surface: #181012;
