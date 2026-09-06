@@ -6,10 +6,12 @@ import xml.etree.ElementTree as ET
 
 root = Path(__file__).resolve().parents[1]
 html = (root / 'index.html').read_text(encoding='utf-8')
+optcg_html = (root / 'one-piece-tcg.html').read_text(encoding='utf-8')
 vercel = json.loads((root / 'vercel.json').read_text(encoding='utf-8') )
 robots = (root / 'robots.txt').read_text(encoding='utf-8')
 sitemap = (root / 'sitemap.xml').read_text(encoding='utf-8')
 soup = BeautifulSoup(html, 'html.parser')
+optcg_soup = BeautifulSoup(optcg_html, 'html.parser')
 errors = []
 
 robots_meta = soup.find('meta', attrs={'name': 'robots'})
@@ -51,6 +53,26 @@ else:
 
 if 'Sitemap: https://www.thousandsunnytcg.com/sitemap.xml' not in robots:
     errors.append('robots.txt is missing the live sitemap declaration.')
+
+# Keep the dedicated One Piece TCG landing page indexable and internally coherent.
+optcg_canonical = optcg_soup.find('link', rel='canonical')
+if not optcg_canonical or optcg_canonical.get('href') != 'https://www.thousandsunnytcg.com/one-piece-tcg':
+    errors.append('One Piece TCG page has an incorrect or missing canonical URL.')
+optcg_robots = optcg_soup.find('meta', attrs={'name': 'robots'})
+if not optcg_robots or 'noindex' in (optcg_robots.get('content') or '').lower():
+    errors.append('One Piece TCG page is missing an indexable robots directive.')
+if not optcg_soup.title or 'West Hartford' not in optcg_soup.title.get_text():
+    errors.append('One Piece TCG page title does not include the local service area.')
+if not optcg_soup.find('meta', attrs={'property': 'og:image:alt'}):
+    errors.append('One Piece TCG page is missing social-image alt metadata.')
+optcg_jsonld = []
+for node in optcg_soup.find_all('script', attrs={'type': 'application/ld+json'}):
+    try:
+        optcg_jsonld.append(json.loads(node.get_text()))
+    except json.JSONDecodeError as exc:
+        errors.append(f'One Piece TCG JSON-LD is invalid: {exc}')
+if not any(isinstance(data, dict) and any(item.get('@type') == 'BreadcrumbList' for item in data.get('@graph', []) if isinstance(item, dict)) for data in optcg_jsonld):
+    errors.append('One Piece TCG page is missing BreadcrumbList structured data.')
 
 try:
     sitemap_root = ET.fromstring(sitemap)
