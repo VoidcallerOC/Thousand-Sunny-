@@ -160,16 +160,16 @@ ul { list-style: none; padding: 0; }
   border-bottom-color: var(--line);
   padding-block: 10px;
 }
-.brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
 .brand img {
-  width: 44px; height: 44px; object-fit: contain; flex: none;
+  width: 56px; height: 56px; object-fit: contain; flex: none;
 }
 .brand-name {
   display: block; font-family: var(--ff-display); font-weight: 700;
-  font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; line-height: 1;
+  font-size: 0.98rem; text-transform: uppercase; letter-spacing: 0.06em; line-height: 1;
 }
 .brand-tag {
-  display: none; margin-top: 4px; font-size: 10px;
+  display: block; margin-top: 5px; font-size: 10px;
   letter-spacing: 0.22em; text-transform: uppercase; color: var(--faint);
 }
 .nav-links { display: none; align-items: center; gap: 28px; }
@@ -243,6 +243,8 @@ ul { list-style: none; padding: 0; }
 /* Landscape screens get the wide crop; keep its focal point centred. */
 @media (min-width: 768px) and (min-aspect-ratio: 1 / 1) {
   .hero-photo { object-position: 50% 50%; }
+  .brand img { width: 64px; height: 64px; }
+  .brand-name { font-size: 1.05rem; }
   .hero-copy { justify-content: center; padding-bottom: 5rem; }
   .hero-shade {
     background:

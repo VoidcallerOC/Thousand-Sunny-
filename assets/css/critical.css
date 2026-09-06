@@ -45,10 +45,10 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
 .wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: var(--gutter); }
 .gold { color: var(--gold); }
 .nav { position: fixed; inset: 0 0 auto 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px var(--gutter); background: transparent; border-bottom: 1px solid transparent; }
-.brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
-.brand img { width: 44px; height: 44px; object-fit: contain; flex: none; }
-.brand-name { display: block; font-family: var(--ff-display); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.06em; line-height: 1; }
-.brand-tag { display: none; }
+.brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.brand img { width: 56px; height: 56px; object-fit: contain; flex: none; }
+.brand-name { display: block; font-family: var(--ff-display); font-weight: 700; font-size: 0.98rem; text-transform: uppercase; letter-spacing: 0.06em; line-height: 1; }
+.brand-tag { display: block; margin-top: 5px; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--faint); }
 .nav-links, .nav-cta { display: none; }
 .nav-toggle { width: 44px; height: 44px; border-radius: 999px; display: grid; place-items: center; background: transparent; flex: none; margin-right: -6px; }
 .nav-toggle span { display: block; width: 18px; height: 1.5px; background: var(--fg); position: relative; border-radius: 99px; }
