@@ -57,13 +57,15 @@ blank page for three and a half hours while every status-code monitor reported
 it healthy — a stub still answers HTTP 200. CI went red on both commits and
 that did not stop the deploy.
 
-Three guards now stand between a gutted page and the live site:
+The deployment contract and four guards now stand between a gutted page and the live site:
 
 | Guard | Runs | Effect |
 | --- | --- | --- |
+| `scripts/check-deploy-contract.sh` | CI and Vercel, every deploy | Combines page, route, sitemap, and Vercel wiring checks |
 | `scripts/check-page-integrity.sh` | CI, every branch and PR | Marks the commit red |
 | `scripts/vercel-ignore-build.sh` | Vercel, every deploy | **Refuses the deploy**; the last good one keeps serving |
 | `scripts/probe-live-site.sh` | Canary, every 15 min | Fails the workflow when the live body is wrong |
+| `scripts/probe-production-endpoints.sh` | Canary, every 15 min | Checks robots, sitemap, verification, and JavaScript endpoints |
 
 All three share one contract in `scripts/lib-page-checks.sh`: a minimum byte
 size, a list of must-be-present markers (the address, the phone number, the
@@ -80,9 +82,15 @@ the guard. To check a page before pushing:
 
 ```bash
 bash scripts/check-page-integrity.sh      # the files in this repo
+bash scripts/check-deploy-contract.sh     # the complete pre-deploy contract
 bash scripts/probe-live-site.sh           # what the live site is serving
+bash scripts/probe-production-endpoints.sh # discovery and tracking endpoints
 SITE_URL=http://localhost:8000 bash scripts/probe-live-site.sh   # a local server
 ```
+
+The scheduled canary also opens or updates a single `production-canary` GitHub
+issue when a check fails, so a production outage is visible without creating a
+new duplicate issue every fifteen minutes.
 
 ## Deploy
 

@@ -16,6 +16,8 @@ jobs:
         uses: actions/checkout@v5
       - name: Guard page integrity
         run: bash scripts/check-page-integrity.sh
+      - name: Validate deployment contract
+        run: bash scripts/check-deploy-contract.sh
       - name: Set up Python
         uses: actions/setup-python@v6
         with:

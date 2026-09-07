@@ -21,15 +21,15 @@ set -uo pipefail
 repo_root=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
 cd "$repo_root"
 
-if bash scripts/check-page-integrity.sh; then
+if bash scripts/check-deploy-contract.sh; then
   echo
-  echo "Pages intact — continuing with the build."
+  echo "Deployment contract passed — continuing with the build."
   exit 1
 fi
 
 echo
 echo "=============================================================="
-echo " DEPLOY REFUSED: page integrity check failed for this commit."
+echo " DEPLOY REFUSED: deployment contract failed for this commit."
 echo " The previous deployment stays live and keeps serving traffic."
 echo " Fix the page and push again."
 echo "=============================================================="
