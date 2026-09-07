@@ -55,6 +55,18 @@ const PHOTOS = [
 const $ = (s, c = document) => c.querySelector(s);
 const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 
+function track(name, data = {}) {
+  if (typeof window.va === "function") window.va("event", { name, data });
+}
+
+function initAnalytics() {
+  $$('a[href^="tel:"]').forEach((link) => link.addEventListener("click", () => track("call_click")));
+  $$('a[href*="maps.google.com"]').forEach((link) => link.addEventListener("click", () => track("directions_click")));
+  $$('a[href*="instagram.com"], a[href*="facebook.com"]').forEach((link) => link.addEventListener("click", () => track("social_click")));
+  $$('a[href^="sms:"]').forEach((link) => link.addEventListener("click", () => track("text_click")));
+  $("#offerForm")?.addEventListener("submit", () => track("offer_started"));
+}
+
 function responsiveSrcset(src, widths, extension) {
   const stem = src.split("/").pop().replace(/\.jpg$/i, "");
   return widths.map((width) => `/assets/img/optimized/${stem}-${width}.${extension} ${width}w`).join(", ");
@@ -488,6 +500,7 @@ function tickStatus() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  initAnalytics();
   renderGames();
   renderGalleries();
   tickStatus();
