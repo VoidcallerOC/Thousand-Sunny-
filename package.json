@@ -1,0 +1,24 @@
+{
+  "name": "thousand-sunny-cards",
+  "version": "1.0.0",
+  "description": "Official site for **Thousand Sunny Cards & Collectibles** — a trading card, anime and collectibles shop in **West Hartford, CT**. Pokémon · One Piece TCG · Magic · Yu-Gi-Oh · anime figures & statues · Funko Pop! · graded slabs · manga · Japanese snacks. _Buy · Sell · Trade · Collect._",
+  "private": true,
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VoidcallerOC/Thousand-Sunny-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VoidcallerOC/Thousand-Sunny-/issues"
+  },
+  "homepage": "https://github.com/VoidcallerOC/Thousand-Sunny-#readme",
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  }
+}
