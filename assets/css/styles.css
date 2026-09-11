@@ -919,7 +919,7 @@ html.gear5 #sunMark { transform: rotate(360deg); }
 .show-status { margin: 1.5rem 0; padding: 16px; border-left: 2px solid var(--gold); background: rgb(229 57 70 / 0.06); }
 .show-status strong { display: block; margin-top: 6px; font-family: var(--ff-display); font-size: 1.15rem; text-transform: uppercase; }
 .show-status p { margin-top: 5px; color: var(--muted); font-size: 0.9rem; }
-
+.show-grid .btn + .btn { margin-left: 8px; }
 .story-sec { background: linear-gradient(180deg, var(--surface), var(--bg)); }
 .story-copy { max-width: 50rem; }
 .story-copy > p:not(.story-lead) { margin-top: 1rem; color: var(--muted); }

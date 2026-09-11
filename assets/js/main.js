@@ -63,6 +63,7 @@ function initAnalytics() {
   $$('a[href^="tel:"]').forEach((link) => link.addEventListener("click", () => track("call_click")));
   $$('a[href*="maps.google.com"]').forEach((link) => link.addEventListener("click", () => track("directions_click")));
   $$('a[href*="instagram.com"], a[href*="facebook.com"]').forEach((link) => link.addEventListener("click", () => track("social_click")));
+  $$('a[href*="ontreasure.com/u/tscc"]').forEach((link) => link.addEventListener("click", () => track("treasure_link_click")));
   $$('a[href^="sms:"]').forEach((link) => link.addEventListener("click", () => track("text_click")));
   $("#offerForm")?.addEventListener("submit", () => track("offer_started"));
 }
