@@ -887,10 +887,12 @@ html.gear5 #sunMark { transform: rotate(360deg); }
 .event-empty h3 { font-family: var(--ff-display); font-size: 1.35rem; text-transform: uppercase; letter-spacing: -0.02em; }
 .event-empty p { margin-top: 6px; max-width: 60ch; color: var(--muted); }
 .event-grid { display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 12px; padding: 14px; }
-.event-card { position: relative; display: flex; flex-direction: column; min-height: 238px; padding: 20px; border: 1px solid var(--line-strong); border-radius: 12px; background: linear-gradient(145deg, rgb(229 57 70 / 0.12), rgb(14 9 10 / 0.42)); transition: border-color .2s ease, transform .2s ease, background .2s ease; }
+.event-card { position: relative; display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--line-strong); border-radius: 12px; background: linear-gradient(145deg, rgb(229 57 70 / 0.12), rgb(14 9 10 / 0.42)); transition: border-color .2s ease, transform .2s ease, background .2s ease; }
 .event-card:hover { border-color: var(--gold); background: linear-gradient(145deg, rgb(229 57 70 / 0.2), rgb(14 9 10 / 0.56)); transform: translateY(-2px); }
+.event-card-poster { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; background: var(--surface); }
+.event-card-body { display: flex; flex-direction: column; min-height: 206px; padding: 18px; }
 .event-card-number { color: var(--gold); font-family: var(--ff-display); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; }
-.event-card-date { margin-top: 1.5rem; color: var(--gold-2); font-family: var(--ff-display); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+.event-card-date { margin-top: 1rem; color: var(--gold-2); font-family: var(--ff-display); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
 .event-card h3 { margin-top: 8px; font-family: var(--ff-display); font-size: 1.12rem; line-height: 1.1; text-transform: uppercase; letter-spacing: -0.02em; }
 .event-card-location { margin-top: 8px; color: var(--muted); font-size: 0.9rem; }
 .event-card-link { margin-top: auto; padding-top: 1.5rem; color: var(--fg); font-family: var(--ff-display); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
@@ -953,7 +955,6 @@ html.gear5 #sunMark { transform: rotate(360deg); }
   .section-head--split { grid-template-columns: 1fr 1fr; align-items: end; }
   .event-empty { grid-template-columns: auto 1fr auto; padding: 28px; }
   .event-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .event-card { aspect-ratio: 1; }
   .interest-row p { width: auto; margin-right: 8px; }
   .trade-grid, .story-grid, .faq-grid { grid-template-columns: 1fr 1fr; align-items: start; }
   .show-grid { grid-template-columns: minmax(15rem, .7fr) 1fr; align-items: center; }
