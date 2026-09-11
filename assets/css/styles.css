@@ -886,17 +886,17 @@ html.gear5 #sunMark { transform: rotate(360deg); }
 .event-no { font-family: var(--ff-display); font-size: 2.25rem; font-weight: 800; line-height: 1; color: rgb(229 57 70 / 0.8); }
 .event-empty h3 { font-family: var(--ff-display); font-size: 1.35rem; text-transform: uppercase; letter-spacing: -0.02em; }
 .event-empty p { margin-top: 6px; max-width: 60ch; color: var(--muted); }
-.event-grid { display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 12px; padding: 14px; }
-.event-card { position: relative; display: flex; flex-direction: column; overflow: hidden; border: 1px solid var(--line-strong); border-radius: 12px; background: linear-gradient(145deg, rgb(229 57 70 / 0.12), rgb(14 9 10 / 0.42)); transition: border-color .2s ease, transform .2s ease, background .2s ease; }
-.event-card:hover { border-color: var(--gold); background: linear-gradient(145deg, rgb(229 57 70 / 0.2), rgb(14 9 10 / 0.56)); transform: translateY(-2px); }
-.event-card-poster { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; background: var(--surface); }
-.event-card-body { display: flex; flex-direction: column; min-height: 206px; padding: 18px; }
-.event-card-number { color: var(--gold); font-family: var(--ff-display); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; }
-.event-card-date { margin-top: 1rem; color: var(--gold-2); font-family: var(--ff-display); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
-.event-card h3 { margin-top: 8px; font-family: var(--ff-display); font-size: 1.12rem; line-height: 1.1; text-transform: uppercase; letter-spacing: -0.02em; }
-.event-card-location { margin-top: 8px; color: var(--muted); font-size: 0.9rem; }
-.event-card-link { margin-top: auto; padding-top: 1.5rem; color: var(--fg); font-family: var(--ff-display); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
-.event-card:hover .event-card-link { color: var(--gold-2); }
+.event-grid { display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 22px; padding: 20px; }
+.event-card { position: relative; display: flex; flex-direction: column; overflow: hidden; border: 1px solid rgb(229 57 70 / 0.3); border-radius: 16px; background: #100c14; box-shadow: 0 18px 34px -26px rgb(0 0 0 / 0.95); transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease; }
+.event-card:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: 0 22px 42px -24px rgb(0 0 0 / 0.98); }
+.event-card-header { display: flex; flex-direction: column; min-height: 158px; padding: 20px 20px 18px; border-bottom: 3px solid var(--gold); background: linear-gradient(145deg, #2b1525, #17101b 72%); }
+.event-card-number { color: var(--gold-2); font-family: var(--ff-display); font-size: 0.68rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; }
+.event-card-date { margin-top: 1rem; color: #fffaf7; font-family: var(--ff-display); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.event-card h3 { margin-top: 7px; font-family: var(--ff-display); font-size: 1.15rem; line-height: 1.1; text-transform: uppercase; letter-spacing: -0.02em; }
+.event-card-location { margin-top: auto; padding-top: 9px; color: var(--muted); font-size: 0.88rem; }
+.event-card-poster { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; background: #050407; }
+.event-card-footer { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 18px; border-top: 1px solid var(--line-strong); color: var(--gold-2); font-family: var(--ff-display); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+.event-card:hover .event-card-footer { color: #fffaf7; background: rgb(229 57 70 / 0.12); }
 .board-update { color: var(--muted); font-size: 0.8rem; }
 .board-update:hover { color: var(--gold); }
 .interest-row { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-top: 18px; }
