@@ -886,6 +886,10 @@ html.gear5 #sunMark { transform: rotate(360deg); }
 .event-no { font-family: var(--ff-display); font-size: 2.25rem; font-weight: 800; line-height: 1; color: rgb(229 57 70 / 0.8); }
 .event-empty h3 { font-family: var(--ff-display); font-size: 1.35rem; text-transform: uppercase; letter-spacing: -0.02em; }
 .event-empty p { margin-top: 6px; max-width: 60ch; color: var(--muted); }
+.event-embed { overflow: hidden; border: 1px solid var(--line); border-radius: 12px; background: #fff; }
+.event-embed iframe { display: block; width: 100%; height: 680px; border: 0; background: #fff; }
+.board-update { color: var(--muted); font-size: 0.8rem; }
+.board-update:hover { color: var(--gold); }
 .interest-row { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-top: 18px; }
 .interest-row p { width: 100%; color: var(--muted); font-size: 0.9rem; }
 .interest-row button { border: 1px solid var(--line-strong); border-radius: 999px; padding: 8px 12px; color: var(--fg); font-size: 0.8rem; transition: border-color .2s ease, color .2s ease, background .2s ease; }
