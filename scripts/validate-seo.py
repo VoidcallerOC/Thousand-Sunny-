@@ -20,9 +20,9 @@ for label, page_html in [('Homepage', html), ('One Piece TCG page', optcg_html)]
         errors.append(f'{label} still loads the render-blocking Google Fonts stylesheet.')
     if not page_html.count('data-critical-css-version="1"'):
         errors.append(f'{label} is missing inline critical CSS.')
-    if 'rel="preload" href="/assets/css/styles.css?v=33" as="style"' not in page_html:
+    if 'rel="preload" href="/assets/css/styles.css?v=34" as="style"' not in page_html:
         errors.append(f'{label} is missing the asynchronous main stylesheet preload.')
-    if '<noscript><link rel="stylesheet" href="/assets/css/styles.css?v=33" /></noscript>' not in page_html:
+    if '<noscript><link rel="stylesheet" href="/assets/css/styles.css?v=34" /></noscript>' not in page_html:
         errors.append(f'{label} is missing the no-JavaScript stylesheet fallback.')
 for font_file in ('assets/fonts/figtree-latin.woff2', 'assets/fonts/syne-latin.woff2'):
     if not (root / font_file).is_file():
