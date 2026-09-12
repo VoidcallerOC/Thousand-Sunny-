@@ -1024,3 +1024,8 @@ html.gear5 #sunMark { transform: rotate(360deg); }
 @media (prefers-reduced-motion: reduce) {
   .case-door, .case-reveal { transition-duration: .001ms !important; }
 }
+
+.event-card--store .event-card-header { min-height: 215px; }
+.event-card-body { display: grid; gap: 10px; min-height: 150px; align-content: center; padding: 22px; background: radial-gradient(circle at 80% 20%, rgb(229 57 70 / 0.16), transparent 45%), #100c14; }
+.event-card-body p { color: var(--muted); font-size: .9rem; line-height: 1.5; }
+.event-card-icon { color: var(--gold-2); font-family: var(--ff-display); font-size: .72rem; font-weight: 800; letter-spacing: .18em; }
