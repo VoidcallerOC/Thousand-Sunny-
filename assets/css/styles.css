@@ -398,8 +398,27 @@ ul { list-style: none; padding: 0; }
 #gallery .shot img,
 #gallery .shot--wide img { height: 100%; aspect-ratio: auto; object-fit: cover; }
 
-.play-grid { display: grid; gap: 12px; margin-top: 3rem; }
-.play-grid .shot img { aspect-ratio: 3/4; }
+.play-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 3rem;
+  /* renderGames() fills this after parsing; reserve the three-card footprint */
+  min-height: 28rem;
+}
+.play-grid .shot { aspect-ratio: 3 / 4; }
+.play-grid .shot img { aspect-ratio: auto; }
+
+/* renderGalleries() fills this after parsing; reserve the complete gallery footprint */
+.gallery {
+  min-height: 330rem;
+  contain: layout paint;
+}
+
+/* tickStatus() fills these after parsing; keep the Visit layout stable */
+.visit-badge { min-height: 2.25rem; }
+.hours-list { min-height: 18rem; }
+.hours-list:empty::before { content: "Loading hours…"; color: var(--faint); font-size: .85rem; }
+
 .events-note { margin-top: 1.5rem; color: var(--muted); font-size: 0.9rem; }
 .events-note a { color: var(--gold); font-weight: 500; }
 .events-note a:hover { color: var(--gold-2); }
@@ -524,7 +543,9 @@ ul { list-style: none; padding: 0; }
   #gallery {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: none;
+    min-height: 125rem;
   }
+  .play-grid { min-height: 32rem; }
   #gallery .shot,
   #gallery .shot:nth-child(n) {
     grid-column: auto;
@@ -852,6 +873,7 @@ html.gear5 #sunMark { transform: rotate(360deg); }
 
 /* Avoid a percentage-height feedback loop inside mobile gallery picture wrappers. */
 @media (max-width: 767px) {
+  .gallery { min-height: 330rem; }
   .gallery .shot { aspect-ratio: 4 / 5; min-height: 0; }
   .gallery .shot--wide { aspect-ratio: 16 / 10; }
   .play-grid .shot { aspect-ratio: 3 / 4; min-height: 0; }
