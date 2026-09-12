@@ -934,6 +934,9 @@ html.gear5 #sunMark { transform: rotate(360deg); }
 .show-status strong { display: block; margin-top: 6px; font-family: var(--ff-display); font-size: 1.15rem; text-transform: uppercase; }
 .show-status p { margin-top: 5px; color: var(--muted); font-size: 0.9rem; }
 .show-grid .btn + .btn { margin-left: 8px; }
+.show-events { grid-column: 1 / -1; }
+.show-events .section-head { margin-bottom: 1.5rem; }
+.show-events .h-sec { font-size: clamp(2rem, 5vw, 3.25rem); }
 .story-sec { background: linear-gradient(180deg, var(--surface), var(--bg)); }
 .story-copy { max-width: 50rem; }
 .story-copy > p:not(.story-lead) { margin-top: 1rem; color: var(--muted); }
