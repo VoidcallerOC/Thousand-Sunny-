@@ -80,6 +80,10 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
 .brand-name { display: block; font-family: var(--ff-display); font-weight: 700; font-size: 0.98rem; text-transform: uppercase; letter-spacing: 0.06em; line-height: 1; }
 .brand-tag { display: block; margin-top: 5px; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--faint); }
 .nav-links, .nav-cta { display: none; }
+.badge { display: inline-flex; align-items: center; gap: 8px; min-height: 31px; max-width: 100%; border: 1px solid var(--line); background: rgb(14 9 10 / 0.5); border-radius: 999px; padding: 6px 12px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--faint); flex: none; }
+.badge .detail { color: var(--faint); }
+.visit-badge { min-height: 2.25rem; }
 .nav-toggle { width: 44px; height: 44px; border-radius: 999px; display: grid; place-items: center; background: transparent; flex: none; margin-right: -6px; }
 .nav-toggle span { display: block; width: 18px; height: 1.5px; background: var(--fg); position: relative; border-radius: 99px; }
 .nav-toggle span::before, .nav-toggle span::after { content: ""; position: absolute; left: 0; width: 18px; height: 1.5px; background: var(--fg); border-radius: 99px; }
@@ -118,6 +122,8 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; } }
   </style>
+  <link rel="preload" href="/assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/syne-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/assets/css/styles.css?v=34" as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="/assets/css/styles.css?v=34" /></noscript>
   <script type="application/ld+json">
