@@ -85,6 +85,7 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
 .brand-tag { display: block; margin-top: 5px; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--faint); }
 .nav-links, .nav-cta { display: none; }
 .badge { display: inline-flex; align-items: center; gap: 8px; min-height: 31px; max-width: 100%; border: 1px solid var(--line); background: rgb(14 9 10 / 0.5); border-radius: 999px; padding: 6px 12px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.badge[data-open-badge] { height: 2.7rem; align-content: center; overflow: hidden; }
 .badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--faint); flex: none; }
 .badge .detail { color: var(--faint); }
 .visit-badge { min-height: 2.25rem; }
@@ -256,7 +257,7 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
       </div>
       <div class="hero-shade"></div>
       <div class="wrap hero-copy">
-        <span class="badge" data-open-badge></span>
+        <span class="badge" data-open-badge><span class="dot"></span><span class="label">Checking hours</span><span class="detail">· West Hartford</span></span>
         <p class="hero-kicker">Thousand</p>
         <div class="wordmark" id="wordmark" aria-hidden="true">S<span class="gold">u</span>nny</div>
         <p class="hero-sub">Thousand Sunny TCG · Cards &amp; Collectibles</p>
@@ -598,9 +599,17 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
         <div class="visit-grid">
           <div class="hours-card">
             <h3>Hours</h3>
-            <p class="clock" id="clock"></p>
+            <p class="clock" id="clock">Local time in West Hartford</p>
             <div class="day-meter" id="dayMeter" hidden><span></span></div>
-            <ul class="hours-list" id="hoursList"></ul>
+            <ul class="hours-list" id="hoursList">
+              <li><span class="d">Sunday</span><span class="t">Closed</span></li>
+              <li><span class="d">Monday</span><span class="t">11:00 AM – 8:00 PM</span></li>
+              <li><span class="d">Tuesday</span><span class="t">11:00 AM – 8:00 PM</span></li>
+              <li><span class="d">Wednesday</span><span class="t">11:00 AM – 8:00 PM</span></li>
+              <li><span class="d">Thursday</span><span class="t">11:00 AM – 8:00 PM</span></li>
+              <li><span class="d">Friday</span><span class="t">11:00 AM – 8:00 PM</span></li>
+              <li><span class="d">Saturday</span><span class="t">Closed</span></li>
+            </ul>
             <p class="hours-note">Weekends we're out at card shows — follow <a href="https://www.instagram.com/tscc_ct/" target="_blank" rel="noopener">@tscc_ct</a> for where to catch us.</p>
           </div>
           <div class="contact-block">

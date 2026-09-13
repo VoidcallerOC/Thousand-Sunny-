@@ -134,6 +134,7 @@ ul { list-style: none; padding: 0; }
 .badge .dot {
   width: 6px; height: 6px; border-radius: 50%; background: var(--faint); flex: none;
 }
+.badge[data-open-badge] { height: 2.7rem; align-content: center; overflow: hidden; }
 .badge.is-open .dot { background: var(--gold); animation: pulse-dot 2.4s ease-out infinite; }
 .badge.is-open .label { color: var(--gold); }
 .badge .detail { color: var(--faint); }
@@ -158,7 +159,6 @@ ul { list-style: none; padding: 0; }
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom-color: var(--line);
-  padding-block: 10px;
 }
 .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
 .brand img {
