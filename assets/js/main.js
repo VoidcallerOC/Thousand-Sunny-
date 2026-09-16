@@ -13,9 +13,9 @@ const CARD_PHOTOS = [
   { src: "/assets/img/collectibles/card-2285-c1.jpg", alt: "Pristine 10 Monkey D. Luffy SP One Piece card in Beckett slab", caption: "Monkey D. Luffy SP · Pristine 10", tag: "One Piece", w: 832, h: 1584, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2283-c2.jpg", alt: "Pristine 10 Portgas D. Ace Manga Art One Piece card in Beckett slab", caption: "Portgas D. Ace · Pristine 10", tag: "One Piece", w: 1024, h: 1649, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2284-c3.jpg", alt: "PSA 10 Boa Hancock Manga Alternate Art One Piece card", caption: "Boa Hancock · PSA 10", tag: "One Piece", w: 880, h: 1611, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2224-c2.jpg", alt: "Lugia V Pokémon card", caption: "Lugia V", tag: "Pokémon", w: 686, h: 1258, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2225-c2.jpg", alt: "Espeon GX Pokémon card", caption: "Espeon GX", tag: "Pokémon", w: 696, h: 1276, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2226-c2.jpg", alt: "Flareon ex Pokémon card", caption: "Flareon ex", tag: "Pokémon", w: 674, h: 1252, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2224-c2.jpg", alt: "Lugia V Pokémon card", caption: "Lugia V", tag: "Pokémon", w: 848, h: 1451, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2225-c2.jpg", alt: "Espeon GX Pokémon card", caption: "Espeon GX", tag: "Pokémon", w: 860, h: 1484, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2226-c2.jpg", alt: "Flareon ex Pokémon card", caption: "Flareon ex", tag: "Pokémon", w: 834, h: 1456, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2221-c4.jpg", alt: "Reshiram EX Pokémon card", caption: "Reshiram EX", tag: "Pokémon", w: 754, h: 1330, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2213-c1.jpg", alt: "Zed From the Shadows Riftbound card", caption: "Zed · From the Shadows", tag: "Riftbound", w: 714, h: 1246, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2214-c1.jpg", alt: "Blind Monk Riftbound card", caption: "Blind Monk", tag: "Riftbound", w: 964, h: 1388, widths: [320, 640, 960] },
@@ -134,7 +134,7 @@ function initAnalytics() {
 
 function imageBust(src, bust = "") {
   if (bust) return bust;
-  return src.includes("/collectibles/") ? "3" : "";
+  return src.includes("/collectibles/") ? "4" : "";
 }
 
 function responsiveSrcset(src, widths, extension, bust = "") {
@@ -282,7 +282,7 @@ function renderBadge(el, status) {
 function collectibleHTML(card, index) {
   const className = ["collectible-card", card.landscape ? "collectible-card--landscape" : ""].filter(Boolean).join(" ");
   return `<button class="${className}" type="button" data-card-photo="${index}" data-tilt aria-label="View ${card.caption}">
-    <span class="collectible-card__media">${responsiveImage({ src: card.src, widths: card.widths, sizes: "(min-width: 960px) 25vw, (min-width: 640px) 50vw, 50vw", alt: card.alt, width: card.w, height: card.h, className: "collectible-card__image", loading: "lazy", bust: "3" })}</span>
+    <span class="collectible-card__media">${responsiveImage({ src: card.src, widths: card.widths, sizes: "(min-width: 960px) 25vw, (min-width: 640px) 50vw, 50vw", alt: card.alt, width: card.w, height: card.h, className: "collectible-card__image", loading: "lazy", bust: "4" })}</span>
     <span class="collectible-card__meta"><span>${card.tag}</span><strong>${card.caption}</strong></span>
   </button>`;
 }
