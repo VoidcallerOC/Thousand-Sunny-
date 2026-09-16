@@ -47,6 +47,13 @@ if [ "$optcg_status" != "200" ]; then
 fi
 check_page '/one-piece-tcg' "$tmp/optcg.html" "$OPTCG_MIN_BYTES" "${OPTCG_MARKERS[@]}"
 
+cards_status=$(fetch "${site}/one-piece-tcg/cards" "$tmp/optcg-cards.html")
+echo "  GET /one-piece-tcg/cards -> HTTP ${cards_status}"
+if [ "$cards_status" != "200" ]; then
+  PAGE_FAILURES=$((PAGE_FAILURES + 1))
+fi
+check_page '/one-piece-tcg/cards' "$tmp/optcg-cards.html" "$OPTCG_CARDS_MIN_BYTES" "${OPTCG_CARDS_MARKERS[@]}"
+
 if [ "$PAGE_FAILURES" -gt 0 ]; then
   echo
   echo "Live site probe FAILED (${PAGE_FAILURES} problem(s)) against ${site}."

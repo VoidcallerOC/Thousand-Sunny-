@@ -12,6 +12,8 @@ Zero-build static site. No frameworks — just open `index.html`. Hosts anywhere
 
 ```
 index.html            ← page markup
+one-piece-tcg.html    ← One Piece TCG hub
+one-piece-tcg-cards.html ← generated One Piece display-case collection
 assets/
   css/styles.css      ← design system
   js/main.js          ← shelves, hours, lightbox, open-now
@@ -42,6 +44,22 @@ Edit the blocks at the top of **`assets/js/main.js`**:
   `America/New_York` hide automatically.
 - **`HOURS`** — Sunday → Saturday. Today's row highlights automatically.
   Set `closed: true` for a day off.
+
+### One Piece featured-card collection
+
+`/one-piece-tcg/cards` is a static, crawlable collection of cards that have
+actually been photographed in the display case. It is deliberately **not** a
+live inventory: it does not publish prices, availability, product offers, or
+individual product pages. Its source of truth is the verified `CARDS` list in
+`scripts/build-one-piece-cards.py`, which uses only the existing One Piece
+showcase photography and creates `one-piece-tcg-cards.html`. The Vercel rewrite
+in `vercel.json` exposes that generated file at the nested clean URL.
+
+After changing the verified card list, rebuild the static page before committing:
+
+```bash
+python3 scripts/build-one-piece-cards.py
+```
 
 ## Live details
 

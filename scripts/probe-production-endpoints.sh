@@ -34,6 +34,7 @@ check_status_and_text '/robots.txt' 'Sitemap: https://www.thousandsunnytcg.com/s
 
 status=$(fetch "${site}/sitemap.xml" "$tmp/sitemap.xml")
 check_status_and_text '/sitemap.xml' 'https://www.thousandsunnytcg.com/one-piece-tcg' "$tmp/sitemap.xml" "$status"
+check_status_and_text '/sitemap.xml' 'https://www.thousandsunnytcg.com/one-piece-tcg/cards' "$tmp/sitemap.xml" "$status"
 
 status=$(fetch "${site}/google2e7599ccbf2b6cc2.html" "$tmp/verification.html")
 check_status_and_text '/google verification' 'google-site-verification' "$tmp/verification.html" "$status"
