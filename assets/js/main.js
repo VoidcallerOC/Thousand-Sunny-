@@ -1,25 +1,25 @@
 const CARD_PHOTOS = [
-  { src: "/assets/img/collectibles/card-2229-c1.jpg", alt: "PSA 10 Raikou V card from Crown Zenith", caption: "Raikou V · PSA 10", tag: "Crown Zenith", w: 802, h: 1442, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2231-c1.jpg", alt: "PSA 10 Suicune V card from Crown Zenith", caption: "Suicune V · PSA 10", tag: "Crown Zenith", w: 826, h: 1486, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2230-c1.jpg", alt: "PSA 10 Entei V card from Crown Zenith", caption: "Entei V · PSA 10", tag: "Crown Zenith", w: 816, h: 1486, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2219-c1.jpg", alt: "Beckett graded Monkey D. Luffy trading card", caption: "Monkey D. Luffy · BGS 10", tag: "One Piece", w: 794, h: 1452, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2218-c1.jpg", alt: "PSA graded Majin Buu Kid trading card", caption: "Majin Buu Kid · PSA 10", tag: "Dragon Ball", w: 804, h: 1452, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2217-c2.jpg", alt: "PSA graded Gogeta trading card", caption: "Gogeta · PSA 10", tag: "Dragon Ball", w: 820, h: 1484, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2220-c1.jpg", alt: "Pristine 10 Monkey D. Luffy One Piece card", caption: "Monkey D. Luffy · Pristine 10", tag: "One Piece", w: 870, h: 1632, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2222-c1.jpg", alt: "Monkey D. Luffy One Piece card", caption: "Monkey D. Luffy", tag: "One Piece", w: 774, h: 1398, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2223-c1.jpg", alt: "Shanks One Piece card", caption: "Shanks", tag: "One Piece", w: 780, h: 1410, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2227-c1.jpg", alt: "Nami One Piece card", caption: "Nami", tag: "One Piece", w: 770, h: 1336, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2286-c2.jpg", alt: "Pristine 10 Gear Two One Piece card in Beckett slab", caption: "Gear Two · Pristine 10", tag: "One Piece", w: 816, h: 1530, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2285-c1.jpg", alt: "Pristine 10 Monkey D. Luffy SP One Piece card in Beckett slab", caption: "Monkey D. Luffy SP · Pristine 10", tag: "One Piece", w: 816, h: 1530, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2283-c2.jpg", alt: "Pristine 10 Portgas D. Ace Manga Art One Piece card in Beckett slab", caption: "Portgas D. Ace · Pristine 10", tag: "One Piece", w: 1008, h: 1620, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2284-c3.jpg", alt: "PSA 10 Boa Hancock Manga Alternate Art One Piece card", caption: "Boa Hancock · PSA 10", tag: "One Piece", w: 864, h: 1530, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2224-c2.jpg", alt: "Lugia V Pokémon card", caption: "Lugia V", tag: "Pokémon", w: 674, h: 1246, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2225-c2.jpg", alt: "Espeon GX Pokémon card", caption: "Espeon GX", tag: "Pokémon", w: 684, h: 1264, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2226-c2.jpg", alt: "Flareon ex Pokémon card", caption: "Flareon ex", tag: "Pokémon", w: 662, h: 1240, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2221-c4.jpg", alt: "Reshiram EX Pokémon card", caption: "Reshiram EX", tag: "Pokémon", w: 680, h: 1224, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2213-c1.jpg", alt: "Zed From the Shadows Riftbound card", caption: "Zed · From the Shadows", tag: "Riftbound", w: 702, h: 1234, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2215-c1.jpg", alt: "Deceiver Riftbound card", caption: "Deceiver", tag: "Riftbound", w: 682, h: 1262, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2216-c1.jpg", alt: "Blind Monk Riftbound card with dragon artwork", caption: "Blind Monk", tag: "Riftbound", w: 814, h: 1464, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2229-c1.jpg", alt: "PSA 10 Raikou V card from Crown Zenith", caption: "Raikou V · PSA 10", tag: "Crown Zenith", w: 988, h: 1628, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2231-c1.jpg", alt: "PSA 10 Suicune V card from Crown Zenith", caption: "Suicune V · PSA 10", tag: "Crown Zenith", w: 1018, h: 1678, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2230-c1.jpg", alt: "PSA 10 Entei V card from Crown Zenith", caption: "Entei V · PSA 10", tag: "Crown Zenith", w: 1008, h: 1678, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2219-c1.jpg", alt: "Beckett graded Monkey D. Luffy trading card", caption: "Monkey D. Luffy · BGS 10", tag: "One Piece", w: 982, h: 1640, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2218-c1.jpg", alt: "PSA graded Majin Buu Kid trading card", caption: "Majin Buu Kid · PSA 10", tag: "Dragon Ball", w: 992, h: 1640, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2217-c2.jpg", alt: "PSA graded Gogeta trading card", caption: "Gogeta · PSA 10", tag: "Dragon Ball", w: 1012, h: 1676, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2220-c1.jpg", alt: "Pristine 10 Monkey D. Luffy One Piece card", caption: "Monkey D. Luffy · Pristine 10", tag: "One Piece", w: 1082, h: 1844, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2222-c1.jpg", alt: "Monkey D. Luffy One Piece card", caption: "Monkey D. Luffy", tag: "One Piece", w: 954, h: 1578, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2223-c1.jpg", alt: "Shanks One Piece card", caption: "Shanks", tag: "One Piece", w: 962, h: 1592, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2227-c1.jpg", alt: "Nami One Piece card", caption: "Nami", tag: "One Piece", w: 942, h: 1508, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2286-c2.jpg", alt: "Pristine 10 Gear Two One Piece card in Beckett slab", caption: "Gear Two · Pristine 10", tag: "One Piece", w: 1014, h: 1728, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2285-c1.jpg", alt: "Pristine 10 Monkey D. Luffy SP One Piece card in Beckett slab", caption: "Monkey D. Luffy SP · Pristine 10", tag: "One Piece", w: 1014, h: 1728, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2283-c2.jpg", alt: "Pristine 10 Portgas D. Ace Manga Art One Piece card in Beckett slab", caption: "Portgas D. Ace · Pristine 10", tag: "One Piece", w: 1200, h: 1800, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2284-c3.jpg", alt: "PSA 10 Boa Hancock Manga Alternate Art One Piece card", caption: "Boa Hancock · PSA 10", tag: "One Piece", w: 1062, h: 1728, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2224-c2.jpg", alt: "Lugia V Pokémon card", caption: "Lugia V", tag: "Pokémon", w: 834, h: 1406, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2225-c2.jpg", alt: "Espeon GX Pokémon card", caption: "Espeon GX", tag: "Pokémon", w: 848, h: 1428, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2226-c2.jpg", alt: "Flareon ex Pokémon card", caption: "Flareon ex", tag: "Pokémon", w: 822, h: 1400, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2221-c4.jpg", alt: "Reshiram EX Pokémon card", caption: "Reshiram EX", tag: "Pokémon", w: 838, h: 1382, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2213-c1.jpg", alt: "Zed From the Shadows Riftbound card", caption: "Zed · From the Shadows", tag: "Riftbound", w: 862, h: 1394, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2215-c1.jpg", alt: "Deceiver Riftbound card", caption: "Deceiver", tag: "Riftbound", w: 846, h: 1426, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2216-c1.jpg", alt: "Blind Monk Riftbound card with dragon artwork", caption: "Blind Monk", tag: "Riftbound", w: 1004, h: 1654, widths: [320, 640, 960] },
 ];
 
 // Treasure @tscc road shows. No public vendor-events API — add a row here; cards filter by endDate (America/New_York calendar day).
@@ -131,19 +131,26 @@ function initAnalytics() {
   $("#offerForm")?.addEventListener("submit", () => track("offer_started"));
 }
 
-function responsiveSrcset(src, widths, extension) {
-  const stem = src.split("/").pop().replace(/\.jpg$/i, "");
-  return widths.map((width) => `/assets/img/optimized/${stem}-${width}.${extension} ${width}w`).join(", ");
+function imageBust(src, bust = "") {
+  if (bust) return bust;
+  return src.includes("/collectibles/") ? "2" : "";
 }
 
-function responsiveImage({ src, widths, sizes, alt = "", width, height, className = "", loading = "lazy", decoding = "async", fetchPriority = "" }) {
+function responsiveSrcset(src, widths, extension, bust = "") {
+  const stem = src.split("/").pop().replace(/\.jpg$/i, "");
+  const q = imageBust(src, bust) ? `?v=${imageBust(src, bust)}` : "";
+  return widths.map((width) => `/assets/img/optimized/${stem}-${width}.${extension}${q} ${width}w`).join(", ");
+}
+
+function responsiveImage({ src, widths, sizes, alt = "", width, height, className = "", loading = "lazy", decoding = "async", fetchPriority = "", bust = "" }) {
   const classAttr = className ? ` class="${className}"` : "";
   const loadingAttr = loading ? ` loading="${loading}"` : "";
   const fetchPriorityAttr = fetchPriority ? ` fetchpriority="${fetchPriority}"` : "";
+  const q = imageBust(src, bust) ? `?v=${imageBust(src, bust)}` : "";
   return `<picture class="responsive-picture">
-    <source type="image/avif" srcset="${responsiveSrcset(src, widths, "avif")}" sizes="${sizes}" />
-    <source type="image/webp" srcset="${responsiveSrcset(src, widths, "webp")}" sizes="${sizes}" />
-    <img${classAttr} src="${src}" alt="${alt}" width="${width}" height="${height}" sizes="${sizes}"${loadingAttr} decoding="${decoding}"${fetchPriorityAttr} />
+    <source type="image/avif" srcset="${responsiveSrcset(src, widths, "avif", bust)}" sizes="${sizes}" />
+    <source type="image/webp" srcset="${responsiveSrcset(src, widths, "webp", bust)}" sizes="${sizes}" />
+    <img${classAttr} src="${src}${q}" alt="${alt}" width="${width}" height="${height}" sizes="${sizes}"${loadingAttr} decoding="${decoding}"${fetchPriorityAttr} />
   </picture>`;
 }
 const DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -274,7 +281,7 @@ function renderBadge(el, status) {
 function collectibleHTML(card, index) {
   const className = ["collectible-card", card.landscape ? "collectible-card--landscape" : ""].filter(Boolean).join(" ");
   return `<button class="${className}" type="button" data-card-photo="${index}" data-tilt aria-label="View ${card.caption}">
-    <span class="collectible-card__media">${responsiveImage({ src: card.src, widths: card.widths, sizes: "(min-width: 960px) 25vw, (min-width: 640px) 50vw, 50vw", alt: card.alt, width: card.w, height: card.h, className: "collectible-card__image", loading: "lazy" })}</span>
+    <span class="collectible-card__media">${responsiveImage({ src: card.src, widths: card.widths, sizes: "(min-width: 960px) 25vw, (min-width: 640px) 50vw, 50vw", alt: card.alt, width: card.w, height: card.h, className: "collectible-card__image", loading: "lazy", bust: "2" })}</span>
     <span class="collectible-card__meta"><span>${card.tag}</span><strong>${card.caption}</strong></span>
   </button>`;
 }
@@ -377,7 +384,7 @@ function initLightbox() {
   const renderStrip = () => {
     if (!strip) return;
     strip.innerHTML = items.map(
-      (p, i) => `<button type="button" data-jump="${i}" aria-label="${p.caption}"><img src="/assets/img/optimized/${p.src.split("/").pop().replace(/\.jpg$/i, "")}-${p.widths[0]}.webp" alt="" width="56" height="72" loading="lazy" decoding="async"></button>`,
+      (p, i) => `<button type="button" data-jump="${i}" aria-label="${p.caption}"><img src="/assets/img/optimized/${p.src.split("/").pop().replace(/\.jpg$/i, "")}-${p.widths[0]}.webp${imageBust(p.src) ? `?v=${imageBust(p.src)}` : ""}" alt="" width="56" height="72" loading="lazy" decoding="async"></button>`,
     ).join("");
   };
 
@@ -387,7 +394,7 @@ function initLightbox() {
     avif.srcset = responsiveSrcset(p.src, p.widths, "avif");
     webp.srcset = responsiveSrcset(p.src, p.widths, "webp");
     img.sizes = "100vw";
-    img.src = p.src;
+    img.src = imageBust(p.src) ? `${p.src}?v=${imageBust(p.src)}` : p.src;
     img.alt = p.alt;
     cap.textContent = p.caption;
     if (count) count.textContent = `${index + 1} / ${items.length}`;
