@@ -18,7 +18,6 @@ const CARD_PHOTOS = [
   { src: "/assets/img/collectibles/card-2226-c2.jpg", alt: "Flareon ex Pokémon card", caption: "Flareon ex", tag: "Pokémon", w: 1213, h: 1694, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2221-c4.jpg", alt: "Reshiram EX Pokémon card", caption: "Reshiram EX", tag: "Pokémon", w: 1247, h: 1742, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2213-c1.jpg", alt: "Zed From the Shadows Riftbound card", caption: "Zed · From the Shadows", tag: "Riftbound", w: 1100, h: 1536, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2214-c1.jpg", alt: "Blind Monk Riftbound card", caption: "Blind Monk", tag: "Riftbound", w: 1050, h: 1467, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2215-c1.jpg", alt: "Deceiver Riftbound card", caption: "Deceiver", tag: "Riftbound", w: 1249, h: 1745, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2216-c1.jpg", alt: "Blind Monk Riftbound card with dragon artwork", caption: "Blind Monk · Alt Art", tag: "Riftbound", w: 1278, h: 1785, widths: [320, 640, 960] },
 ];
