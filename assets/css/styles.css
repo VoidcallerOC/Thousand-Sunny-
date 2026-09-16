@@ -84,6 +84,7 @@ ul { list-style: none; padding: 0; }
 .gold { color: var(--gold); }
 .section { padding-block: clamp(5rem, 10vw, 7rem); }
 .section:not(.hero) { content-visibility: auto; contain-intrinsic-size: 900px; }
+#shelves { content-visibility: visible; contain-intrinsic-size: auto; }
 .section--tight { padding-top: 0; }
 .section--surface { background: var(--surface); border-block: 1px solid var(--line); }
 .section--border { border-block: 1px solid var(--line); }
@@ -308,6 +309,7 @@ ul { list-style: none; padding: 0; }
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
   perspective: 1000px;
+  align-items: start;
 }
 .collectible-card {
   appearance: none;
@@ -335,18 +337,23 @@ ul { list-style: none; padding: 0; }
 .collectible-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 .collectible-card__media {
   display: block;
-  aspect-ratio: 5 / 7;
   padding: 5px;
   background: #0c0a0b;
 }
 .collectible-card--landscape { grid-column: span 2; }
-.collectible-card--landscape .collectible-card__media { aspect-ratio: 4 / 3; }
-.collectible-card__media .responsive-picture { height: 100%; }
+.collectible-card__media .responsive-picture {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 .collectible-card__media img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-width: none;
+  max-height: none;
   object-fit: contain;
+  object-position: center;
   border-radius: 9px;
   background: #0e090a;
 }
@@ -892,6 +899,23 @@ html.gear5 #sunMark { transform: rotate(360deg); }
   .tcg-art .responsive-picture img {
     position: absolute; inset: 0; width: 100%; height: 100%;
     aspect-ratio: auto; object-fit: cover;
+  }
+  .collectible-card__media .responsive-picture {
+    position: static;
+    inset: auto;
+    width: 100%;
+    height: auto;
+  }
+  .collectible-card__media img {
+    position: static;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    max-width: none;
+    max-height: none;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center;
   }
 }
 
