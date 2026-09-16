@@ -18,8 +18,9 @@ const CARD_PHOTOS = [
   { src: "/assets/img/collectibles/card-2226-c2.jpg", alt: "Flareon ex Pokémon card", caption: "Flareon ex", tag: "Pokémon", w: 822, h: 1400, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2221-c4.jpg", alt: "Reshiram EX Pokémon card", caption: "Reshiram EX", tag: "Pokémon", w: 838, h: 1382, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2213-c1.jpg", alt: "Zed From the Shadows Riftbound card", caption: "Zed · From the Shadows", tag: "Riftbound", w: 862, h: 1394, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2214-c1.jpg", alt: "Blind Monk Riftbound card", caption: "Blind Monk", tag: "Riftbound", w: 992, h: 1388, widths: [320, 640, 960] },
   { src: "/assets/img/collectibles/card-2215-c1.jpg", alt: "Deceiver Riftbound card", caption: "Deceiver", tag: "Riftbound", w: 846, h: 1426, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2216-c1.jpg", alt: "Blind Monk Riftbound card with dragon artwork", caption: "Blind Monk", tag: "Riftbound", w: 1004, h: 1654, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2216-c1.jpg", alt: "Blind Monk Riftbound card with dragon artwork", caption: "Blind Monk · Alt Art", tag: "Riftbound", w: 1004, h: 1654, widths: [320, 640, 960] },
 ];
 
 // Treasure @tscc road shows. No public vendor-events API — add a row here; cards filter by endDate (America/New_York calendar day).
@@ -568,8 +569,8 @@ function initCaseReveal() {
     const mobile = isMobileCase();
     region.classList.toggle("is-open", open);
     button.setAttribute("aria-expanded", String(open));
-    button.setAttribute("aria-label", mobile || open ? "Browse all 21 cards in the display case gallery" : "Open the display case");
-    label.textContent = mobile || open ? "Browse all 21 cards" : "Open the case";
+    button.setAttribute("aria-label", mobile || open ? `Browse all ${CARD_PHOTOS.length} cards in the display case gallery` : "Open the display case");
+    label.textContent = mobile || open ? `Browse all ${CARD_PHOTOS.length} cards` : "Open the case";
   };
 
   setOpen(false);
