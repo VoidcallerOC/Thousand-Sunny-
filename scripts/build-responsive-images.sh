@@ -49,7 +49,6 @@ assets/img/play-room.jpg|480,768,1168
 assets/img/pulls/pokemon.jpg|240,400,640
 assets/img/pulls/onepiece.jpg|240,400,640
 assets/img/pulls/mtg.jpg|240,400,640
-assets/img/pulls/yugioh.jpg|240,400,640
 assets/img/pulls/figures.jpg|240,400,640
 assets/img/pulls/funko.jpg|240,400,640
 assets/img/pulls/manga.jpg|240,400,640

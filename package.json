@@ -1,7 +1,7 @@
 {
   "name": "thousand-sunny-cards",
   "version": "1.0.0",
-  "description": "Official site for **Thousand Sunny Cards & Collectibles** — a trading card, anime and collectibles shop in **West Hartford, CT**. Pokémon · One Piece TCG · Magic · Yu-Gi-Oh · anime figures & statues · Funko Pop! · graded slabs · manga · Japanese snacks. _Buy · Sell · Trade · Collect._",
+  "description": "Official site for **Thousand Sunny Cards & Collectibles** — a trading card, anime and collectibles shop in **West Hartford, CT**. Pokémon · One Piece TCG · Magic · Riftbound · Dragon Ball · anime figures & statues · Funko Pop! · graded slabs · manga · Japanese snacks. _Buy · Sell · Trade · Collect._",
   "private": true,
   "scripts": {
     "dev": "python3 -m http.server 8000",
