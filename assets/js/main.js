@@ -1,26 +1,25 @@
 const CARD_PHOTOS = [
-  { src: "/assets/img/collectibles/card-2229-c1.jpg", alt: "PSA 10 Raikou V card from Crown Zenith", caption: "Raikou V · PSA 10", tag: "Crown Zenith", w: 1145, h: 1718, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2231-c1.jpg", alt: "PSA 10 Suicune V card from Crown Zenith", caption: "Suicune V · PSA 10", tag: "Crown Zenith", w: 1165, h: 1748, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2230-c1.jpg", alt: "PSA 10 Entei V card from Crown Zenith", caption: "Entei V · PSA 10", tag: "Crown Zenith", w: 1165, h: 1748, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2219-c1.jpg", alt: "Beckett graded Monkey D. Luffy trading card", caption: "Monkey D. Luffy · BGS 10", tag: "One Piece", w: 1167, h: 1750, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2218-c1.jpg", alt: "PSA graded Majin Buu Kid trading card", caption: "Majin Buu Kid · PSA 10", tag: "Dragon Ball", w: 1167, h: 1750, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2217-c2.jpg", alt: "PSA graded Gogeta trading card", caption: "Gogeta · PSA 10", tag: "Dragon Ball", w: 1207, h: 1810, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2220-c1.jpg", alt: "Pristine 10 Monkey D. Luffy One Piece card", caption: "Monkey D. Luffy · Pristine 10", tag: "One Piece", w: 1280, h: 1920, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2222-c1.jpg", alt: "Monkey D. Luffy One Piece card", caption: "Monkey D. Luffy", tag: "One Piece", w: 1137, h: 1705, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2223-c1.jpg", alt: "Shanks One Piece card", caption: "Shanks", tag: "One Piece", w: 1147, h: 1720, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2227-c1.jpg", alt: "Nami One Piece card", caption: "Nami", tag: "One Piece", w: 1100, h: 1650, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2286-c2.jpg", alt: "Pristine 10 Gear Two One Piece card in Beckett slab", caption: "Gear Two · Pristine 10", tag: "One Piece", w: 1200, h: 1800, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2285-c1.jpg", alt: "Pristine 10 Monkey D. Luffy SP One Piece card in Beckett slab", caption: "Monkey D. Luffy SP · Pristine 10", tag: "One Piece", w: 1200, h: 1800, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2283-c2.jpg", alt: "Pristine 10 Portgas D. Ace Manga Art One Piece card in Beckett slab", caption: "Portgas D. Ace · Pristine 10", tag: "One Piece", w: 1200, h: 1800, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2284-c3.jpg", alt: "PSA 10 Boa Hancock Manga Alternate Art One Piece card", caption: "Boa Hancock · PSA 10", tag: "One Piece", w: 1200, h: 1800, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2224-c2.jpg", alt: "Lugia V Pokémon card", caption: "Lugia V", tag: "Pokémon", w: 1123, h: 1685, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2225-c2.jpg", alt: "Espeon GX Pokémon card", caption: "Espeon GX", tag: "Pokémon", w: 1140, h: 1710, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2226-c2.jpg", alt: "Flareon ex Pokémon card", caption: "Flareon ex", tag: "Pokémon", w: 1103, h: 1655, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2221-c4.jpg", alt: "Reshiram EX Pokémon card", caption: "Reshiram EX", tag: "Pokémon", w: 1133, h: 1700, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2213-c1.jpg", alt: "Zed From the Shadows Riftbound card", caption: "Zed · From the Shadows", tag: "Riftbound", w: 1003, h: 1505, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2214-c1.jpg", alt: "Blind Monk Riftbound card", caption: "Blind Monk", tag: "Riftbound", w: 925, h: 1388, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2215-c1.jpg", alt: "Deceiver Riftbound card", caption: "Deceiver", tag: "Riftbound", w: 1137, h: 1705, widths: [320, 640, 960] },
-  { src: "/assets/img/collectibles/card-2216-c1.jpg", alt: "Blind Monk Riftbound card with dragon artwork", caption: "Blind Monk · Alt Art", tag: "Riftbound", w: 1163, h: 1744, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2229-c1.jpg", alt: "PSA 10 Raikou V card from Crown Zenith", caption: "Raikou V · PSA 10", tag: "Crown Zenith", w: 802, h: 1442, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2231-c1.jpg", alt: "PSA 10 Suicune V card from Crown Zenith", caption: "Suicune V · PSA 10", tag: "Crown Zenith", w: 826, h: 1486, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2230-c1.jpg", alt: "PSA 10 Entei V card from Crown Zenith", caption: "Entei V · PSA 10", tag: "Crown Zenith", w: 816, h: 1486, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2219-c1.jpg", alt: "Beckett graded Monkey D. Luffy trading card", caption: "Monkey D. Luffy · BGS 10", tag: "One Piece", w: 794, h: 1452, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2218-c1.jpg", alt: "PSA graded Majin Buu Kid trading card", caption: "Majin Buu Kid · PSA 10", tag: "Dragon Ball", w: 804, h: 1452, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2217-c2.jpg", alt: "PSA graded Gogeta trading card", caption: "Gogeta · PSA 10", tag: "Dragon Ball", w: 820, h: 1484, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2220-c1.jpg", alt: "Pristine 10 Monkey D. Luffy One Piece card", caption: "Monkey D. Luffy · Pristine 10", tag: "One Piece", w: 870, h: 1632, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2222-c1.jpg", alt: "Monkey D. Luffy One Piece card", caption: "Monkey D. Luffy", tag: "One Piece", w: 774, h: 1398, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2223-c1.jpg", alt: "Shanks One Piece card", caption: "Shanks", tag: "One Piece", w: 780, h: 1410, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2227-c1.jpg", alt: "Nami One Piece card", caption: "Nami", tag: "One Piece", w: 770, h: 1336, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2286-c2.jpg", alt: "Pristine 10 Gear Two One Piece card in Beckett slab", caption: "Gear Two · Pristine 10", tag: "One Piece", w: 816, h: 1530, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2285-c1.jpg", alt: "Pristine 10 Monkey D. Luffy SP One Piece card in Beckett slab", caption: "Monkey D. Luffy SP · Pristine 10", tag: "One Piece", w: 816, h: 1530, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2283-c2.jpg", alt: "Pristine 10 Portgas D. Ace Manga Art One Piece card in Beckett slab", caption: "Portgas D. Ace · Pristine 10", tag: "One Piece", w: 1008, h: 1620, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2284-c3.jpg", alt: "PSA 10 Boa Hancock Manga Alternate Art One Piece card", caption: "Boa Hancock · PSA 10", tag: "One Piece", w: 864, h: 1530, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2224-c2.jpg", alt: "Lugia V Pokémon card", caption: "Lugia V", tag: "Pokémon", w: 674, h: 1246, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2225-c2.jpg", alt: "Espeon GX Pokémon card", caption: "Espeon GX", tag: "Pokémon", w: 684, h: 1264, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2226-c2.jpg", alt: "Flareon ex Pokémon card", caption: "Flareon ex", tag: "Pokémon", w: 662, h: 1240, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2221-c4.jpg", alt: "Reshiram EX Pokémon card", caption: "Reshiram EX", tag: "Pokémon", w: 680, h: 1224, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2213-c1.jpg", alt: "Zed From the Shadows Riftbound card", caption: "Zed · From the Shadows", tag: "Riftbound", w: 702, h: 1234, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2215-c1.jpg", alt: "Deceiver Riftbound card", caption: "Deceiver", tag: "Riftbound", w: 682, h: 1262, widths: [320, 640, 960] },
+  { src: "/assets/img/collectibles/card-2216-c1.jpg", alt: "Blind Monk Riftbound card with dragon artwork", caption: "Blind Monk", tag: "Riftbound", w: 814, h: 1464, widths: [320, 640, 960] },
 ];
 
 // Treasure @tscc road shows. No public vendor-events API — add a row here; cards filter by endDate (America/New_York calendar day).
@@ -562,8 +561,8 @@ function initCaseReveal() {
     const mobile = isMobileCase();
     region.classList.toggle("is-open", open);
     button.setAttribute("aria-expanded", String(open));
-    button.setAttribute("aria-label", mobile || open ? "Browse all 22 cards in the display case gallery" : "Open the display case");
-    label.textContent = mobile || open ? "Browse all 22 cards" : "Open the case";
+    button.setAttribute("aria-label", mobile || open ? "Browse all 21 cards in the display case gallery" : "Open the display case");
+    label.textContent = mobile || open ? "Browse all 21 cards" : "Open the case";
   };
 
   setOpen(false);
