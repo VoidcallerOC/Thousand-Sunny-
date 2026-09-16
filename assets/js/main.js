@@ -23,6 +23,70 @@ const CARD_PHOTOS = [
   { src: "/assets/img/collectibles/card-2216-c1.jpg", alt: "Blind Monk Riftbound card with dragon artwork", caption: "Blind Monk · Alt Art", tag: "Riftbound", w: 1163, h: 1744, widths: [320, 640, 960] },
 ];
 
+// Treasure @tscc road shows. No public vendor-events API — add a row here; cards filter by endDate (America/New_York calendar day).
+const TREASURE_ROAD_EVENTS = [
+  {
+    slug: "northeast-sports-card-expo-connecticut-09122026",
+    url: "https://www.ontreasure.com/events/northeast-sports-card-expo-connecticut-09122026",
+    title: "Northeast Sports Card Expo: Connecticut",
+    dateLabel: "Sat, Sep 12 – Sun, Sep 13",
+    location: "Stamford, CT",
+    startDate: "2026-09-12",
+    endDate: "2026-09-13",
+    poster: "/assets/img/events/northeast-sports-card-expo-connecticut.jpg",
+    posterFallback: "https://qkdlfshzugzeqlznyqfv.supabase.co/storage/v1/object/public/posters/posters1787581346598",
+    posterAlt: "Northeast Sports Card Expo: Connecticut event poster",
+  },
+  {
+    slug: "glitch-collectibles-tcg-show-09272026",
+    url: "https://www.ontreasure.com/events/glitch-collectibles-tcg-show-09272026",
+    title: "Glitch Collectibles TCG Show - September 2026",
+    dateLabel: "Sun, Sep 27 · 9 AM – 2 PM",
+    location: "White's of Westport · Westport, MA",
+    startDate: "2026-09-27",
+    endDate: "2026-09-27",
+    poster: "/assets/img/events/glitch-collectibles-tcg-show.jpg",
+    posterFallback: "https://qkdlfshzugzeqlznyqfv.supabase.co/storage/v1/object/public/posters/posters1785352595624",
+    posterAlt: "Glitch Collectibles TCG Show September 2026 event poster",
+  },
+  {
+    slug: "collex-cards-collectibles-ll-10102026",
+    url: "https://www.ontreasure.com/events/collex-cards-collectibles-ll-10102026",
+    title: "ColleX Cards & Collectibles ll",
+    dateLabel: "Sat, Oct 10",
+    location: "Wallingford, CT",
+    startDate: "2026-10-10",
+    endDate: "2026-10-10",
+    poster: "/assets/img/events/collex-cards-collectibles.jpg",
+    posterFallback: "https://qkdlfshzugzeqlznyqfv.supabase.co/storage/v1/object/public/posters/posters1788382527916",
+    posterAlt: "ColleX Cards and Collectibles event poster",
+  },
+  {
+    slug: "hard-hittin-card-shows-at-foxwoods-casino-10172026",
+    url: "https://www.ontreasure.com/events/hard-hittin-card-shows-at-foxwoods-casino-10172026",
+    title: "Hard Hittin' Card Shows at FOXWOODS CASINO",
+    dateLabel: "Sat, Oct 17 – Sun, Oct 18",
+    location: "Mashantucket, CT",
+    startDate: "2026-10-17",
+    endDate: "2026-10-18",
+    poster: "/assets/img/events/hard-hittin-foxwoods.jpg",
+    posterFallback: "https://qkdlfshzugzeqlznyqfv.supabase.co/storage/v1/object/public/posters/posters1787710241358",
+    posterAlt: "Hard Hittin' Card Shows at FOXWOODS CASINO event poster",
+  },
+  {
+    slug: "the151cardshow-halloween-bash-10312026",
+    url: "https://www.ontreasure.com/events/the151cardshow-halloween-bash-10312026",
+    title: "The151CardShow - HALLOWEEN BASH",
+    dateLabel: "Sat, Oct 31",
+    location: "Vale Fieldhouse · Middletown, CT",
+    startDate: "2026-10-31",
+    endDate: "2026-10-31",
+    poster: "/assets/img/events/the151cardshow-halloween-bash.jpg",
+    posterFallback: "https://qkdlfshzugzeqlznyqfv.supabase.co/storage/v1/object/public/posters/posters1787089877141",
+    posterAlt: "The151CardShow HALLOWEEN BASH event poster",
+  },
+];
+
 const HOURS = [
   { day: "Sunday", closed: true },
   { day: "Monday", open: "11:00 AM", close: "8:00 PM", openMin: 11 * 60, closeMin: 20 * 60 },
@@ -63,7 +127,7 @@ function initAnalytics() {
   $$('a[href^="tel:"]').forEach((link) => link.addEventListener("click", () => track("call_click")));
   $$('a[href*="maps.google.com"]').forEach((link) => link.addEventListener("click", () => track("directions_click")));
   $$('a[href*="instagram.com"], a[href*="facebook.com"]').forEach((link) => link.addEventListener("click", () => track("social_click")));
-  $$('a[href*="ontreasure.com/u/tscc"]').forEach((link) => link.addEventListener("click", () => track("treasure_link_click")));
+  $$('a[href*="ontreasure.com"]').forEach((link) => link.addEventListener("click", () => track("treasure_link_click")));
   $$('a[href^="sms:"]').forEach((link) => link.addEventListener("click", () => track("text_click")));
   $("#offerForm")?.addEventListener("submit", () => track("offer_started"));
 }
@@ -101,6 +165,73 @@ function easternNow() {
   const pick = (t) => parts.find((p) => p.type === t)?.value ?? "";
   const dayIndex = Math.max(0, DAYS.indexOf(pick("weekday")));
   return { dayIndex, nowMin: Number(pick("hour")) * 60 + Number(pick("minute")) };
+}
+
+function easternTodayISO() {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "America/New_York",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
+}
+
+function escapeHTML(value) {
+  return String(value)
+    .replace(/&/g, "\u0026amp;")
+    .replace(/</g, "\u0026lt;")
+    .replace(/>/g, "\u0026gt;")
+    .replace(/"/g, "\u0026quot;");
+}
+
+function upcomingTreasureRoadEvents() {
+  const today = easternTodayISO();
+  return TREASURE_ROAD_EVENTS
+    .filter((event) => event.endDate >= today)
+    .sort((a, b) => a.startDate.localeCompare(b.startDate) || a.endDate.localeCompare(b.endDate));
+}
+
+function roadEventCardHTML(event, index) {
+  const n = String(index + 1).padStart(2, "0");
+  const title = escapeHTML(event.title);
+  return `<a class="event-card" href="${escapeHTML(event.url)}" target="_blank" rel="noopener" aria-label="${escapeHTML(`Open ${event.title} on Treasure`)}">
+    <div class="event-card-header"><span class="event-card-number">${n} <i aria-hidden="true">/</i> ON THE ROAD</span><span class="event-card-date">${escapeHTML(event.dateLabel)}</span><h3>${title}</h3><span class="event-card-location">${escapeHTML(event.location)}</span></div>
+    <img class="event-card-poster" src="${escapeHTML(event.poster)}" alt="${escapeHTML(event.posterAlt)}" width="800" height="800" loading="lazy" decoding="async" data-fallback="${escapeHTML(event.posterFallback)}" />
+    <span class="event-card-footer"><span>View event on Treasure</span><span aria-hidden="true">↗</span></span>
+  </a>`;
+}
+
+function renderRoadEvents() {
+  const grid = $("#roadEventGrid");
+  const nextTitle = $("#roadNextTitle");
+  const nextDetail = $("#roadNextDetail");
+  const upcoming = upcomingTreasureRoadEvents();
+
+  if (nextTitle && nextDetail) {
+    if (upcoming.length) {
+      const next = upcoming[0];
+      nextTitle.textContent = next.title;
+      nextDetail.textContent = `${next.dateLabel} · ${next.location}`;
+    } else {
+      nextTitle.textContent = "No upcoming shows on the board";
+      nextDetail.textContent = "Check Treasure for the latest @tscc table details.";
+    }
+  }
+
+  if (!grid) return;
+
+  if (!upcoming.length) {
+    grid.innerHTML = `<div class="event-empty"><span class="event-no">00</span><div><h3>No upcoming road shows posted</h3><p>When the next Treasure date is booked it will land here from the @tscc catalog.</p></div></div>`;
+    return;
+  }
+
+  grid.innerHTML = upcoming.map(roadEventCardHTML).join("");
+  grid.querySelectorAll("img.event-card-poster[data-fallback]").forEach((img) => {
+    img.addEventListener("error", () => {
+      const fallback = img.getAttribute("data-fallback");
+      if (fallback && img.getAttribute("src") !== fallback) img.setAttribute("src", fallback);
+    });
+  });
 }
 
 function nextOpenDay(from) {
@@ -501,6 +632,7 @@ function tickStatus() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  renderRoadEvents();
   initAnalytics();
   renderGames();
   renderGalleries();

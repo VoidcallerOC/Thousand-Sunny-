@@ -33,8 +33,13 @@ python3 -m http.server 8000
 
 Edit the blocks at the top of **`assets/js/main.js`**:
 
-- **`GAMES`** — the shelf category tiles
 - **`CARD_PHOTOS`** — graded case lightbox
+- **`TREASURE_ROAD_EVENTS`** — Catch us on the Road cards, sourced from the
+  [@tscc Treasure profile](https://www.ontreasure.com/u/tscc). Treasure does not
+  expose a public vendor-events API, so this catalog is the source of truth.
+  Add a new object (title, dates, venue, individual Treasure URL, local poster)
+  when the shop books another show. Cards whose `endDate` is before today in
+  `America/New_York` hide automatically.
 - **`HOURS`** — Sunday → Saturday. Today's row highlights automatically.
   Set `closed: true` for a day off.
 

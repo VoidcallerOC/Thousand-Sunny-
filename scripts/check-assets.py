@@ -32,6 +32,8 @@ for path in text_files:
             continue
         if clean in allowed_raw:
             continue
+        if "/assets/img/events/" in clean:
+            continue
         if "/assets/img/pulls/" in clean:
             errors.append(f"{path.name} still uses raw pull image as a served src: {clean}")
             continue

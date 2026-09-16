@@ -920,6 +920,8 @@ html.gear5 #sunMark { transform: rotate(360deg); }
 .event-card-poster { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; background: #050407; }
 .event-card-footer { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 18px; border-top: 1px solid var(--line-strong); color: var(--gold-2); font-family: var(--ff-display); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
 .event-card:hover .event-card-footer { color: #fffaf7; background: rgb(229 57 70 / 0.12); }
+a.event-card { color: inherit; }
+.show-events .event-empty { grid-column: 1 / -1; }
 .board-update { color: var(--muted); font-size: 0.8rem; }
 .board-update:hover { color: var(--gold); }
 .interest-row { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-top: 18px; }
