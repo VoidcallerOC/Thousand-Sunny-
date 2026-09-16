@@ -637,7 +637,7 @@ function tickStatus() {
   return status;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+function initPage() {
   renderRoadEvents();
   initAnalytics();
   renderGames();
@@ -658,4 +658,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const track = $("#marquee");
   if (track) track.innerHTML += track.innerHTML;
   setInterval(tickStatus, 30_000);
-});
+}
+
+// main.js is deferred, so the document has been parsed when this runs. Build
+// dynamic sections before the first normal paint rather than inserting them
+// from a later DOMContentLoaded callback (which creates measurable CLS).
+initPage();

@@ -115,12 +115,16 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 48px; padding: 0 24px; border-radius: 999px; font-family: var(--ff-display); font-weight: 600; font-size: 0.875rem; letter-spacing: 0.14em; text-transform: uppercase; }
 .btn--primary { background: var(--gold); color: var(--gold-ink); }
 .btn--ghost { border: 1px solid var(--line-strong); color: var(--fg); }
-@media (min-width: 768px) and (min-aspect-ratio: 1 / 1) {
-  .hero-photo { object-position: 50% 50%; }
-  .hero-copy { justify-content: center; padding-bottom: 5rem; }
-  .hero-shade { background: linear-gradient(to right, var(--bg) 0%, rgb(14 9 10 / 0.8) 38%, rgb(14 9 10 / 0.2) 100%), linear-gradient(to top, var(--bg), transparent 50%); }
-  .hero-lead { display: block; }
-  .nav-links { display: flex; align-items: center; gap: 28px; }
+  @media (min-width: 768px) {
+    .hero-photo { object-position: 50% 50%; }
+    .brand img { width: 48px; height: 48px; }
+    .nav { padding: 22px var(--gutter); }
+    .hero-copy { justify-content: center; padding-bottom: 5rem; }
+    .hero-shade { background: linear-gradient(to right, var(--bg) 0%, rgb(14 9 10 / 0.8) 38%, rgb(14 9 10 / 0.2) 100%), linear-gradient(to top, var(--bg), transparent 50%); }
+    .hero-lead { display: block; }
+  }
+  @media (min-width: 1024px) {
+    .nav-links { display: flex; align-items: center; gap: 28px; }
   .nav-links a { font-family: var(--ff-display); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
   .nav-cta { display: flex; align-items: center; gap: 12px; }
   .nav-toggle { display: none; }
@@ -129,8 +133,8 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
   </style>
   <link rel="preload" href="/assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/assets/fonts/syne-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/assets/css/styles.css?v=38" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="/assets/css/styles.css?v=38" /></noscript>
+  <link rel="preload" href="/assets/css/styles.css?v=36" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="/assets/css/styles.css?v=36" /></noscript>
 
   <link rel="preload" as="image" type="image/avif" href="/assets/img/optimized/gear5-tall-640.avif" imagesrcset="/assets/img/optimized/gear5-tall-480.avif 480w, /assets/img/optimized/gear5-tall-640.avif 640w" imagesizes="min(100vw, 640px)" media="(max-width: 767px), (max-aspect-ratio: 1/1)" fetchpriority="high" />
   <link rel="preload" as="image" type="image/avif" href="/assets/img/optimized/gear5-wide-1120.avif" imagesrcset="/assets/img/optimized/gear5-wide-640.avif 640w, /assets/img/optimized/gear5-wide-960.avif 960w, /assets/img/optimized/gear5-wide-1120.avif 1120w" imagesizes="100vw" media="(min-width: 768px) and (min-aspect-ratio: 1/1)" fetchpriority="high" />

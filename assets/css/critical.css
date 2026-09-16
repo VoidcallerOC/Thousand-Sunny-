@@ -81,11 +81,15 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 48px; padding: 0 24px; border-radius: 999px; font-family: var(--ff-display); font-weight: 600; font-size: 0.875rem; letter-spacing: 0.14em; text-transform: uppercase; }
 .btn--primary { background: var(--gold); color: var(--gold-ink); }
 .btn--ghost { border: 1px solid var(--line-strong); color: var(--fg); }
-@media (min-width: 768px) and (min-aspect-ratio: 1 / 1) {
+@media (min-width: 768px) {
   .hero-photo { object-position: 50% 50%; }
+  .brand img { width: 48px; height: 48px; }
+  .nav { padding: 22px var(--gutter); }
   .hero-copy { justify-content: center; padding-bottom: 5rem; }
   .hero-shade { background: linear-gradient(to right, var(--bg) 0%, rgb(14 9 10 / 0.8) 38%, rgb(14 9 10 / 0.2) 100%), linear-gradient(to top, var(--bg), transparent 50%); }
   .hero-lead { display: block; }
+}
+@media (min-width: 1024px) {
   .nav-links { display: flex; align-items: center; gap: 28px; }
   .nav-links a { font-family: var(--ff-display); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
   .nav-cta { display: flex; align-items: center; gap: 12px; }
