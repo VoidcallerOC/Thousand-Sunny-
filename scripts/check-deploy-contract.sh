@@ -35,7 +35,7 @@ else
   fail "Vercel ignoreCommand is not wired to the deployment gate"
 fi
 
-if grep -qF '"source": "/one-piece-tcg/cards"' vercel.json && grep -qF '"destination": "/one-piece-tcg-cards.html"' vercel.json; then
+if grep -qF '"source": "/one-piece-tcg/cards"' vercel.json && grep -qF '"destination": "/one-piece-tcg-cards"' vercel.json; then
   ok "Vercel routes featured cards through the clean URL"
 else
   fail "Vercel is missing the featured-cards clean-URL rewrite"

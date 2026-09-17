@@ -107,7 +107,7 @@ for rule in vercel.get('headers', []):
 
 featured_cards_rewrite = {
     'source': '/one-piece-tcg/cards',
-    'destination': '/one-piece-tcg-cards.html',
+    'destination': '/one-piece-tcg-cards',
 }
 if featured_cards_rewrite not in vercel.get('rewrites', []):
     errors.append('Vercel is missing the featured-cards clean-URL rewrite.')

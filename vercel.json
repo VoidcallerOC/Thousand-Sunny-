@@ -19,7 +19,7 @@
   "rewrites": [
     {
       "source": "/one-piece-tcg/cards",
-      "destination": "/one-piece-tcg-cards.html"
+      "destination": "/one-piece-tcg-cards"
     }
   ],
   "headers": [
