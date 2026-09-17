@@ -2,7 +2,7 @@
 
 Official site for **Thousand Sunny Cards & Collectibles** — a trading card,
 anime and collectibles shop in **West Hartford, CT**. Pokémon · One Piece TCG ·
-Magic · Yu-Gi-Oh · anime figures & statues · Funko Pop! · graded slabs · manga ·
+Magic · Riftbound · Dragon Ball · anime figures & statues · Funko Pop! · graded slabs · manga ·
 Japanese snacks. _Buy · Sell · Trade · Collect._
 
 Photography-led single page: the Gear 5 greeter in the hero, live open/closed
