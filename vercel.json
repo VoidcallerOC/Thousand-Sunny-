@@ -16,6 +16,12 @@
       "permanent": true
     }
   ],
+  "rewrites": [
+    {
+      "source": "/one-piece-tcg/cards",
+      "destination": "/one-piece-tcg-cards.html"
+    }
+  ],
   "headers": [
     {
       "source": "/",

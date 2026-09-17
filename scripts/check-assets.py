@@ -21,7 +21,7 @@ allowed_raw = {
     "/assets/img/collectibles/card-2229-c1.jpg",
 }
 
-text_files = [root / "index.html", root / "assets/js/main.js"]
+text_files = [root / "index.html", root / "one-piece-tcg.html", root / "one-piece-tcg-cards.html", root / "assets/js/main.js"]
 pattern = re.compile(r"""(?:src|href)=[\"'](/assets/img/[^\"']+\.(?:jpg|jpeg|png))[\"']""")
 
 for path in text_files:

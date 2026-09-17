@@ -12,6 +12,7 @@
 
 INDEX_MIN_BYTES=20000
 OPTCG_MIN_BYTES=8000
+OPTCG_CARDS_MIN_BYTES=12000
 
 INDEX_MARKERS=(
   'West Hartford'
@@ -32,6 +33,16 @@ OPTCG_MARKERS=(
   'schema.org'
   '<main'
   '<footer'
+  '/assets/css/styles.css'
+)
+
+OPTCG_CARDS_MARKERS=(
+  'Featured One Piece TCG'
+  '75 Park Rd'
+  'schema.org'
+  '<main'
+  '<footer'
+  'featured-card'
   '/assets/css/styles.css'
 )
 

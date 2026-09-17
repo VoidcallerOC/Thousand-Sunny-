@@ -21,6 +21,7 @@ cd "$repo_root"
 echo "Page integrity check"
 check_page 'index.html'         'index.html'         "$INDEX_MIN_BYTES" "${INDEX_MARKERS[@]}"
 check_page 'one-piece-tcg.html' 'one-piece-tcg.html' "$OPTCG_MIN_BYTES" "${OPTCG_MARKERS[@]}"
+check_page 'one-piece-tcg-cards.html' 'one-piece-tcg-cards.html' "$OPTCG_CARDS_MIN_BYTES" "${OPTCG_CARDS_MARKERS[@]}"
 
 if [ "$PAGE_FAILURES" -gt 0 ]; then
   echo

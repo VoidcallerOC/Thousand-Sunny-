@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import json
+import os
 import subprocess
 import time
 import urllib.request
@@ -56,7 +57,7 @@ def measure(url, width, height):
 
 
 if __name__ == "__main__":
-    base = "http://127.0.0.1:8000"
+    base = os.environ.get("CLS_BASE_URL", "http://127.0.0.1:8000").rstrip("/")
     for viewport in ((1365, 900), (390, 844)):
-        for route in ("/", "/one-piece-tcg"):
+        for route in ("/", "/one-piece-tcg.html", "/one-piece-tcg-cards.html"):
             measure(base + route, *viewport)
