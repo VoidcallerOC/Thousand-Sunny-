@@ -1,26 +1,46 @@
 const CARD_PHOTOS = [
   { src: "/assets/img/collectibles/card-2229-c1.jpg", alt: "PSA 10 Raikou V card from Crown Zenith", caption: "Raikou V · PSA 10", tag: "Crown Zenith", w: 852, h: 1540, widths: [320, 640, 960] , crop: { x: 23, y: 445, w: 809, h: 1070 } },
   { src: "/assets/img/collectibles/card-2231-c1.jpg", alt: "PSA 10 Suicune V card from Crown Zenith", caption: "Suicune V · PSA 10", tag: "Crown Zenith", w: 906, h: 1552, widths: [320, 640, 960] , crop: { x: 22, y: 444, w: 862, h: 1088 } },
-  { src: "/assets/img/collectibles/card-2230-c1.jpg", alt: "PSA 10 Entei V card from Crown Zenith", caption: "Entei V · PSA 10", tag: "Crown Zenith", w: 882, h: 1633, widths: [320, 640, 960] , crop: { x: 21, y: 444, w: 840, h: 1145 } },
+  { src: "/assets/img/collectibles/card-2230-c1.jpg", alt: "PSA 10 Entei V card from Crown Zenith", caption: "Entei V · PSA 10", tag: "Crown Zenith", w: 882, h: 1633, widths: [320, 640, 960] , crop: { x: 36, y: 486, w: 828, h: 1110 } },
   { src: "/assets/img/collectibles/card-2219-c1.jpg", alt: "Beckett graded Monkey D. Luffy trading card", caption: "Monkey D. Luffy · BGS 10", tag: "One Piece", w: 859, h: 1635, widths: [320, 640, 960] , crop: { x: 0, y: 332, w: 859, h: 1158 } },
   { src: "/assets/img/collectibles/card-2218-c1.jpg", alt: "PSA graded Majin Buu Kid trading card", caption: "Majin Buu Kid · PSA 10", tag: "Dragon Ball", w: 884, h: 1661, widths: [320, 640, 960] , crop: { x: 20, y: 300, w: 844, h: 1240 } },
   { src: "/assets/img/collectibles/card-2217-c2.jpg", alt: "PSA graded Gogeta trading card", caption: "Gogeta · PSA 10", tag: "Dragon Ball", w: 857, h: 1673, widths: [320, 640, 960] , crop: { x: 20, y: 300, w: 817, h: 1245 } },
   { src: "/assets/img/collectibles/card-2220-c1.jpg", alt: "Pristine 10 Monkey D. Luffy One Piece card", caption: "Monkey D. Luffy · Pristine 10", tag: "One Piece", w: 956, h: 1673, widths: [320, 640, 960] , crop: { x: 56, y: 220, w: 844, h: 1290 } },
-  { src: "/assets/img/collectibles/card-2222-c1.jpg", alt: "Monkey D. Luffy One Piece card", caption: "Monkey D. Luffy", tag: "One Piece", w: 1249, h: 1745, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1249, h: 1625 } },
+  { src: "/assets/img/collectibles/card-2222-c1.jpg", alt: "Monkey D. Luffy One Piece card", caption: "Monkey D. Luffy", tag: "One Piece", w: 1249, h: 1745, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1249, h: 1744 } },
   { src: "/assets/img/collectibles/card-2223-c1.jpg", alt: "Shanks One Piece card", caption: "Shanks", tag: "One Piece", w: 1260, h: 1760, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1260, h: 1760 } },
   { src: "/assets/img/collectibles/card-2227-c1.jpg", alt: "Nami One Piece card", caption: "Nami", tag: "One Piece", w: 984, h: 1403, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 984, h: 1403 } },
   { src: "/assets/img/collectibles/card-2286-c2.jpg", alt: "Pristine 10 Gear Two One Piece card in Beckett slab", caption: "Gear Two · Pristine 10", tag: "One Piece", w: 832, h: 1602, widths: [320, 640, 960] , crop: { x: 40, y: 220, w: 752, h: 1320 } },
-  { src: "/assets/img/collectibles/card-2285-c1.jpg", alt: "Pristine 10 Monkey D. Luffy SP One Piece card in Beckett slab", caption: "Monkey D. Luffy SP · Pristine 10", tag: "One Piece", w: 832, h: 1584, widths: [320, 640, 960] , crop: { x: 40, y: 220, w: 752, h: 1300 } },
+  { src: "/assets/img/collectibles/card-2285-c1.jpg", alt: "Pristine 10 Monkey D. Luffy SP One Piece card in Beckett slab", caption: "Monkey D. Luffy SP · Pristine 10", tag: "One Piece", w: 832, h: 1584, widths: [320, 640, 960] , crop: { x: 0, y: 361, w: 821, h: 1130 } },
   { src: "/assets/img/collectibles/card-2283-c2.jpg", alt: "Pristine 10 Portgas D. Ace Manga Art One Piece card in Beckett slab", caption: "Portgas D. Ace · Pristine 10", tag: "One Piece", w: 1024, h: 1649, widths: [320, 640, 960] , crop: { x: 40, y: 215, w: 944, h: 1390 } },
-  { src: "/assets/img/collectibles/card-2284-c3.jpg", alt: "PSA 10 Boa Hancock Manga Alternate Art One Piece card", caption: "Boa Hancock · PSA 10", tag: "One Piece", w: 880, h: 1611, widths: [320, 640, 960] , crop: { x: 28, y: 230, w: 824, h: 1360 } },
+  { src: "/assets/img/collectibles/card-2284-c3.jpg", alt: "PSA 10 Boa Hancock Manga Alternate Art One Piece card", caption: "Boa Hancock · PSA 10", tag: "One Piece", w: 880, h: 1611, widths: [320, 640, 960] , crop: { x: 31, y: 387, w: 849, h: 1145 } },
   { src: "/assets/img/collectibles/card-2224-c2.jpg", alt: "Lugia V Pokémon card", caption: "Lugia V", tag: "Pokémon", w: 1236, h: 1726, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1236, h: 1726 } },
   { src: "/assets/img/collectibles/card-2225-c2.jpg", alt: "Espeon GX Pokémon card", caption: "Espeon GX", tag: "Pokémon", w: 1253, h: 1750, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1253, h: 1750 } },
   { src: "/assets/img/collectibles/card-2226-c2.jpg", alt: "Flareon ex Pokémon card", caption: "Flareon ex", tag: "Pokémon", w: 1213, h: 1694, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1213, h: 1694 } },
   { src: "/assets/img/collectibles/card-2221-c4.jpg", alt: "Reshiram EX Pokémon card", caption: "Reshiram EX", tag: "Pokémon", w: 1247, h: 1742, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1247, h: 1742 } },
-  { src: "/assets/img/collectibles/card-2213-c1.jpg", alt: "Zed From the Shadows Riftbound card", caption: "Zed · From the Shadows", tag: "Riftbound", w: 1100, h: 1536, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1100, h: 1536 } },
+  { src: "/assets/img/collectibles/card-2213-c1.jpg", alt: "Zed From the Shadows Riftbound card", caption: "Zed · From the Shadows", tag: "Riftbound", w: 1100, h: 1536, widths: [320, 640, 960] , crop: { x: 0, y: 13, w: 1100, h: 1523 } },
   { src: "/assets/img/collectibles/card-2215-c1.jpg", alt: "Deceiver Riftbound card", caption: "Deceiver", tag: "Riftbound", w: 1249, h: 1745, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1249, h: 1745 } },
   { src: "/assets/img/collectibles/card-2216-c1.jpg", alt: "Blind Monk Riftbound card with dragon artwork", caption: "Blind Monk · Alt Art", tag: "Riftbound", w: 1278, h: 1785, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1278, h: 1785 } },
 ];
+
+// Card-aware crop metadata. The native dimensions and per-image crop rectangle
+// above are the offline-computed defaults; window.CARD_CROPS (generated by
+// scripts/detect-card-crops.py from the actual source pixels — RAW vs PSA/BGS
+// slab detection + card-boundary extraction, with hand-verified overrides for
+// low-confidence photos) is the source of truth and overlays them here when
+// present. Loaded synchronously before this file, so rendering never shifts.
+(function applyCardCrops() {
+  const meta = typeof window !== "undefined" && window.CARD_CROPS;
+  if (!meta) return;
+  for (const card of CARD_PHOTOS) {
+    const m = meta[card.src.slice(card.src.lastIndexOf("/") + 1)];
+    if (!m || !m.crop) continue;
+    if (m.w) card.w = m.w;
+    if (m.h) card.h = m.h;
+    card.crop = m.crop;
+    card.cropType = m.type;
+    card.cropMode = m.mode;
+  }
+})();
 
 // Treasure @tscc road shows. No public vendor-events API — add a row here; cards filter by endDate (America/New_York calendar day).
 const TREASURE_ROAD_EVENTS = [
@@ -281,7 +301,11 @@ function renderBadge(el, status) {
 function collectibleHTML(card, index) {
   const className = ["collectible-card", card.landscape ? "collectible-card--landscape" : ""].filter(Boolean).join(" ");
   const crop = card.crop || { x: 0, y: 0, w: card.w, h: card.h };
-  const cropStyle = `--crop-ratio: ${crop.w} / ${crop.h}; --crop-image-width: ${(card.w / crop.w * 100).toFixed(4)}%; --crop-image-height: ${(card.h / crop.h * 100).toFixed(4)}%; --crop-image-left: ${(-crop.x / crop.w * 100).toFixed(4)}%; --crop-image-top: ${(-crop.y / crop.h * 100).toFixed(4)}%;`;
+  // The image is scaled so the crop rectangle fills the frame, then translated
+  // to bring the crop's top-left to the frame origin. width/height are relative
+  // to the frame; the translate percentages are relative to the IMAGE's own box
+  // (card.w x card.h scaled), so the offsets divide by card.w / card.h.
+  const cropStyle = `--crop-ratio: ${crop.w} / ${crop.h}; --crop-image-width: ${(card.w / crop.w * 100).toFixed(4)}%; --crop-image-height: ${(card.h / crop.h * 100).toFixed(4)}%; --crop-image-left: ${(-crop.x / card.w * 100).toFixed(4)}%; --crop-image-top: ${(-crop.y / card.h * 100).toFixed(4)}%;`;
   return `<button class="${className}" type="button" data-card-photo="${index}" data-tilt aria-label="View ${card.caption}">
     <span class="collectible-card__media" style="${cropStyle}">${responsiveImage({ src: card.src, widths: card.widths, sizes: "(min-width: 960px) 25vw, (min-width: 640px) 50vw, 50vw", alt: card.alt, width: crop.w, height: crop.h, className: "collectible-card__image", loading: "lazy", bust: "5" })}</span>
     <span class="collectible-card__meta"><span>${card.tag}</span><strong>${card.caption}</strong></span>
@@ -292,6 +316,37 @@ function renderGames() {
   const grid = $("#gamesGrid");
   if (!grid) return;
   grid.innerHTML = CARD_PHOTOS.map((card, index) => collectibleHTML(card, index)).join("");
+}
+
+// The One Piece "cards we photographed" page renders featured cards as static
+// markup with the whole photo letterboxed into a fixed 5/7 frame (object-fit:
+// contain), so graded cards showed the entire slab + grading label. Reuse the
+// same crop metadata to show just the card: the card region is scaled to COVER
+// the existing 5/7 frame (~ the trading-card ratio), so the frame size never
+// changes (no layout shift) and the card is never stretched — only the pixels
+// inside the fixed box change once the image loads.
+function enhanceFeaturedCards() {
+  const meta = typeof window !== "undefined" && window.CARD_CROPS;
+  if (!meta) return;
+  const frameRatio = 5 / 7;
+  $$(".featured-card picture").forEach((pic) => {
+    const img = pic.querySelector("img");
+    if (!img) return;
+    const base = (img.getAttribute("src") || "").split("/").pop().match(/^(card-\d+-[a-z]\d+)/);
+    const data = base && meta[`${base[1]}.jpg`];
+    if (!data || !data.crop || !data.w || !data.h) return;
+    const { w: W, h: H, crop } = data;
+    // Largest sub-rectangle of the detected crop that matches the 5/7 frame,
+    // centred — i.e. object-fit:cover of the card region, no distortion.
+    let { x, y, w: cw, h: ch } = crop;
+    if (cw / ch > frameRatio) { const nw = ch * frameRatio; x += (cw - nw) / 2; cw = nw; }
+    else { const nh = cw / frameRatio; y += (ch - nh) / 2; ch = nh; }
+    pic.classList.add("is-cropped");
+    pic.style.setProperty("--crop-image-width", `${(W / cw * 100).toFixed(4)}%`);
+    pic.style.setProperty("--crop-image-height", `${(H / ch * 100).toFixed(4)}%`);
+    pic.style.setProperty("--crop-image-left", `${(-x / W * 100).toFixed(4)}%`);
+    pic.style.setProperty("--crop-image-top", `${(-y / H * 100).toFixed(4)}%`);
+  });
 }
 
 function renderHours(status) {
@@ -407,8 +462,9 @@ function initLightbox() {
         media.style.setProperty("--lightbox-width", `${Math.min(innerWidth - 32, innerHeight * 0.78 * crop.w / crop.h)}px`);
         media.style.setProperty("--crop-image-width", `${(p.w / crop.w * 100).toFixed(4)}%`);
         media.style.setProperty("--crop-image-height", `${(p.h / crop.h * 100).toFixed(4)}%`);
-        media.style.setProperty("--crop-image-left", `${(-crop.x / crop.w * 100).toFixed(4)}%`);
-        media.style.setProperty("--crop-image-top", `${(-crop.y / crop.h * 100).toFixed(4)}%`);
+        // translate percentages are relative to the image's own box -> divide by p.w / p.h
+        media.style.setProperty("--crop-image-left", `${(-crop.x / p.w * 100).toFixed(4)}%`);
+        media.style.setProperty("--crop-image-top", `${(-crop.y / p.h * 100).toFixed(4)}%`);
       } else {
         media.removeAttribute("style");
       }
@@ -658,6 +714,7 @@ function initPage() {
   renderRoadEvents();
   initAnalytics();
   renderGames();
+  enhanceFeaturedCards();
   renderGalleries();
   tickStatus();
   initNav();

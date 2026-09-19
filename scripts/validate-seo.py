@@ -82,10 +82,10 @@ for label, page in pages.items():
         errors.append(f'{label} still loads the render-blocking Google Fonts stylesheet.')
     if html.count('data-critical-css-version="1"') != 1:
         errors.append(f'{label} is missing inline critical CSS.')
-    if 'rel="preload" href="/assets/css/styles.css?v=37" as="style"' not in html:
-        errors.append(f'{label} is missing the asynchronous v37 main stylesheet preload.')
-    if '<noscript><link rel="stylesheet" href="/assets/css/styles.css?v=37" /></noscript>' not in html:
-        errors.append(f'{label} is missing the v37 no-JavaScript stylesheet fallback.')
+    if 'rel="preload" href="/assets/css/styles.css?v=38" as="style"' not in html:
+        errors.append(f'{label} is missing the asynchronous v38 main stylesheet preload.')
+    if '<noscript><link rel="stylesheet" href="/assets/css/styles.css?v=38" /></noscript>' not in html:
+        errors.append(f'{label} is missing the v38 no-JavaScript stylesheet fallback.')
 
     for property_name in ('og:title', 'og:description', 'og:url', 'og:image', 'og:image:alt'):
         if not soup.find('meta', attrs={'property': property_name}):
@@ -199,4 +199,4 @@ if errors:
     sys.exit(1)
 
 print('SEO validation passed.')
-print('Every canonical page has unique crawlable metadata, critical CSS v37, structured data, and internal links.')
+print('Every canonical page has unique crawlable metadata, critical CSS v38, structured data, and internal links.')

@@ -1,0 +1,48 @@
+{
+  "_note": "Manual crop overrides for the display-case gallery. This is the human-in-the-loop layer required by the crop system: when scripts/detect-card-crops.py reports low confidence (or a plausible-but-wrong auto crop on a difficult photo), a hand-verified crop is placed here and always wins over the detector. Coordinates are source pixels {x, y, w, h}. Re-run: python3 scripts/detect-card-crops.py",
+  "card-2229-c1.jpg": {
+    "type": "PSA",
+    "crop": { "x": 23, "y": 445, "w": 809, "h": 1070 },
+    "reason": "Crown Zenith PSA slab with a price sticker on the plastic; auto crop can catch a label sliver. Hand-verified card bounds."
+  },
+  "card-2231-c1.jpg": {
+    "type": "PSA",
+    "crop": { "x": 22, "y": 444, "w": 862, "h": 1088 },
+    "reason": "Crown Zenith PSA slab; blue holo top defeats label detection (auto conf 0.39). Hand-verified card bounds."
+  },
+  "card-2230-c1.jpg": {
+    "type": "PSA",
+    "crop": { "x": 36, "y": 486, "w": 828, "h": 1110 },
+    "reason": "Crown Zenith PSA slab; a '$1050' price sticker overlaps the plastic beside the card, so auto (conf 0.80) kept a sticker sliver. Hand-verified, tightened past the sticker."
+  },
+  "card-2219-c1.jpg": {
+    "type": "BGS",
+    "crop": { "x": 0, "y": 332, "w": 859, "h": 1158 },
+    "reason": "Beckett slab; auto bounds reached the bottom 'BECKETT' plastic strip. Hand-verified to end at the card."
+  },
+  "card-2218-c1.jpg": {
+    "type": "PSA",
+    "crop": { "x": 20, "y": 300, "w": 844, "h": 1240 },
+    "reason": "DBS PSA slab; auto top edge (252) sat a few px into the label/plastic. Hand-verified to the card's top border."
+  },
+  "card-2217-c2.jpg": {
+    "type": "PSA",
+    "crop": { "x": 20, "y": 300, "w": 817, "h": 1245 },
+    "reason": "DBS PSA slab; full-bleed gold holo art gives no plastic contrast (auto conf 0.53). Hand-verified card bounds."
+  },
+  "card-2220-c1.jpg": {
+    "type": "BGS",
+    "crop": { "x": 56, "y": 220, "w": 844, "h": 1290 },
+    "reason": "Beckett Pristine slab; gold/holo card fills the busy map so auto returned the whole slab (conf 0.41). Hand-verified card bounds."
+  },
+  "card-2286-c2.jpg": {
+    "type": "BGS",
+    "crop": { "x": 40, "y": 220, "w": 752, "h": 1320 },
+    "reason": "Beckett Pristine slab, light monochrome manga art; low texture fragments the auto region (conf 0.33). Hand-verified card bounds."
+  },
+  "card-2283-c2.jpg": {
+    "type": "BGS",
+    "crop": { "x": 40, "y": 215, "w": 944, "h": 1390 },
+    "reason": "Beckett Pristine slab, light monochrome manga art; low texture fragments the auto region (conf 0.38). Hand-verified card bounds."
+  }
+}
