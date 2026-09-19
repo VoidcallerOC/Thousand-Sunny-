@@ -1,25 +1,32 @@
 const CARD_PHOTOS = [
-  { src: "/assets/img/collectibles/card-2229-c1.jpg", alt: "PSA 10 Raikou V card from Crown Zenith", caption: "Raikou V · PSA 10", tag: "Crown Zenith", w: 852, h: 1540, widths: [320, 640, 960] , crop: { x: 23, y: 445, w: 809, h: 1070 } },
-  { src: "/assets/img/collectibles/card-2231-c1.jpg", alt: "PSA 10 Suicune V card from Crown Zenith", caption: "Suicune V · PSA 10", tag: "Crown Zenith", w: 906, h: 1552, widths: [320, 640, 960] , crop: { x: 22, y: 444, w: 862, h: 1088 } },
-  { src: "/assets/img/collectibles/card-2230-c1.jpg", alt: "PSA 10 Entei V card from Crown Zenith", caption: "Entei V · PSA 10", tag: "Crown Zenith", w: 882, h: 1633, widths: [320, 640, 960] , crop: { x: 21, y: 444, w: 840, h: 1145 } },
-  { src: "/assets/img/collectibles/card-2219-c1.jpg", alt: "Beckett graded Monkey D. Luffy trading card", caption: "Monkey D. Luffy · BGS 10", tag: "One Piece", w: 859, h: 1635, widths: [320, 640, 960] , crop: { x: 0, y: 332, w: 859, h: 1158 } },
-  { src: "/assets/img/collectibles/card-2218-c1.jpg", alt: "PSA graded Majin Buu Kid trading card", caption: "Majin Buu Kid · PSA 10", tag: "Dragon Ball", w: 884, h: 1661, widths: [320, 640, 960] , crop: { x: 20, y: 300, w: 844, h: 1240 } },
-  { src: "/assets/img/collectibles/card-2217-c2.jpg", alt: "PSA graded Gogeta trading card", caption: "Gogeta · PSA 10", tag: "Dragon Ball", w: 857, h: 1673, widths: [320, 640, 960] , crop: { x: 20, y: 300, w: 817, h: 1245 } },
-  { src: "/assets/img/collectibles/card-2220-c1.jpg", alt: "Pristine 10 Monkey D. Luffy One Piece card", caption: "Monkey D. Luffy · Pristine 10", tag: "One Piece", w: 956, h: 1673, widths: [320, 640, 960] , crop: { x: 56, y: 220, w: 844, h: 1290 } },
-  { src: "/assets/img/collectibles/card-2222-c1.jpg", alt: "Monkey D. Luffy One Piece card", caption: "Monkey D. Luffy", tag: "One Piece", w: 1249, h: 1745, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1249, h: 1625 } },
-  { src: "/assets/img/collectibles/card-2223-c1.jpg", alt: "Shanks One Piece card", caption: "Shanks", tag: "One Piece", w: 1260, h: 1760, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1260, h: 1760 } },
-  { src: "/assets/img/collectibles/card-2227-c1.jpg", alt: "Nami One Piece card", caption: "Nami", tag: "One Piece", w: 984, h: 1403, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 984, h: 1403 } },
-  { src: "/assets/img/collectibles/card-2286-c2.jpg", alt: "Pristine 10 Gear Two One Piece card in Beckett slab", caption: "Gear Two · Pristine 10", tag: "One Piece", w: 832, h: 1602, widths: [320, 640, 960] , crop: { x: 40, y: 220, w: 752, h: 1320 } },
-  { src: "/assets/img/collectibles/card-2285-c1.jpg", alt: "Pristine 10 Monkey D. Luffy SP One Piece card in Beckett slab", caption: "Monkey D. Luffy SP · Pristine 10", tag: "One Piece", w: 832, h: 1584, widths: [320, 640, 960] , crop: { x: 40, y: 220, w: 752, h: 1300 } },
-  { src: "/assets/img/collectibles/card-2283-c2.jpg", alt: "Pristine 10 Portgas D. Ace Manga Art One Piece card in Beckett slab", caption: "Portgas D. Ace · Pristine 10", tag: "One Piece", w: 1024, h: 1649, widths: [320, 640, 960] , crop: { x: 40, y: 215, w: 944, h: 1390 } },
-  { src: "/assets/img/collectibles/card-2284-c3.jpg", alt: "PSA 10 Boa Hancock Manga Alternate Art One Piece card", caption: "Boa Hancock · PSA 10", tag: "One Piece", w: 880, h: 1611, widths: [320, 640, 960] , crop: { x: 28, y: 230, w: 824, h: 1360 } },
-  { src: "/assets/img/collectibles/card-2224-c2.jpg", alt: "Lugia V Pokémon card", caption: "Lugia V", tag: "Pokémon", w: 1236, h: 1726, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1236, h: 1726 } },
-  { src: "/assets/img/collectibles/card-2225-c2.jpg", alt: "Espeon GX Pokémon card", caption: "Espeon GX", tag: "Pokémon", w: 1253, h: 1750, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1253, h: 1750 } },
-  { src: "/assets/img/collectibles/card-2226-c2.jpg", alt: "Flareon ex Pokémon card", caption: "Flareon ex", tag: "Pokémon", w: 1213, h: 1694, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1213, h: 1694 } },
-  { src: "/assets/img/collectibles/card-2221-c4.jpg", alt: "Reshiram EX Pokémon card", caption: "Reshiram EX", tag: "Pokémon", w: 1247, h: 1742, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1247, h: 1742 } },
-  { src: "/assets/img/collectibles/card-2213-c1.jpg", alt: "Zed From the Shadows Riftbound card", caption: "Zed · From the Shadows", tag: "Riftbound", w: 1100, h: 1536, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1100, h: 1536 } },
-  { src: "/assets/img/collectibles/card-2215-c1.jpg", alt: "Deceiver Riftbound card", caption: "Deceiver", tag: "Riftbound", w: 1249, h: 1745, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1249, h: 1745 } },
-  { src: "/assets/img/collectibles/card-2216-c1.jpg", alt: "Blind Monk Riftbound card with dragon artwork", caption: "Blind Monk · Alt Art", tag: "Riftbound", w: 1278, h: 1785, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1278, h: 1785 } },
+  { src: "/assets/img/collectibles/card-2229-c1.jpg", alt: "PSA 10 Raikou V card from Crown Zenith", caption: "Raikou V · PSA 10", tag: "Crown Zenith", game: "pokemon", w: 852, h: 1540, widths: [320, 640, 960] , crop: { x: 23, y: 445, w: 809, h: 1070 } },
+  { src: "/assets/img/collectibles/card-2231-c1.jpg", alt: "PSA 10 Suicune V card from Crown Zenith", caption: "Suicune V · PSA 10", tag: "Crown Zenith", game: "pokemon", w: 906, h: 1552, widths: [320, 640, 960] , crop: { x: 22, y: 444, w: 862, h: 1088 } },
+  { src: "/assets/img/collectibles/card-2230-c1.jpg", alt: "PSA 10 Entei V card from Crown Zenith", caption: "Entei V · PSA 10", tag: "Crown Zenith", game: "pokemon", w: 882, h: 1633, widths: [320, 640, 960] , crop: { x: 21, y: 444, w: 840, h: 1145 } },
+  { src: "/assets/img/collectibles/card-2219-c1.jpg", alt: "Beckett graded Monkey D. Luffy trading card", caption: "Monkey D. Luffy · BGS 10", tag: "One Piece", game: "one-piece", w: 859, h: 1635, widths: [320, 640, 960] , crop: { x: 0, y: 332, w: 859, h: 1158 } },
+  { src: "/assets/img/collectibles/card-2218-c1.jpg", alt: "PSA graded Majin Buu Kid trading card", caption: "Majin Buu Kid · PSA 10", tag: "Dragon Ball", game: "dragon-ball", w: 884, h: 1661, widths: [320, 640, 960] , crop: { x: 20, y: 300, w: 844, h: 1240 } },
+  { src: "/assets/img/collectibles/card-2217-c2.jpg", alt: "PSA graded Gogeta trading card", caption: "Gogeta · PSA 10", tag: "Dragon Ball", game: "dragon-ball", w: 857, h: 1673, widths: [320, 640, 960] , crop: { x: 20, y: 300, w: 817, h: 1245 } },
+  { src: "/assets/img/collectibles/card-2220-c1.jpg", alt: "Pristine 10 Monkey D. Luffy One Piece card", caption: "Monkey D. Luffy · Pristine 10", tag: "One Piece", game: "one-piece", w: 956, h: 1673, widths: [320, 640, 960] , crop: { x: 56, y: 220, w: 844, h: 1290 } },
+  { src: "/assets/img/collectibles/card-2222-c1.jpg", alt: "Monkey D. Luffy One Piece card", caption: "Monkey D. Luffy", tag: "One Piece", game: "one-piece", w: 1249, h: 1745, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1249, h: 1625 } },
+  { src: "/assets/img/collectibles/card-2223-c1.jpg", alt: "Shanks One Piece card", caption: "Shanks", tag: "One Piece", game: "one-piece", w: 1260, h: 1760, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1260, h: 1760 } },
+  { src: "/assets/img/collectibles/card-2227-c1.jpg", alt: "Nami One Piece card", caption: "Nami", tag: "One Piece", game: "one-piece", w: 984, h: 1403, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 984, h: 1403 } },
+  { src: "/assets/img/collectibles/card-2286-c2.jpg", alt: "Pristine 10 Gear Two One Piece card in Beckett slab", caption: "Gear Two · Pristine 10", tag: "One Piece", game: "one-piece", w: 832, h: 1602, widths: [320, 640, 960] , crop: { x: 40, y: 220, w: 752, h: 1320 } },
+  { src: "/assets/img/collectibles/card-2285-c1.jpg", alt: "Pristine 10 Monkey D. Luffy SP One Piece card in Beckett slab", caption: "Monkey D. Luffy SP · Pristine 10", tag: "One Piece", game: "one-piece", w: 832, h: 1584, widths: [320, 640, 960] , crop: { x: 40, y: 220, w: 752, h: 1300 } },
+  { src: "/assets/img/collectibles/card-2283-c2.jpg", alt: "Pristine 10 Portgas D. Ace Manga Art One Piece card in Beckett slab", caption: "Portgas D. Ace · Pristine 10", tag: "One Piece", game: "one-piece", w: 1024, h: 1649, widths: [320, 640, 960] , crop: { x: 40, y: 215, w: 944, h: 1390 } },
+  { src: "/assets/img/collectibles/card-2284-c3.jpg", alt: "PSA 10 Boa Hancock Manga Alternate Art One Piece card", caption: "Boa Hancock · PSA 10", tag: "One Piece", game: "one-piece", w: 880, h: 1611, widths: [320, 640, 960] , crop: { x: 28, y: 230, w: 824, h: 1360 } },
+  { src: "/assets/img/collectibles/card-2224-c2.jpg", alt: "Lugia V Pokémon card", caption: "Lugia V", tag: "Pokémon", game: "pokemon", w: 1236, h: 1726, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1236, h: 1726 } },
+  { src: "/assets/img/collectibles/card-2225-c2.jpg", alt: "Espeon GX Pokémon card", caption: "Espeon GX", tag: "Pokémon", game: "pokemon", w: 1253, h: 1750, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1253, h: 1750 } },
+  { src: "/assets/img/collectibles/card-2226-c2.jpg", alt: "Flareon ex Pokémon card", caption: "Flareon ex", tag: "Pokémon", game: "pokemon", w: 1213, h: 1694, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1213, h: 1694 } },
+  { src: "/assets/img/collectibles/card-2221-c4.jpg", alt: "Reshiram EX Pokémon card", caption: "Reshiram EX", tag: "Pokémon", game: "pokemon", w: 1247, h: 1742, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1247, h: 1742 } },
+  { src: "/assets/img/collectibles/card-2213-c1.jpg", alt: "Zed From the Shadows Riftbound card", caption: "Zed · From the Shadows", tag: "Riftbound", game: "riftbound", w: 1100, h: 1536, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1100, h: 1536 } },
+  { src: "/assets/img/collectibles/card-2215-c1.jpg", alt: "Deceiver Riftbound card", caption: "Deceiver", tag: "Riftbound", game: "riftbound", w: 1249, h: 1745, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1249, h: 1745 } },
+  { src: "/assets/img/collectibles/card-2216-c1.jpg", alt: "Blind Monk Riftbound card with dragon artwork", caption: "Blind Monk · Alt Art", tag: "Riftbound", game: "riftbound", w: 1278, h: 1785, widths: [320, 640, 960] , crop: { x: 0, y: 0, w: 1278, h: 1785 } },
+];
+
+const GAME_SHELVES = [
+  { game: "one-piece", title: "One Piece TCG", viewAllHref: "/one-piece-tcg" },
+  { game: "pokemon", title: "Pokémon" },
+  { game: "riftbound", title: "Riftbound" },
+  { game: "dragon-ball", title: "Dragon Ball" },
 ];
 
 // Treasure @tscc road shows. No public vendor-events API — add a row here; cards filter by endDate (America/New_York calendar day).
@@ -291,7 +298,19 @@ function collectibleHTML(card, index) {
 function renderGames() {
   const grid = $("#gamesGrid");
   if (!grid) return;
-  grid.innerHTML = CARD_PHOTOS.map((card, index) => collectibleHTML(card, index)).join("");
+  grid.innerHTML = GAME_SHELVES.map((shelf) => {
+    const cards = CARD_PHOTOS
+      .map((card, index) => ({ card, index }))
+      .filter(({ card }) => card.game === shelf.game);
+    if (!cards.length) return "";
+    const viewAll = shelf.viewAllHref
+      ? `<a class="shelf-view-all" href="${shelf.viewAllHref}">View All ${escapeHTML(shelf.title)} <span aria-hidden="true">→</span></a>`
+      : "";
+    return `<section class="game-shelf" aria-labelledby="shelf-${shelf.game}">
+      <div class="game-shelf__head"><h3 id="shelf-${shelf.game}">${escapeHTML(shelf.title)}</h3>${viewAll}</div>
+      <div class="games game-shelf__grid">${cards.map(({ card, index }) => collectibleHTML(card, index)).join("")}</div>
+    </section>`;
+  }).join("");
 }
 
 function renderHours(status) {

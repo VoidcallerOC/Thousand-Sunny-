@@ -303,6 +303,27 @@ ul { list-style: none; padding: 0; }
   display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 3rem;
   perspective: 900px;
 }
+.game-shelves { margin-top: 3rem; }
+
+.game-shelf + .game-shelf { margin-top: clamp(3.5rem, 8vw, 5.5rem); }
+.game-shelf__head {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: .85rem;
+}
+.game-shelf__head h3 {
+  font-family: var(--ff-display); font-size: clamp(1.2rem, 3vw, 1.65rem); font-weight: 800;
+  letter-spacing: .02em; line-height: 1; text-transform: uppercase;
+}
+.shelf-view-all {
+  display: inline-flex; align-items: center; gap: .4rem; flex: none;
+  color: var(--gold); font-family: var(--ff-display); font-size: .68rem; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+}
+.shelf-view-all span { font-size: 1rem; transition: transform .2s ease; }
+.shelf-view-all:hover span { transform: translateX(3px); }
+.game-shelf__grid { margin-top: 0; }
 
 /* — Showcase card-photo gallery — */
 .games:has(.collectible-card) {
@@ -927,6 +948,9 @@ html.gear5 #sunMark { transform: rotate(360deg); }
     aspect-ratio: auto; object-fit: cover;
   }
   .games { grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; min-width: 0; }
+  .game-shelf__head { align-items: flex-start; }
+  .game-shelf__head h3 { line-height: 1.1; }
+  .shelf-view-all { font-size: .6rem; letter-spacing: .08em; text-align: right; }
   .games > .tcg { width: 100%; max-width: 100%; min-width: 0; }
   .tcg, .tcg-face, .tcg-plate { min-width: 0; }
   .tcg-plate h4 { min-width: 0; overflow-wrap: anywhere; }
