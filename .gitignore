@@ -4,3 +4,7 @@ node_modules
 *.log
 .env
 .env.*
+
+# Dev-only crop diagnostics output (regenerate with scripts/card-crop-diagnostics.py)
+scripts/diagnostics/
+__pycache__/

@@ -1,0 +1,856 @@
+{
+  "_generated_by": "scripts/detect-card-crops.py",
+  "_note": "Per-image card crop metadata. Do not edit by hand; edit the detector or scripts/card-crop-overrides.json and re-run.",
+  "cards": {
+    "card-2229-c1.jpg": {
+      "file": "card-2229-c1.jpg",
+      "src": "/assets/img/collectibles/card-2229-c1.jpg",
+      "caption": "Raikou V · PSA 10",
+      "type": "PSA",
+      "mode": "manual",
+      "confidence": 0.716,
+      "w": 852,
+      "h": 1540,
+      "aspect": 0.5532,
+      "crop": {
+        "x": 23,
+        "y": 445,
+        "w": 809,
+        "h": 1070
+      },
+      "cropNorm": {
+        "left": 0.027,
+        "top": 0.289,
+        "right": 0.9765,
+        "bottom": 0.9838
+      },
+      "autoCrop": {
+        "x": 0,
+        "y": 486,
+        "w": 852,
+        "h": 1054
+      },
+      "autoType": "PSA",
+      "signals": {
+        "label_frac": 0.314,
+        "label_cov": 0.851,
+        "side_plastic": 0.0,
+        "top_margin": 0.315,
+        "cov_area": 0.685,
+        "crop_ar": 0.808,
+        "fill": 0.904,
+        "red": 0.133,
+        "dark": 0.028
+      },
+      "reason": "Crown Zenith PSA slab with a price sticker on the plastic; auto crop can catch a label sliver. Hand-verified card bounds."
+    },
+    "card-2231-c1.jpg": {
+      "file": "card-2231-c1.jpg",
+      "src": "/assets/img/collectibles/card-2231-c1.jpg",
+      "caption": "Suicune V · PSA 10",
+      "type": "PSA",
+      "mode": "manual",
+      "confidence": 0.393,
+      "w": 906,
+      "h": 1552,
+      "aspect": 0.5838,
+      "crop": {
+        "x": 22,
+        "y": 444,
+        "w": 862,
+        "h": 1088
+      },
+      "cropNorm": {
+        "left": 0.0243,
+        "top": 0.2861,
+        "right": 0.9757,
+        "bottom": 0.9871
+      },
+      "autoCrop": {
+        "x": 0,
+        "y": 0,
+        "w": 906,
+        "h": 1552
+      },
+      "autoType": "PSA",
+      "signals": {
+        "label_frac": 0.0,
+        "label_cov": 0.0,
+        "side_plastic": 0.0,
+        "top_margin": 0.0,
+        "cov_area": 1.0,
+        "crop_ar": 0.584,
+        "fill": 0.806,
+        "red": 0.201,
+        "dark": 0.021
+      },
+      "reason": "Crown Zenith PSA slab; blue holo top defeats label detection (auto conf 0.39). Hand-verified card bounds."
+    },
+    "card-2230-c1.jpg": {
+      "file": "card-2230-c1.jpg",
+      "src": "/assets/img/collectibles/card-2230-c1.jpg",
+      "caption": "Entei V · PSA 10",
+      "type": "PSA",
+      "mode": "manual",
+      "confidence": 0.796,
+      "w": 882,
+      "h": 1633,
+      "aspect": 0.5401,
+      "crop": {
+        "x": 36,
+        "y": 486,
+        "w": 828,
+        "h": 1110
+      },
+      "cropNorm": {
+        "left": 0.0408,
+        "top": 0.2976,
+        "right": 0.9796,
+        "bottom": 0.9773
+      },
+      "autoCrop": {
+        "x": 0,
+        "y": 332,
+        "w": 882,
+        "h": 1257
+      },
+      "autoType": "PSA",
+      "signals": {
+        "label_frac": 0.203,
+        "label_cov": 0.69,
+        "side_plastic": 0.0,
+        "top_margin": 0.203,
+        "cov_area": 0.77,
+        "crop_ar": 0.702,
+        "fill": 0.902,
+        "red": 0.151,
+        "dark": 0.024
+      },
+      "reason": "Crown Zenith PSA slab; a '$1050' price sticker overlaps the plastic beside the card, so auto (conf 0.80) kept a sticker sliver. Hand-verified, tightened past the sticker."
+    },
+    "card-2219-c1.jpg": {
+      "file": "card-2219-c1.jpg",
+      "src": "/assets/img/collectibles/card-2219-c1.jpg",
+      "caption": "Monkey D. Luffy · BGS 10",
+      "type": "BGS",
+      "mode": "manual",
+      "confidence": 0.732,
+      "w": 859,
+      "h": 1635,
+      "aspect": 0.5254,
+      "crop": {
+        "x": 0,
+        "y": 332,
+        "w": 859,
+        "h": 1158
+      },
+      "cropNorm": {
+        "left": 0.0,
+        "top": 0.2031,
+        "right": 1.0,
+        "bottom": 0.9113
+      },
+      "autoCrop": {
+        "x": 0,
+        "y": 339,
+        "w": 859,
+        "h": 1278
+      },
+      "autoType": "BGS",
+      "signals": {
+        "label_frac": 0.0,
+        "label_cov": 0.0,
+        "side_plastic": 0.0,
+        "top_margin": 0.208,
+        "cov_area": 0.782,
+        "crop_ar": 0.672,
+        "fill": 0.834,
+        "red": 0.0,
+        "dark": 0.016
+      },
+      "reason": "Beckett slab; auto bounds reached the bottom 'BECKETT' plastic strip. Hand-verified to end at the card."
+    },
+    "card-2218-c1.jpg": {
+      "file": "card-2218-c1.jpg",
+      "src": "/assets/img/collectibles/card-2218-c1.jpg",
+      "caption": "Majin Buu Kid · PSA 10",
+      "type": "PSA",
+      "mode": "manual",
+      "confidence": 0.726,
+      "w": 884,
+      "h": 1661,
+      "aspect": 0.5322,
+      "crop": {
+        "x": 20,
+        "y": 300,
+        "w": 844,
+        "h": 1240
+      },
+      "cropNorm": {
+        "left": 0.0226,
+        "top": 0.1806,
+        "right": 0.9774,
+        "bottom": 0.9272
+      },
+      "autoCrop": {
+        "x": 0,
+        "y": 252,
+        "w": 884,
+        "h": 1345
+      },
+      "autoType": "PSA",
+      "signals": {
+        "label_frac": 0.151,
+        "label_cov": 0.795,
+        "side_plastic": 0.0,
+        "top_margin": 0.152,
+        "cov_area": 0.81,
+        "crop_ar": 0.657,
+        "fill": 0.892,
+        "red": 0.157,
+        "dark": 0.049
+      },
+      "reason": "DBS PSA slab; auto top edge (252) sat a few px into the label/plastic. Hand-verified to the card's top border."
+    },
+    "card-2217-c2.jpg": {
+      "file": "card-2217-c2.jpg",
+      "src": "/assets/img/collectibles/card-2217-c2.jpg",
+      "caption": "Gogeta · PSA 10",
+      "type": "PSA",
+      "mode": "manual",
+      "confidence": 0.525,
+      "w": 857,
+      "h": 1673,
+      "aspect": 0.5123,
+      "crop": {
+        "x": 20,
+        "y": 300,
+        "w": 817,
+        "h": 1245
+      },
+      "cropNorm": {
+        "left": 0.0233,
+        "top": 0.1793,
+        "right": 0.9767,
+        "bottom": 0.9235
+      },
+      "autoCrop": {
+        "x": 0,
+        "y": 214,
+        "w": 857,
+        "h": 1458
+      },
+      "autoType": "PSA",
+      "signals": {
+        "label_frac": 0.127,
+        "label_cov": 0.96,
+        "side_plastic": 0.0,
+        "top_margin": 0.128,
+        "cov_area": 0.872,
+        "crop_ar": 0.588,
+        "fill": 0.857,
+        "red": 0.054,
+        "dark": 0.051
+      },
+      "reason": "DBS PSA slab; full-bleed gold holo art gives no plastic contrast (auto conf 0.53). Hand-verified card bounds."
+    },
+    "card-2220-c1.jpg": {
+      "file": "card-2220-c1.jpg",
+      "src": "/assets/img/collectibles/card-2220-c1.jpg",
+      "caption": "Monkey D. Luffy · Pristine 10",
+      "type": "BGS",
+      "mode": "manual",
+      "confidence": 0.413,
+      "w": 956,
+      "h": 1673,
+      "aspect": 0.5714,
+      "crop": {
+        "x": 56,
+        "y": 220,
+        "w": 844,
+        "h": 1290
+      },
+      "cropNorm": {
+        "left": 0.0586,
+        "top": 0.1315,
+        "right": 0.9414,
+        "bottom": 0.9026
+      },
+      "autoCrop": {
+        "x": 0,
+        "y": 5,
+        "w": 956,
+        "h": 1668
+      },
+      "autoType": "BGS",
+      "signals": {
+        "label_frac": 0.0,
+        "label_cov": 0.0,
+        "side_plastic": 0.0,
+        "top_margin": 0.003,
+        "cov_area": 0.997,
+        "crop_ar": 0.573,
+        "fill": 0.906,
+        "red": 0.002,
+        "dark": 0.094
+      },
+      "reason": "Beckett Pristine slab; gold/holo card fills the busy map so auto returned the whole slab (conf 0.41). Hand-verified card bounds."
+    },
+    "card-2222-c1.jpg": {
+      "file": "card-2222-c1.jpg",
+      "src": "/assets/img/collectibles/card-2222-c1.jpg",
+      "caption": "Monkey D. Luffy",
+      "type": "RAW",
+      "mode": "auto",
+      "confidence": 1.0,
+      "w": 1249,
+      "h": 1745,
+      "aspect": 0.7158,
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "w": 1249,
+        "h": 1744
+      },
+      "cropNorm": {
+        "left": 0.0,
+        "top": 0.0,
+        "right": 1.0,
+        "bottom": 0.9994
+      },
+      "autoCrop": {
+        "x": 0,
+        "y": 0,
+        "w": 1249,
+        "h": 1744
+      },
+      "autoType": "RAW",
+      "signals": {
+        "label_frac": 0.082,
+        "label_cov": 0.743,
+        "side_plastic": 0.0,
+        "top_margin": 0.084,
+        "cov_area": 1.0,
+        "crop_ar": 0.716,
+        "fill": 0.802
+      }
+    },
+    "card-2223-c1.jpg": {
+      "file": "card-2223-c1.jpg",
+      "src": "/assets/img/collectibles/card-2223-c1.jpg",
+      "caption": "Shanks",
+      "type": "RAW",
+      "mode": "auto",
+      "confidence": 1.0,
+      "w": 1260,
+      "h": 1760,
+      "aspect": 0.7159,
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "w": 1260,
+        "h": 1760
+      },
+      "cropNorm": {
+        "left": 0.0,
+        "top": 0.0,
+        "right": 1.0,
+        "bottom": 1.0
+      },
+      "autoCrop": {
+        "x": 0,
+        "y": 0,
+        "w": 1260,
+        "h": 1760
+      },
+      "autoType": "RAW",
+      "signals": {
+        "label_frac": 0.0,
+        "label_cov": 0.0,
+        "side_plastic": 0.0,
+        "top_margin": 0.012,
+        "cov_area": 1.0,
+        "crop_ar": 0.716,
+        "fill": 0.766
+      }
+    },
+    "card-2227-c1.jpg": {
+      "file": "card-2227-c1.jpg",
+      "src": "/assets/img/collectibles/card-2227-c1.jpg",
+      "caption": "Nami",
+      "type": "RAW",
+      "mode": "auto",
+      "confidence": 0.997,
+      "w": 984,
+      "h": 1403,
+      "aspect": 0.7014,
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "w": 984,
+        "h": 1402
+      },
+      "cropNorm": {
+        "left": 0.0,
+        "top": 0.0,
+        "right": 1.0,
+        "bottom": 0.9993
+      },
+      "autoCrop": {
+        "x": 0,
+        "y": 0,
+        "w": 984,
+        "h": 1402
+      },
+      "autoType": "RAW",
+      "signals": {
+        "label_frac": 0.0,
+        "label_cov": 0.0,
+        "side_plastic": 0.0,
+        "top_margin": 0.0,
+        "cov_area": 0.999,
+        "crop_ar": 0.702,
+        "fill": 0.911
+      }
+    },
+    "card-2286-c2.jpg": {
+      "file": "card-2286-c2.jpg",
+      "src": "/assets/img/collectibles/card-2286-c2.jpg",
+      "caption": "Gear Two · Pristine 10",
+      "type": "BGS",
+      "mode": "manual",
+      "confidence": 0.326,
+      "w": 832,
+      "h": 1602,
+      "aspect": 0.5194,
+      "crop": {
+        "x": 40,
+        "y": 220,
+        "w": 752,
+        "h": 1320
+      },
+      "cropNorm": {
+        "left": 0.0481,
+        "top": 0.1373,
+        "right": 0.9519,
+        "bottom": 0.9613
+      },
+      "autoCrop": {
+        "x": 0,
+        "y": 703,
+        "w": 832,
+        "h": 771
+      },
+      "autoType": "BGS",
+      "signals": {
+        "label_frac": 0.438,
+        "label_cov": 0.895,
+        "side_plastic": 0.0,
+        "top_margin": 0.439,
+        "cov_area": 0.481,
+        "crop_ar": 1.079,
+        "fill": 0.849,
+        "red": 0.01,
+        "dark": 0.047
+      },
+      "reason": "Beckett Pristine slab, light monochrome manga art; low texture fragments the auto region (conf 0.33). Hand-verified card bounds."
+    },
+    "card-2285-c1.jpg": {
+      "file": "card-2285-c1.jpg",
+      "src": "/assets/img/collectibles/card-2285-c1.jpg",
+      "caption": "Monkey D. Luffy SP · Pristine 10",
+      "type": "BGS",
+      "mode": "auto",
+      "confidence": 0.836,
+      "w": 832,
+      "h": 1584,
+      "aspect": 0.5253,
+      "crop": {
+        "x": 0,
+        "y": 361,
+        "w": 821,
+        "h": 1130
+      },
+      "cropNorm": {
+        "left": 0.0,
+        "top": 0.2279,
+        "right": 0.9868,
+        "bottom": 0.9413
+      },
+      "autoCrop": {
+        "x": 0,
+        "y": 361,
+        "w": 821,
+        "h": 1130
+      },
+      "autoType": "BGS",
+      "signals": {
+        "label_frac": 0.0,
+        "label_cov": 0.0,
+        "side_plastic": 0.0,
+        "top_margin": 0.228,
+        "cov_area": 0.704,
+        "crop_ar": 0.726,
+        "fill": 0.899,
+        "red": 0.0,
+        "dark": 0.102
+      }
+    },
+    "card-2283-c2.jpg": {
+      "file": "card-2283-c2.jpg",
+      "src": "/assets/img/collectibles/card-2283-c2.jpg",
+      "caption": "Portgas D. Ace · Pristine 10",
+      "type": "BGS",
+      "mode": "manual",
+      "confidence": 0.379,
+      "w": 1024,
+      "h": 1649,
+      "aspect": 0.621,
+      "crop": {
+        "x": 40,
+        "y": 215,
+        "w": 944,
+        "h": 1390
+      },
+      "cropNorm": {
+        "left": 0.0391,
+        "top": 0.1304,
+        "right": 0.9609,
+        "bottom": 0.9733
+      },
+      "autoCrop": {
+        "x": 60,
+        "y": 741,
+        "w": 843,
+        "h": 807
+      },
+      "autoType": "BGS",
+      "signals": {
+        "label_frac": 0.448,
+        "label_cov": 0.982,
+        "side_plastic": 0.058,
+        "top_margin": 0.449,
+        "cov_area": 0.403,
+        "crop_ar": 1.044,
+        "fill": 0.875,
+        "red": 0.037,
+        "dark": 0.059
+      },
+      "reason": "Beckett Pristine slab, light monochrome manga art; low texture fragments the auto region (conf 0.38). Hand-verified card bounds."
+    },
+    "card-2284-c3.jpg": {
+      "file": "card-2284-c3.jpg",
+      "src": "/assets/img/collectibles/card-2284-c3.jpg",
+      "caption": "Boa Hancock · PSA 10",
+      "type": "PSA",
+      "mode": "auto",
+      "confidence": 0.827,
+      "w": 880,
+      "h": 1611,
+      "aspect": 0.5462,
+      "crop": {
+        "x": 31,
+        "y": 387,
+        "w": 849,
+        "h": 1145
+      },
+      "cropNorm": {
+        "left": 0.0352,
+        "top": 0.2402,
+        "right": 1.0,
+        "bottom": 0.951
+      },
+      "autoCrop": {
+        "x": 31,
+        "y": 387,
+        "w": 849,
+        "h": 1145
+      },
+      "autoType": "PSA",
+      "signals": {
+        "label_frac": 0.153,
+        "label_cov": 0.799,
+        "side_plastic": 0.0,
+        "top_margin": 0.24,
+        "cov_area": 0.686,
+        "crop_ar": 0.741,
+        "fill": 0.876,
+        "red": 0.163,
+        "dark": 0.085
+      }
+    },
+    "card-2224-c2.jpg": {
+      "file": "card-2224-c2.jpg",
+      "src": "/assets/img/collectibles/card-2224-c2.jpg",
+      "caption": "Lugia V",
+      "type": "RAW",
+      "mode": "auto",
+      "confidence": 1.0,
+      "w": 1236,
+      "h": 1726,
+      "aspect": 0.7161,
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "w": 1236,
+        "h": 1726
+      },
+      "cropNorm": {
+        "left": 0.0,
+        "top": 0.0,
+        "right": 1.0,
+        "bottom": 1.0
+      },
+      "autoCrop": {
+        "x": 0,
+        "y": 0,
+        "w": 1236,
+        "h": 1726
+      },
+      "autoType": "RAW",
+      "signals": {
+        "label_frac": 0.358,
+        "label_cov": 0.887,
+        "side_plastic": 0.0,
+        "top_margin": 0.359,
+        "cov_area": 1.0,
+        "crop_ar": 0.716,
+        "fill": 0.847
+      }
+    },
+    "card-2225-c2.jpg": {
+      "file": "card-2225-c2.jpg",
+      "src": "/assets/img/collectibles/card-2225-c2.jpg",
+      "caption": "Espeon GX",
+      "type": "RAW",
+      "mode": "auto",
+      "confidence": 1.0,
+      "w": 1253,
+      "h": 1750,
+      "aspect": 0.716,
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "w": 1253,
+        "h": 1750
+      },
+      "cropNorm": {
+        "left": 0.0,
+        "top": 0.0,
+        "right": 1.0,
+        "bottom": 1.0
+      },
+      "autoCrop": {
+        "x": 0,
+        "y": 0,
+        "w": 1253,
+        "h": 1750
+      },
+      "autoType": "RAW",
+      "signals": {
+        "label_frac": 0.449,
+        "label_cov": 0.96,
+        "side_plastic": 0.0,
+        "top_margin": 0.45,
+        "cov_area": 1.0,
+        "crop_ar": 0.716,
+        "fill": 0.964
+      }
+    },
+    "card-2226-c2.jpg": {
+      "file": "card-2226-c2.jpg",
+      "src": "/assets/img/collectibles/card-2226-c2.jpg",
+      "caption": "Flareon ex",
+      "type": "RAW",
+      "mode": "auto",
+      "confidence": 1.0,
+      "w": 1213,
+      "h": 1694,
+      "aspect": 0.7161,
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "w": 1213,
+        "h": 1694
+      },
+      "cropNorm": {
+        "left": 0.0,
+        "top": 0.0,
+        "right": 1.0,
+        "bottom": 1.0
+      },
+      "autoCrop": {
+        "x": 0,
+        "y": 0,
+        "w": 1213,
+        "h": 1694
+      },
+      "autoType": "RAW",
+      "signals": {
+        "label_frac": 0.039,
+        "label_cov": 1.0,
+        "side_plastic": 0.0,
+        "top_margin": 0.041,
+        "cov_area": 1.0,
+        "crop_ar": 0.716,
+        "fill": 0.971
+      }
+    },
+    "card-2221-c4.jpg": {
+      "file": "card-2221-c4.jpg",
+      "src": "/assets/img/collectibles/card-2221-c4.jpg",
+      "caption": "Reshiram EX",
+      "type": "RAW",
+      "mode": "auto",
+      "confidence": 1.0,
+      "w": 1247,
+      "h": 1742,
+      "aspect": 0.7158,
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "w": 1247,
+        "h": 1742
+      },
+      "cropNorm": {
+        "left": 0.0,
+        "top": 0.0,
+        "right": 1.0,
+        "bottom": 1.0
+      },
+      "autoCrop": {
+        "x": 0,
+        "y": 0,
+        "w": 1247,
+        "h": 1742
+      },
+      "autoType": "RAW",
+      "signals": {
+        "label_frac": 0.449,
+        "label_cov": 0.836,
+        "side_plastic": 0.03,
+        "top_margin": 0.45,
+        "cov_area": 1.0,
+        "crop_ar": 0.716,
+        "fill": 0.7
+      }
+    },
+    "card-2213-c1.jpg": {
+      "file": "card-2213-c1.jpg",
+      "src": "/assets/img/collectibles/card-2213-c1.jpg",
+      "caption": "Zed · From the Shadows",
+      "type": "RAW",
+      "mode": "auto",
+      "confidence": 0.999,
+      "w": 1100,
+      "h": 1536,
+      "aspect": 0.7161,
+      "crop": {
+        "x": 0,
+        "y": 13,
+        "w": 1100,
+        "h": 1523
+      },
+      "cropNorm": {
+        "left": 0.0,
+        "top": 0.0085,
+        "right": 1.0,
+        "bottom": 1.0
+      },
+      "autoCrop": {
+        "x": 0,
+        "y": 13,
+        "w": 1100,
+        "h": 1523
+      },
+      "autoType": "RAW",
+      "signals": {
+        "label_frac": 0.0,
+        "label_cov": 0.0,
+        "side_plastic": 0.0,
+        "top_margin": 0.017,
+        "cov_area": 0.992,
+        "crop_ar": 0.722,
+        "fill": 0.902
+      }
+    },
+    "card-2215-c1.jpg": {
+      "file": "card-2215-c1.jpg",
+      "src": "/assets/img/collectibles/card-2215-c1.jpg",
+      "caption": "Deceiver",
+      "type": "RAW",
+      "mode": "auto",
+      "confidence": 1.0,
+      "w": 1249,
+      "h": 1745,
+      "aspect": 0.7158,
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "w": 1249,
+        "h": 1744
+      },
+      "cropNorm": {
+        "left": 0.0,
+        "top": 0.0,
+        "right": 1.0,
+        "bottom": 0.9994
+      },
+      "autoCrop": {
+        "x": 0,
+        "y": 0,
+        "w": 1249,
+        "h": 1744
+      },
+      "autoType": "RAW",
+      "signals": {
+        "label_frac": 0.0,
+        "label_cov": 0.0,
+        "side_plastic": 0.0,
+        "top_margin": 0.0,
+        "cov_area": 1.0,
+        "crop_ar": 0.716,
+        "fill": 0.734
+      }
+    },
+    "card-2216-c1.jpg": {
+      "file": "card-2216-c1.jpg",
+      "src": "/assets/img/collectibles/card-2216-c1.jpg",
+      "caption": "Blind Monk · Alt Art",
+      "type": "RAW",
+      "mode": "auto",
+      "confidence": 1.0,
+      "w": 1278,
+      "h": 1785,
+      "aspect": 0.716,
+      "crop": {
+        "x": 0,
+        "y": 0,
+        "w": 1278,
+        "h": 1785
+      },
+      "cropNorm": {
+        "left": 0.0,
+        "top": 0.0,
+        "right": 1.0,
+        "bottom": 1.0
+      },
+      "autoCrop": {
+        "x": 0,
+        "y": 0,
+        "w": 1278,
+        "h": 1785
+      },
+      "autoType": "RAW",
+      "signals": {
+        "label_frac": 0.11,
+        "label_cov": 0.688,
+        "side_plastic": 0.0,
+        "top_margin": 0.111,
+        "cov_area": 1.0,
+        "crop_ar": 0.716,
+        "fill": 0.935
+      }
+    }
+  }
+}
